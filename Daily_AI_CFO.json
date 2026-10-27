@@ -1,0 +1,13 @@
+{
+  "gcp_project": "hardware-knowledge-web",
+  "gcp_location": "us-central1",
+  "gemini_models": ["gemini-3.8-flash", "gemini-2.5-flash", "gemini-2.5-pro"],
+  "portfolio_etfs": ["0050.TW", "0056.TW", "00878.TW", "00919.TW"],
+  "market_indices": {
+    "taiwan_index": "^TWII",
+    "sp500": "^GSPC",
+    "vix": "^VIX"
+  },
+  "top_10_us_stocks": ["AAPL", "MSFT", "NVDA", "AMZN", "GOOGL", "META", "TSLA", "BRK-B", "LLY", "AVGO"],
+  "vix_threshold": 32.0
+}
