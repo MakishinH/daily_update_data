@@ -18,7 +18,9 @@ TARGET_SYMBOLS = {
     "NVDA": "輝達",
     "AAPL": "蘋果",
     "TSLA": "特斯拉",
-    "SPCX": "太空探索"
+    "SPCX": "太空探索",
+    "AVGO": "博通",
+    "AMD": "超微",
     "GOOGL": "Google",
     "META": "Meta",
     "AMZN": "亞馬遜",
