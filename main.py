@@ -24,6 +24,7 @@ TARGET_SYMBOLS = {
     "GOOGL": "Google",
     "META": "Meta",
     "AMZN": "亞馬遜",
+    "BRK-B": "波克夏",
     "^TWII": "台股加權指數",
     "0050.TW": "元大台灣50",
     "00631L.TW": "元大50正2"
