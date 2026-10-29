@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>投資與交易系統控制台</title>
+    <link rel="stylesheet" href="assets/dashboard.css">
+    
+    <style>
+        .finance-dashboard {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 16px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .dashboard-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0;
+        }
+
+        .update-time {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        .stock-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .stock-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .stock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .stock-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .stock-symbol {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 500;
+            margin-left: 4px;
+        }
+
+        .stock-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 4px 0;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .stock-change {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        .up { color: #dc2626; background-color: #fef2f2; }
+        .down { color: #16a34a; background-color: #f0fdf4; }
+        .neutral { color: #475569; background-color: #f1f5f9; }
+        .loading-state { text-align: center; color: #94a3b8; padding: 40px 0; grid-column: 1 / -1; }
+
+        .strategy-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.02em;
+        }
+        .badge-etf { color: #0369a1; background: #e0f2fe; border: 1px solid #bae6fd; }
+        .badge-v7 { color: #7c2d12; background: #ffedd5; border: 1px solid #fed7aa; }
+
+        .signal-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 6px 0 10px 0;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .action-pill {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            white-space: nowrap;
+        }
+        .action-buy { color: #991b1b; background-color: #fee2e2; border: 1px solid #fca5a5; }
+        .action-hold-long { color: #065f46; background-color: #d1fae5; border: 1px solid #6ee7b7; }
+        .action-hold-short { color: #9f1239; background-color: #ffe4e6; border: 1px solid #fecdd3; }
+        .action-flat { color: #475569; background-color: #f1f5f9; border: 1px solid #cbd5e1; }
+
+        .signal-metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 12px;
+            padding-top: 10px;
+            border-top: 1px dashed #e2e8f0;
+            margin-top: 6px;
+        }
+        .metric-box { display: flex; flex-direction: column; }
+        .metric-label { font-size: 0.7rem; color: #64748b; font-weight: 500; }
+        .metric-val { font-size: 0.825rem; font-weight: 600; margin-top: 2px; padding: 1px 4px; border-radius: 4px; width: fit-content; }
+        .date-val { color: #475569; font-weight: 500; background-color: #f8fafc; }
+
+        /* === ☀️ 早安簡報 (AI CFO) 專用優雅樣式 === */
+        .cfo-container-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+        .cfo-summary-banner {
+            background: #f8fafc;
+            border-left: 4px solid #0284c7;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .cfo-modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 16px;
+        }
+        .cfo-subcard {
+            background: #fbfcfe;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px 16px;
+        }
+        .cfo-subcard-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .cfo-subcard-content {
+            font-size: 0.85rem;
+            color: #475569;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+        .cfo-news-item {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        .cfo-news-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .cfo-news-title {
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .cfo-weather-pill {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-bottom: 6px;
+        }
+        .cfo-greeting-banner {
+            margin-top: 16px;
+            text-align: center;
+            padding: 10px;
+            background: #f0fdf4;
+            color: #15803d;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body data-config="index_Finanical_config.json">
+
+    <!-- 1. 即時市場指數與 ETF -->
+    <div class="finance-dashboard">
+        <div class="dashboard-header">
+            <h2 class="dashboard-title">📊 即時市場指數與 ETF</h2>
+            <div id="update-timestamp" class="update-time">資料載入中…</div>
+        </div>
+        <div id="stock-container" class="stock-grid">
+            <div class="loading-state">刻正獲取最新市場數據…</div>
+        </div>
+    </div>
+
+    <!-- 2. 早安簡報 (Daily AI CFO) 區域 -->
+    <div class="finance-dashboard" id="cfo-briefing-wrapper" style="margin-top: 24px;">
+        <div class="dashboard-header">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h2 class="dashboard-title" id="cfo-main-title">☀️ AI CFO 早安晨會簡報</h2>
+                <span class="strategy-badge badge-etf">每日 08:25 自動推送</span>
+            </div>
+            <div id="cfo-timestamp" class="update-time">簡報載入中…</div>
+        </div>
+        <div id="cfo-container">
+            <div class="loading-state">刻正獲取今日 AI CFO 晨會即時資訊…</div>
+        </div>
+    </div>
+
+    <!-- 3. AI 量化波段策略 盤後訊號卡片 (Stock_Agent) -->
+    <div class="finance-dashboard" style="margin-top: 24px;">
+        <div class="dashboard-header">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h2 class="dashboard-title">🎯 AI 量化波段策略 盤後訊號卡片 (Stock_Agent)</h2>
+                <span class="strategy-badge badge-etf">每日盤後排程更新</span>
+            </div>
+            <div id="signals-timestamp" class="update-time">策略訊號載入中…</div>
+        </div>
+        <div id="signals-container" class="stock-grid">
+            <div class="loading-state">刻正獲取最新 AI 量化盤後訊號…</div>
+        </div>
+    </div>
+
+    <!-- 原系統控制台主要掛載點 (若有外部資產 dashboard.js 則掛載) -->
+    <div class="container" id="app">
+        <p style="text-align:center;color:#94a3b8;padding:60px 0;">載入中…</p>
+    </div>
+
+    <script src="assets/dashboard.js"></script>
+
+    <script>
+        // 輔助函式：時區格式化為台北時間 (UTC+8)
+        function formatToTaipeiTime(utcString) {
+            if (!utcString) return '';
+            let parsableStr = utcString.trim();
+            if (parsableStr.endsWith('UTC')) {
+                parsableStr = parsableStr.replace(/\s*UTC$/, '').replace(' ', 'T') + 'Z';
+            } else if (!parsableStr.endsWith('Z') && !parsableStr.includes('+')) {
+                parsableStr = parsableStr.replace(' ', 'T') + 'Z';
+            }
+            const date = new Date(parsableStr);
+            if (isNaN(date.getTime())) return utcString;
+            return new Intl.DateTimeFormat('zh-TW', {
+                timeZone: 'Asia/Taipei',
+                year: 'numeric', month: '2-digit', day: '2-digit',
+                hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+            }).format(date).replace(/\//g, '-');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. 抓取即時市場指數 (直接讀取同目錄下的 daily_update.json)
+            loadMarketData();
+
+            // 2. 抓取並渲染 AI CFO 早安晨報 (直接讀取同目錄下的 Daily_AI_CFO.json)
+            loadDailyAiCfoBriefing();
+
+            // 3. 抓取 Stock_Agent 訊號 (直接讀取同目錄下的 latest_signals.json)
+            loadStockAgentSignals();
+
+            // 檢查 #app 是否有被外部腳本填入內容，若無則自動隱藏避免留白
+            setTimeout(() => {
+                const appElem = document.getElementById('app');
+                if (appElem && appElem.innerText.trim() === '載入中…') {
+                    appElem.style.display = 'none';
+                }
+            }, 1000);
+        });
+
+        // 1. 讀取並渲染市場指數 (daily_update.json)
+        function loadMarketData() {
+            const container = document.getElementById('stock-container');
+            const timeContainer = document.getElementById('update-timestamp');
+
+            // 候選路徑：優先讀取同目錄下的 daily_update.json，若失敗則使用遠端 CDN 備援
+            const candidateUrls = [
+                `daily_update.json?t=${Date.now()}`,
+                `https://cdn.jsdelivr.net/gh/MakishinH/daily_update_data@main/daily_update.json?t=${Date.now()}`
+            ];
+
+            function tryFetch(idx) {
+                if (idx >= candidateUrls.length) {
+                    if (container) {
+                        container.innerHTML = '<div class="loading-state" style="color: #ef4444;">⚠️ 無法載入最新市場數據 (daily_update.json)</div>';
+                    }
+                    return;
+                }
+
+                fetch(candidateUrls[idx])
+                    .then(res => {
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.json();
+                    })
+                    .then(data => renderMarketData(data))
+                    .catch(err => {
+                        console.warn(`市場數據載入失敗 (${candidateUrls[idx]}):`, err);
+                        tryFetch(idx + 1);
+                    });
+            }
+
+            tryFetch(0);
+        }
+
+        function renderMarketData(data) {
+            const container = document.getElementById('stock-container');
+            const timeContainer = document.getElementById('update-timestamp');
+            if (!container) return;
+
+            let gridHtml = '';
+            let latestTime = '';
+            for (const symbol in data) {
+                const item = data[symbol];
+                const isUp = item.changePercent > 0;
+                const isDown = item.changePercent < 0;
+                const colorClass = isUp ? 'up' : (isDown ? 'down' : 'neutral');
+                const sign = isUp ? '+' : '';
+                if (item.updatedAt) latestTime = item.updatedAt;
+                gridHtml += `
+                    <div class="stock-card">
+                        <div class="stock-header">
+                            <span class="stock-name">${item.name || symbol}</span>
+                            <span class="stock-symbol">${symbol}</span>
+                        </div>
+                        <div class="stock-price">${Number(item.price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                        <div><span class="stock-change ${colorClass}">${sign}${Number(item.change).toFixed(2)} (${sign}${Number(item.changePercent).toFixed(2)}%)</span></div>
+                    </div>`;
+            }
+            container.innerHTML = gridHtml;
+            const taipeiTime = formatToTaipeiTime(latestTime);
+            if (timeContainer && taipeiTime) timeContainer.innerText = `更新時間: ${taipeiTime} (台北)`;
+        }
+
+        // 2. 讀取並渲染 AI CFO 早安晨會卡片 (Daily_AI_CFO.json)
+        function loadDailyAiCfoBriefing() {
+            const container = document.getElementById('cfo-container');
+            const titleElem = document.getElementById('cfo-main-title');
+            const timeElem = document.getElementById('cfo-timestamp');
+
+            // 候選路徑：優先讀取同目錄下的 Daily_AI_CFO.json，若失敗則使用遠端 CDN 備援
+            const candidateUrls = [
+                `Daily_AI_CFO.json?t=${Date.now()}`,
+                `https://cdn.jsdelivr.net/gh/MakishinH/daily_update_data@main/Daily_AI_CFO.json?t=${Date.now()}`
+            ];
+
+            function tryFetch(idx) {
+                if (idx >= candidateUrls.length) {
+                    if (container) {
+                        container.innerHTML = '<div class="loading-state" style="color: #94a3b8;">⚠️ 今日早安簡報尚在生成中或排程未啟動 (Daily_AI_CFO.json)</div>';
+                    }
+                    return;
+                }
+
+                fetch(candidateUrls[idx])
+                    .then(res => {
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.json();
+                    })
+                    .then(data => renderCfoBriefing(data))
+                    .catch(err => {
+                        console.warn(`AI CFO 簡報資料讀取失敗 (${candidateUrls[idx]}):`, err);
+                        tryFetch(idx + 1);
+                    });
+            }
+
+            tryFetch(0);
+        }
+
+        function renderCfoBriefing(data) {
+            const container = document.getElementById('cfo-container');
+            const titleElem = document.getElementById('cfo-main-title');
+            const timeElem = document.getElementById('cfo-timestamp');
+            if (!container) return;
+
+            if (data.today_str && titleElem) {
+                titleElem.innerText = `☀️ 早安簡報 | ${data.today_str}`;
+            }
+            if (data.updated_at && timeElem) {
+                timeElem.innerText = `排程更新: ${data.updated_at}`;
+            }
+
+            // 處理新聞列表
+            let newsHtml = '';
+            if (Array.isArray(data.top_news) && data.top_news.length > 0) {
+                data.top_news.forEach(n => {
+                    newsHtml += `
+                        <div class="cfo-news-item">
+                            <div class="cfo-news-title">‧ ${n.title}</div>
+                            <div style="font-size: 0.8rem; color: #64748b; margin-top: 2px;">${n.snippet || ''}</div>
+                        </div>`;
+                });
+            } else {
+                newsHtml = '<div style="color: #94a3b8;">暫無重大新聞摘要</div>';
+            }
+
+            // 處理天氣資訊
+            const w = data.weather || {};
+            const weatherContent = `
+                <div class="cfo-weather-pill">⛅ ${w.location || '台北'}：${w.condition || '晴時多雲'}</div>
+                <div>🌡️ 氣溫預測：<b>${w.temp_range || '未提供'}</b> | 🌧️ 降雨機率：<b>${w.rain_prob || '0%'}</b></div>
+                <div style="margin-top: 4px; color: #b45309; font-weight: 500;">💡 ${w.notice || '早晚溫差大，請適時增添衣物'}</div>
+            `;
+
+            container.innerHTML = `
+                <div class="cfo-container-card">
+                    <div class="cfo-summary-banner">
+                        <b>📢 晨報速覽：</b>${data.summary || '今日市場數據已就緒，請見下方模組分析。'}
+                    </div>
+                    <div class="cfo-modules-grid">
+                        <div class="cfo-subcard">
+                            <div class="cfo-subcard-title">📰 1. 財經與科技頭條</div>
+                            <div class="cfo-subcard-content">${newsHtml}</div>
+                        </div>
+                        <div class="cfo-subcard">
+                            <div class="cfo-subcard-title">⛅ 2. 天氣預報 (台北)</div>
+                            <div class="cfo-subcard-content">${weatherContent}</div>
+                            <div class="cfo-subcard-title" style="margin-top: 14px;">⚖️ 5. 今日台股氣氛預估</div>
+                            <div class="cfo-subcard-content">${data.tw_outlook || '維持中性震盪觀察。'}</div>
+                        </div>
+                        <div class="cfo-subcard">
+                            <div class="cfo-subcard-title">🇺🇸 3. 美股熱門科技股</div>
+                            <div class="cfo-subcard-content">${data.us_stocks || '暫無美股數據'}</div>
+                        </div>
+                        <div class="cfo-subcard">
+                            <div class="cfo-subcard-title">🇹🇼 4. 台股最新動態</div>
+                            <div class="cfo-subcard-content">${data.tw_market || '暫無台股數據'}</div>
+                        </div>
+                    </div>
+                    <div class="cfo-greeting-banner">
+                        ✨ ${data.greeting || '祝您今天投資與工作順利，Good morning！'}
+                    </div>
+                </div>
+            `;
+        }
+
+        // 3. 讀取並渲染 Stock_Agent 訊號卡片 (latest_signals.json)
+        function loadStockAgentSignals() {
+            const container = document.getElementById('signals-container');
+            const timeContainer = document.getElementById('signals-timestamp');
+            if (!container) return;
+
+            // 候選路徑：優先讀取同目錄下的 latest_signals.json，若失敗則使用遠端 CDN 備援
+            const candidateUrls = [
+                `latest_signals.json?t=${Date.now()}`,
+                `https://cdn.jsdelivr.net/gh/MakishinH/daily_update_data@main/latest_signals.json?t=${Date.now()}`,
+                `https://cdn.jsdelivr.net/gh/MakishinH/Stock_Agent@main/daily_signals/latest_signals.json?t=${Date.now()}`
+            ];
+
+            function tryFetchSignal(index) {
+                if (index >= candidateUrls.length) {
+                    container.innerHTML = '<div class="loading-state" style="color: #ef4444;">⚠️ 無法取得 AI 策略最新訊號資料 (latest_signals.json)</div>';
+                    return;
+                }
+                fetch(candidateUrls[index])
+                    .then(res => {
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.json();
+                    })
+                    .then(data => renderSignals(data))
+                    .catch(err => {
+                        console.warn(`策略訊號載入失敗 (${candidateUrls[index]}):`, err);
+                        tryFetchSignal(index + 1);
+                    });
+            }
+
+            function renderSignals(payload) {
+                const signals = payload.signals || [];
+                if (!signals.length) {
+                    container.innerHTML = '<div class="loading-state">目前尚無策略訊號資料</div>';
+                    return;
+                }
+                let cardsHtml = '';
+                signals.forEach(item => {
+                    const isETF = item.ticker && item.ticker.startsWith('00');
+                    const badgeClass = isETF ? 'badge-etf' : 'badge-v7';
+                    let actionClass = 'action-flat';
+                    const act = item.action || '';
+                    if (act.includes('BUY') || act.includes('進場')) actionClass = 'action-buy';
+                    else if (act.includes('HOLD') || act.includes('續抱')) actionClass = (act.includes('空單') || act.includes('反1')) ? 'action-hold-short' : 'action-hold-long';
+                    else if (act.includes('SHORT')) actionClass = 'action-hold-short';
+
+                    const fVal = Number(item.foreign_net_buy || 0);
+                    const tVal = Number(item.trust_net_buy || 0);
+                    const revVal = Number(item.revenue_yoy_pct || 0);
+
+                    cardsHtml += `
+                        <div class="stock-card signal-card">
+                            <div class="stock-header">
+                                <div><span class="stock-name">${item.name}</span><span class="stock-symbol">${item.ticker}</span></div>
+                                <span class="strategy-badge ${badgeClass}">${item.strategy_title}</span>
+                            </div>
+                            <div class="signal-price-row">
+                                <div class="stock-price">${Number(item.close).toLocaleString('en-US', { minimumFractionDigits: isETF ? 2 : 1, maximumFractionDigits: 2 })}</div>
+                                <div><span class="action-pill ${actionClass}">${item.action}</span></div>
+                            </div>
+                            <div class="signal-metrics-grid">
+                                <div class="metric-box"><span class="metric-label">外資買賣超</span><span class="metric-val ${fVal > 0 ? 'up' : (fVal < 0 ? 'down' : 'neutral')}">${fVal > 0 ? '+' : ''}${fVal.toLocaleString()} 張</span></div>
+                                <div class="metric-box"><span class="metric-label">投信買賣超</span><span class="metric-val ${tVal > 0 ? 'up' : (tVal < 0 ? 'down' : 'neutral')}">${tVal > 0 ? '+' : ''}${tVal.toLocaleString()} 張</span></div>
+                                <div class="metric-box"><span class="metric-label">月營收 YoY</span><span class="metric-val ${revVal > 0 ? 'up' : (revVal < 0 ? 'down' : 'neutral')}">${revVal > 0 ? '+' : ''}${revVal.toFixed(1)}%</span></div>
+                                <div class="metric-box"><span class="metric-label">資料基準日</span><span class="metric-val date-val">${item.trade_date}</span></div>
+                            </div>
+                        </div>`;
+                });
+                container.innerHTML = cardsHtml;
+                if (payload.updated_at && timeContainer) timeContainer.innerText = `排程更新: ${payload.updated_at}`;
+            }
+
+            tryFetchSignal(0);
+        }
+    </script>
+</body>
+</html>
