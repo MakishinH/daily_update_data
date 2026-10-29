@@ -9,7 +9,7 @@
     
     <style>
         .finance-dashboard {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 20px auto;
             padding: 0 16px;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -144,7 +144,9 @@
         .metric-val { font-size: 0.825rem; font-weight: 600; margin-top: 2px; padding: 1px 4px; border-radius: 4px; width: fit-content; }
         .date-val { color: #475569; font-weight: 500; background-color: #f8fafc; }
 
-        /* === ☀️ 早安簡報 (AI CFO) 專用優雅樣式 === */
+        /* ======================================================== */
+        /* === ☀️ 早安簡報 (AI CFO) 3欄式高質感卡片專用樣式 === */
+        /* ======================================================== */
         .cfo-container-card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -152,68 +154,237 @@
             padding: 20px;
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
         }
+
         .cfo-summary-banner {
             background: #f8fafc;
             border-left: 4px solid #0284c7;
-            padding: 12px 16px;
+            padding: 14px 18px;
             border-radius: 0 8px 8px 0;
-            margin-bottom: 16px;
-            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-size: 0.925rem;
             color: #334155;
             line-height: 1.6;
         }
-        .cfo-modules-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 16px;
+
+        .cfo-weather-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 18px;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #cbd5e1;
+            font-size: 0.85rem;
+            color: #475569;
         }
-        .cfo-subcard {
+
+        .cfo-weather-pill {
+            display: inline-flex;
+            align-items: center;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        /* 核心：3 欄式 Grid 佈局 */
+        .cfo-3col-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        @media (max-width: 1080px) {
+            .cfo-3col-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cfo-col-card {
             background: #fbfcfe;
             border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 14px 16px;
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
         }
-        .cfo-subcard-title {
-            font-size: 0.9rem;
+
+        .cfo-col-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cfo-col-title {
+            font-size: 0.975rem;
             font-weight: 700;
             color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 右上角分類標籤 */
+        .cfo-badge-news { background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; font-size: 0.75rem; font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+        .cfo-badge-us { background: #f3e8ff; color: #7e22ce; border: 1px solid #e9d5ff; font-size: 0.75rem; font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+        .cfo-badge-tw { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; font-size: 0.75rem; font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+
+        /* 欄 1：重大新聞獨立白卡 */
+        .cfo-news-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 14px;
             margin-bottom: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .cfo-news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+        }
+        .cfo-news-card:last-child {
+            margin-bottom: 0;
+        }
+        .cfo-news-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        .cfo-news-num {
+            background: #eff6ff;
+            color: #2563eb;
+            border: 1px solid #93c5fd;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 1px 6px;
+            border-radius: 4px;
+            line-height: 1.2;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .cfo-news-heading {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.4;
+        }
+        .cfo-news-snippet {
+            font-size: 0.825rem;
+            color: #64748b;
+            line-height: 1.5;
+            margin-top: 4px;
+        }
+
+        /* 欄 2：美股行情卡片與漲跌藥丸 */
+        .cfo-us-overview-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+        }
+        .cfo-us-stock-row {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+            transition: transform 0.15s ease;
+        }
+        .cfo-us-stock-row:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+        .cfo-us-stock-row:last-child {
+            margin-bottom: 0;
+        }
+        .cfo-us-footer-box {
+            margin-top: 10px;
+            padding: 10px 12px;
+            background: #f8fafc;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: #475569;
+            line-height: 1.5;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .cfo-pill {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+            flex-shrink: 0;
+            margin-top: 1px;
+            white-space: nowrap;
+        }
+        /* 台股色彩習慣：紅漲綠跌 */
+        .cfo-pill-up {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+        .cfo-pill-down {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+        .cfo-pill-flat {
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+        .cfo-us-stock-text {
+            font-size: 0.825rem;
+            color: #334155;
+            line-height: 1.5;
+        }
+        .cfo-stock-price {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        /* 欄 3：台股盤勢與開盤預估 */
+        .cfo-section-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 6px;
         }
-        .cfo-subcard-content {
+        .cfo-section-desc {
             font-size: 0.85rem;
             color: #475569;
             line-height: 1.6;
+            margin-bottom: 16px;
             white-space: pre-line;
         }
-        .cfo-news-item {
-            margin-bottom: 8px;
-            padding-bottom: 8px;
-            border-bottom: 1px dashed #e2e8f0;
-        }
-        .cfo-news-item:last-child {
+        .cfo-section-desc:last-child {
             margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
         }
-        .cfo-news-title {
-            font-weight: 600;
-            color: #1e293b;
-        }
-        .cfo-weather-pill {
-            display: inline-block;
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.8rem;
-            margin-bottom: 6px;
-        }
+
         .cfo-greeting-banner {
-            margin-top: 16px;
+            margin-top: 18px;
             text-align: center;
             padding: 10px;
             background: #f0fdf4;
@@ -237,7 +408,7 @@
         </div>
     </div>
 
-    <!-- 2. 早安簡報 (Daily AI CFO) 區域 -->
+    <!-- 2. 早安簡報 (Daily AI CFO) 區域 - 3 欄式卡片佈局 -->
     <div class="finance-dashboard" id="cfo-briefing-wrapper" style="margin-top: 24px;">
         <div class="dashboard-header">
             <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
@@ -310,12 +481,13 @@
             }, 1000);
         });
 
+        // ==========================================
         // 1. 讀取並渲染市場指數 (daily_update.json)
+        // ==========================================
         function loadMarketData() {
             const container = document.getElementById('stock-container');
             const timeContainer = document.getElementById('update-timestamp');
 
-            // 候選路徑：優先讀取同目錄下的 daily_update.json，若失敗則使用遠端 CDN 備援
             const candidateUrls = [
                 `daily_update.json?t=${Date.now()}`,
                 `https://cdn.jsdelivr.net/gh/MakishinH/daily_update_data@main/daily_update.json?t=${Date.now()}`
@@ -373,13 +545,12 @@
             if (timeContainer && taipeiTime) timeContainer.innerText = `更新時間: ${taipeiTime} (台北)`;
         }
 
+        // ========================================================
         // 2. 讀取並渲染 AI CFO 早安晨會卡片 (Daily_AI_CFO.json)
+        // ========================================================
         function loadDailyAiCfoBriefing() {
             const container = document.getElementById('cfo-container');
-            const titleElem = document.getElementById('cfo-main-title');
-            const timeElem = document.getElementById('cfo-timestamp');
 
-            // 候選路徑：優先讀取同目錄下的 Daily_AI_CFO.json，若失敗則使用遠端 CDN 備援
             const candidateUrls = [
                 `Daily_AI_CFO.json?t=${Date.now()}`,
                 `https://cdn.jsdelivr.net/gh/MakishinH/daily_update_data@main/Daily_AI_CFO.json?t=${Date.now()}`
@@ -408,6 +579,66 @@
             tryFetch(0);
         }
 
+        // 解析美股文字內容為帶有 漲 / 跌 藥丸的精緻卡片列表
+        function parseUsStocksHtml(text) {
+            if (!text) return '<div class="cfo-section-desc">暫無美股數據</div>';
+            const lines = text.trim().split('\n');
+            let overview = [];
+            let stocks = [];
+            let footer = [];
+
+            lines.forEach(rawLine => {
+                const line = rawLine.trim();
+                if (!line) return;
+                if (line.startsWith('•') || line.startsWith('*') || line.startsWith('-')) {
+                    stocks.push(line.replace(/^[•*-]\s*/, ''));
+                } else if (stocks.length > 0) {
+                    footer.push(line);
+                } else {
+                    overview.push(line);
+                }
+            });
+
+            let html = '';
+
+            // 1. 大盤綜述 (帶 ⚪ 平 藥丸)
+            if (overview.length > 0) {
+                html += `
+                    <div class="cfo-us-overview-box">
+                        <span class="cfo-pill cfo-pill-flat">⚪ 平</span>
+                        <div class="cfo-us-stock-text">${overview.join(' ')}</div>
+                    </div>`;
+            }
+
+            // 2. 個股獨立行 (自動判定漲跌藥丸，依台股習慣：紅漲綠跌)
+            stocks.forEach(stockStr => {
+                const isUp = stockStr.includes('+') || stockStr.includes('漲') || stockStr.includes('飆') || stockStr.includes('彈');
+                const isDown = stockStr.includes('-') || stockStr.includes('跌') || stockStr.includes('挫') || stockStr.includes('拉回');
+                const pillClass = isUp ? 'cfo-pill-up' : (isDown ? 'cfo-pill-down' : 'cfo-pill-flat');
+                const pillLabel = isUp ? '🔴 漲' : (isDown ? '🟢 跌' : '⚪ 平');
+
+                // 加粗價格與數值
+                const formattedStr = stockStr.replace(/(\$[\d,]+(?:\.\d+)?)/g, '<b class="cfo-stock-price">$1</b>');
+
+                html += `
+                    <div class="cfo-us-stock-row">
+                        <span class="cfo-pill ${pillClass}">${pillLabel}</span>
+                        <div class="cfo-us-stock-text">${formattedStr}</div>
+                    </div>`;
+            });
+
+            // 3. 資金板塊總結
+            if (footer.length > 0) {
+                html += `
+                    <div class="cfo-us-footer-box">
+                        💡 <b>資金板塊總結：</b>${footer.join(' ').replace(/^.*?資金板塊總結[：:]\s*/, '')}
+                    </div>`;
+            }
+
+            return html || `<div class="cfo-section-desc">${text}</div>`;
+        }
+
+        // 渲染 3 欄式黃金比例卡片
         function renderCfoBriefing(data) {
             const container = document.getElementById('cfo-container');
             const titleElem = document.getElementById('cfo-main-title');
@@ -421,53 +652,96 @@
                 timeElem.innerText = `排程更新: ${data.updated_at}`;
             }
 
-            // 處理新聞列表
-            let newsHtml = '';
+            // 1. 處理重大頭條 (編號卡片 01, 02, 03...)
+            let newsCardsHtml = '';
             if (Array.isArray(data.top_news) && data.top_news.length > 0) {
-                data.top_news.forEach(n => {
-                    newsHtml += `
-                        <div class="cfo-news-item">
-                            <div class="cfo-news-title">‧ ${n.title}</div>
-                            <div style="font-size: 0.8rem; color: #64748b; margin-top: 2px;">${n.snippet || ''}</div>
+                data.top_news.forEach((n, idx) => {
+                    const numStr = String(idx + 1).padStart(2, '0');
+                    newsCardsHtml += `
+                        <div class="cfo-news-card">
+                            <div class="cfo-news-header">
+                                <span class="cfo-news-num">${numStr}</span>
+                                <div class="cfo-news-heading">${n.title}</div>
+                            </div>
+                            <div class="cfo-news-snippet">${n.snippet || ''}</div>
                         </div>`;
                 });
             } else {
-                newsHtml = '<div style="color: #94a3b8;">暫無重大新聞摘要</div>';
+                newsCardsHtml = '<div class="cfo-section-desc">暫無頭條新聞摘要</div>';
             }
 
-            // 處理天氣資訊
-            const w = data.weather || {};
-            const weatherContent = `
-                <div class="cfo-weather-pill">⛅ ${w.location || '台北'}：${w.condition || '晴時多雲'}</div>
-                <div>🌡️ 氣溫預測：<b>${w.temp_range || '未提供'}</b> | 🌧️ 降雨機率：<b>${w.rain_prob || '0%'}</b></div>
-                <div style="margin-top: 4px; color: #b45309; font-weight: 500;">💡 ${w.notice || '早晚溫差大，請適時增添衣物'}</div>
+            // 2. 處理美股行情 (大盤總結 + 漲跌藥丸列表)
+            const usStocksHtml = parseUsStocksHtml(data.us_stocks);
+
+            // 3. 處理台股盤勢與開盤預估 (合為一欄)
+            const twMarketHtml = `
+                <div class="cfo-section-title">📊 前一交易日盤面動態：</div>
+                <div class="cfo-section-desc">${data.tw_market || '暫無台股大盤資料'}</div>
+                <div class="cfo-section-title" style="margin-top: 18px;">🎯 今日開盤氣氛預估與盤面重點：</div>
+                <div class="cfo-section-desc">${data.tw_outlook || '維持中性震盪觀察。'}</div>
             `;
+
+            // 4. 處理天氣預報資訊
+            const w = data.weather || {};
 
             container.innerHTML = `
                 <div class="cfo-container-card">
+                    <!-- 頂部晨報速覽與天氣整合橫幅 -->
                     <div class="cfo-summary-banner">
-                        <b>📢 晨報速覽：</b>${data.summary || '今日市場數據已就緒，請見下方模組分析。'}
-                    </div>
-                    <div class="cfo-modules-grid">
-                        <div class="cfo-subcard">
-                            <div class="cfo-subcard-title">📰 1. 財經與科技頭條</div>
-                            <div class="cfo-subcard-content">${newsHtml}</div>
+                        <div style="font-size: 0.95rem; font-weight: 500; margin-bottom: 8px;">
+                            <b>📢 晨報速覽：</b>${data.summary || '今日市場數據已就緒，請見下方模組分析。'}
                         </div>
-                        <div class="cfo-subcard">
-                            <div class="cfo-subcard-title">⛅ 2. 天氣預報 (台北)</div>
-                            <div class="cfo-subcard-content">${weatherContent}</div>
-                            <div class="cfo-subcard-title" style="margin-top: 14px;">⚖️ 5. 今日台股氣氛預估</div>
-                            <div class="cfo-subcard-content">${data.tw_outlook || '維持中性震盪觀察。'}</div>
-                        </div>
-                        <div class="cfo-subcard">
-                            <div class="cfo-subcard-title">🇺🇸 3. 美股熱門科技股</div>
-                            <div class="cfo-subcard-content">${data.us_stocks || '暫無美股數據'}</div>
-                        </div>
-                        <div class="cfo-subcard">
-                            <div class="cfo-subcard-title">🇹🇼 4. 台股最新動態</div>
-                            <div class="cfo-subcard-content">${data.tw_market || '暫無台股數據'}</div>
+                        <div class="cfo-weather-inline">
+                            <span class="cfo-weather-pill">⛅ ${w.location || '台北'}：${w.condition || '晴時多雲'}</span>
+                            <span>🌡️ 氣溫預測：<b>${w.temp_range || '未提供'}</b></span>
+                            <span>🌧️ 降雨機率：<b>${w.rain_prob || '0%'}</b></span>
+                            <span style="color: #b45309; font-weight: 500;">💡 ${w.notice || '早晚溫差顯著，建議採取洋蔥式穿法'}</span>
                         </div>
                     </div>
+
+                    <!-- 核心：3 欄式卡片佈局 (完全還原原版設計) -->
+                    <div class="cfo-3col-grid">
+                        <!-- 第一欄：今日重大財經與科技頭條 -->
+                        <div class="cfo-col-card">
+                            <div class="cfo-col-header">
+                                <div class="cfo-col-title">
+                                    <span>📰</span> 今日重大財經與科技頭條
+                                </div>
+                                <span class="cfo-badge-news">焦點 5 大頭條</span>
+                            </div>
+                            <div class="cfo-col-body">
+                                ${newsCardsHtml}
+                            </div>
+                        </div>
+
+                        <!-- 第二欄：昨夜美股行情與科技股動態 -->
+                        <div class="cfo-col-card">
+                            <div class="cfo-col-header">
+                                <div class="cfo-col-title">
+                                    <span style="font-weight: 800; font-size: 0.85rem; color: #64748b; letter-spacing: -0.5px;">US</span> 昨夜美股行情與科技股動態
+                                </div>
+                                <span class="cfo-badge-us">美股盤後觀察</span>
+                            </div>
+                            <div class="cfo-col-body">
+                                ${usStocksHtml}
+                            </div>
+                        </div>
+
+                        <!-- 第三欄：台股盤勢剖析與開盤預估 -->
+                        <div class="cfo-col-card">
+                            <div class="cfo-col-header">
+                                <div class="cfo-col-title">
+                                    <span style="font-weight: 800; font-size: 0.85rem; color: #64748b; letter-spacing: -0.5px;">TW</span> 台股盤勢剖析與開盤預估
+                                </div>
+                                <span class="cfo-badge-tw">加權指數與前瞻</span>
+                            </div>
+                            <div class="cfo-col-body">
+                                ${twMarketHtml}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 底部親切問候 -->
                     <div class="cfo-greeting-banner">
                         ✨ ${data.greeting || '祝您今天投資與工作順利，Good morning！'}
                     </div>
@@ -475,13 +749,14 @@
             `;
         }
 
+        // ========================================================
         // 3. 讀取並渲染 Stock_Agent 訊號卡片 (latest_signals.json)
+        // ========================================================
         function loadStockAgentSignals() {
             const container = document.getElementById('signals-container');
             const timeContainer = document.getElementById('signals-timestamp');
             if (!container) return;
 
-            // 候選路徑：優先讀取同目錄下的 latest_signals.json，若失敗則使用遠端 CDN 備援
             const candidateUrls = [
                 `latest_signals.json?t=${Date.now()}`,
                 `https://cdn.jsdelivr.net/gh/MakishinH/daily_update_data@main/latest_signals.json?t=${Date.now()}`,
