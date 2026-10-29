@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>投資與交易系統控制台 (含台指期 V7 長線波段訊號)</title>
+    <link rel="stylesheet" href="assets/dashboard.css">
+    
+    <style>
+        .finance-dashboard {
+            max-width: 1280px;
+            margin: 20px auto;
+            padding: 0 16px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .dashboard-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0;
+        }
+
+        .update-time {
+            font-size: 0.85rem;
+            color: #475569;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        .stock-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .stock-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .stock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .stock-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .stock-symbol {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 500;
+            margin-left: 4px;
+        }
+
+        .stock-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 4px 0;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .stock-change {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        .up { color: #dc2626; background-color: #fef2f2; }
+        .down { color: #16a34a; background-color: #f0fdf4; }
+        .neutral { color: #475569; background-color: #f1f5f9; }
+        .loading-state { text-align: center; color: #94a3b8; padding: 40px 0; grid-column: 1 / -1; }
+
+        .strategy-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.02em;
+        }
+        .badge-etf { color: #0369a1; background: #e0f2fe; border: 1px solid #bae6fd; }
+        .badge-v7 { color: #7c2d12; background: #ffedd5; border: 1px solid #fed7aa; }
+        .badge-kgi-v7 { color: #92400e; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 1px solid #f59e0b; }
+
+        .signal-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 6px 0 10px 0;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .action-pill {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            white-space: nowrap;
+        }
+        .action-buy { color: #991b1b; background-color: #fee2e2; border: 1px solid #fca5a5; }
+        .action-hold-long { color: #065f46; background-color: #d1fae5; border: 1px solid #6ee7b7; }
+        .action-hold-short { color: #9f1239; background-color: #ffe4e6; border: 1px solid #fecdd3; }
+        .action-flat { color: #475569; background-color: #f1f5f9; border: 1px solid #cbd5e1; }
+
+        .signal-metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 12px;
+            padding-top: 10px;
+            border-top: 1px dashed #e2e8f0;
+            margin-top: 6px;
+        }
+        .metric-box { display: flex; flex-direction: column; }
+        .metric-label { font-size: 0.7rem; color: #64748b; font-weight: 500; }
+        .metric-val { font-size: 0.825rem; font-weight: 600; margin-top: 2px; padding: 1px 4px; border-radius: 4px; width: fit-content; }
+        .date-val { color: #475569; font-weight: 500; background-color: #f8fafc; }
+
+        /* ======================================================== */
+        /* === ☀️ 早安簡報 (AI CFO) 3欄式高質感卡片專用樣式 === */
+        /* ======================================================== */
+        .cfo-container-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .cfo-summary-banner {
+            background: #f8fafc;
+            border-left: 4px solid #0284c7;
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+            font-size: 0.925rem;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .cfo-weather-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 18px;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #cbd5e1;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        .cfo-weather-pill {
+            display: inline-flex;
+            align-items: center;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .cfo-3col-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        @media (max-width: 1080px) {
+            .cfo-3col-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cfo-col-card {
+            background: #fbfcfe;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cfo-col-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cfo-col-title {
+            font-size: 0.975rem;
+            font-weight: 700;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cfo-badge-news { background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; font-size: 0.75rem; font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+        .cfo-badge-us { background: #f3e8ff; color: #7e22ce; border: 1px solid #e9d5ff; font-size: 0.75rem; font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+        .cfo-badge-tw { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; font-size: 0.75rem; font-weight: 600; padding: 2px 8px; border-radius: 6px; }
+
+        .cfo-news-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .cfo-news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+        }
+        .cfo-news-card:last-child { margin-bottom: 0; }
+        .cfo-news-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        .cfo-news-num {
+            background: #eff6ff;
+            color: #2563eb;
+            border: 1px solid #93c5fd;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 1px 6px;
+            border-radius: 4px;
+            line-height: 1.2;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .cfo-news-heading {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.4;
+        }
+        .cfo-news-snippet {
+            font-size: 0.825rem;
+            color: #64748b;
+            line-height: 1.5;
+            margin-top: 4px;
+        }
+
+        .cfo-us-overview-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+        }
+        .cfo-us-stock-row {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+            transition: transform 0.15s ease;
+        }
+        .cfo-us-stock-row:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+        .cfo-us-stock-row:last-child { margin-bottom: 0; }
+        .cfo-us-footer-box {
+            margin-top: 10px;
+            padding: 10px 12px;
+            background: #f8fafc;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: #475569;
+            line-height: 1.5;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .cfo-pill {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+            flex-shrink: 0;
+            margin-top: 1px;
+            white-space: nowrap;
+        }
+        .cfo-pill-up { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+        .cfo-pill-down { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+        .cfo-pill-flat { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+        .cfo-us-stock-text { font-size: 0.825rem; color: #334155; line-height: 1.5; }
+        .cfo-stock-price { font-weight: 700; color: #0f172a; }
+
+        .cfo-section-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .cfo-section-desc {
+            font-size: 0.85rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            white-space: pre-line;
+        }
+        .cfo-section-desc:last-child { margin-bottom: 0; }
+
+        .cfo-greeting-banner {
+            margin-top: 18px;
+            text-align: center;
+            padding: 10px;
+            background: #f0fdf4;
+            color: #15803d;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* ====================================================================== */
+        /* === 👑 模組 4：台指期 V7 終極王者版 (Daily_main4_v7_signal.JSON) 樣式 === */
+        /* ====================================================================== */
+        .v7-master-container {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+        }
+
+        /* 第 1 層：Current 最新點位與狀態橫幅 */
+        .v7-current-banner {
+            display: grid;
+            grid-template-columns: 1.1fr 1.6fr 1.3fr;
+            gap: 18px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid #cbd5e1;
+            border-left: 5px solid #f59e0b;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        @media (max-width: 980px) {
+            .v7-current-banner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .v7-price-block {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            border-right: 1px dashed #cbd5e1;
+            padding-right: 16px;
+        }
+        @media (max-width: 980px) {
+            .v7-price-block { border-right: none; border-bottom: 1px dashed #cbd5e1; padding-right: 0; padding-bottom: 12px; }
+        }
+
+        .v7-price-main {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .v7-ohlc-sub {
+            font-size: 0.8rem;
+            color: #64748b;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+
+        .v7-status-block {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .v7-signal-desc {
+            font-size: 0.925rem;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.4;
+        }
+
+        .v7-weight-bar-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: #475569;
+        }
+
+        .v7-weight-track {
+            flex: 1;
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 999px;
+            overflow: hidden;
+            max-width: 220px;
+        }
+
+        .v7-weight-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #f59e0b 100%);
+            border-radius: 999px;
+            transition: width 0.3s ease;
+        }
+
+        .v7-pnl-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 14px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 14px;
+        }
+
+        /* 模式切換按鈕群組 */
+        .v7-mode-tabs {
+            display: inline-flex;
+            background: #f1f5f9;
+            padding: 3px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            gap: 4px;
+        }
+
+        .v7-mode-btn {
+            border: none;
+            background: transparent;
+            color: #475569;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .v7-mode-btn.active {
+            background: #0f172a;
+            color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+        .v7-mode-btn:hover:not(.active) {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        /* 第 2 層：First ~ Fifth + Exit 6 格水平時間軸卡片 */
+        .v7-section-subtitle {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 6px 0 12px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .v7-slots-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        @media (max-width: 1200px) {
+            .v7-slots-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 680px) {
+            .v7-slots-grid { grid-template-columns: 1fr; }
+        }
+
+        .v7-slot-card {
+            background: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 175px;
+            position: relative;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .v7-slot-card.filled-entry {
+            border-color: #f59e0b;
+            background: linear-gradient(180deg, #fffbeb 0%, #ffffff 38%);
+            box-shadow: 0 2px 6px rgba(245, 158, 11, 0.1);
+        }
+
+        .v7-slot-card.filled-first {
+            border-color: #0284c7;
+            background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 38%);
+            box-shadow: 0 2px 6px rgba(2, 132, 199, 0.1);
+        }
+
+        .v7-slot-card.filled-exit {
+            border-color: #10b981;
+            background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 38%);
+            box-shadow: 0 2px 6px rgba(16, 185, 129, 0.12);
+        }
+
+        .v7-slot-card.empty-slot {
+            border: 1.5px dashed #cbd5e1;
+            background: #f8fafc;
+            opacity: 0.78;
+        }
+
+        .v7-slot-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+        }
+
+        .v7-slot-key {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: #475569;
+            background: #e2e8f0;
+            padding: 2px 7px;
+            border-radius: 4px;
+        }
+
+        .v7-slot-wt {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #b45309;
+            background: #fef3c7;
+            border: 1px solid #fde68a;
+            padding: 1px 7px;
+            border-radius: 999px;
+        }
+
+        .v7-slot-price {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 2px 0;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .v7-slot-datetime {
+            font-size: 0.78rem;
+            color: #475569;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .v7-slot-reason {
+            font-size: 0.74rem;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 4px 7px;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            line-height: 1.35;
+        }
+
+        .v7-slot-diff-box {
+            margin-top: auto;
+            padding-top: 8px;
+            border-top: 1px dashed #cbd5e1;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .v7-empty-placeholder {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* 第 3 層：四大技術指標卡片 (4欄式 Grid) */
+        .v7-indicators-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 1150px) {
+            .v7-indicators-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .v7-indicators-grid { grid-template-columns: 1fr; }
+        }
+
+        .v7-ind-card {
+            background: #fbfcfe;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 15px 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .v7-ind-header {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #0f172a;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .v7-ma-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.78rem;
+            margin-bottom: 8px;
+        }
+
+        .v7-ma-table th {
+            text-align: left;
+            color: #64748b;
+            font-weight: 600;
+            padding: 3px 4px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .v7-ma-table td {
+            padding: 4px 4px;
+            border-bottom: 1px dashed #f1f5f9;
+            font-variant-numeric: tabular-nums;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .v7-ind-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 1px dashed #e2e8f0;
+            font-size: 0.82rem;
+        }
+        .v7-ind-row:last-child { border-bottom: none; }
+
+        .v7-ind-summary-foot {
+            margin-top: auto;
+            padding: 8px 10px;
+            background: #f1f5f9;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            color: #334155;
+            font-weight: 600;
+            line-height: 1.45;
+        }
+    </style>
+</head>
+<body data-config="index_Finanical_config.json">
+
+    <!-- 1. 即時市場指數與 ETF -->
+    <div class="finance-dashboard">
+        <div class="dashboard-header">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h2 class="dashboard-title">📊 即時市場指數與 ETF</h2>
+                <span class="strategy-badge badge-etf">⏰ GitHub YML 原定推送：每日 06:30 / 17:00</span>
+            </div>
+            <div id="update-timestamp" class="update-time">最後排程更新：載入中…</div>
+        </div>
+        <div id="stock-container" class="stock-grid">
+            <div class="loading-state">刻正獲取最新市場數據…</div>
+        </div>
+    </div>
+
+    <!-- 2. 早安簡報 (Daily AI CFO) 區域 - 3 欄式卡片佈局 -->
+    <div class="finance-dashboard" id="cfo-briefing-wrapper" style="margin-top: 28px;">
+        <div class="dashboard-header">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h2 class="dashboard-title" id="cfo-main-title">☀️ AI CFO 早安晨會簡報</h2>
+                <span class="strategy-badge badge-etf">⏰ GitHub YML 原定推送：每日 08:25 (UTC+8)</span>
+            </div>
+            <div id="cfo-timestamp" class="update-time">最後排程更新：載入中…</div>
+        </div>
+        <div id="cfo-container">
+            <div class="loading-state">刻正獲取今日 AI CFO 晨會即時資訊…</div>
+        </div>
+    </div>
+
+    <!-- 3. AI 量化波段策略 盤後訊號卡片 (Stock_Agent) -->
+    <div class="finance-dashboard" style="margin-top: 28px;">
+        <div class="dashboard-header">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h2 class="dashboard-title">🎯 AI 量化波段策略 盤後訊號卡片 (Stock_Agent)</h2>
+                <span class="strategy-badge badge-etf">⏰ GitHub YML 原定推送：每日 17:00 (UTC+8)</span>
+            </div>
+            <div id="signals-timestamp" class="update-time">最後排程更新：載入中…</div>
+        </div>
+        <div id="signals-container" class="stock-grid">
+            <div class="loading-state">刻正獲取最新 AI 量化盤後訊號…</div>
+        </div>
+    </div>
+
+    <!-- 4. 👑 台指期 / 小台指 A++ 日線長線波段策略 V7 終極王者版 訊號控制台 (Daily_main4_v7_signal.JSON) -->
+    <div class="finance-dashboard" id="kgi-v7-wrapper" style="margin-top: 28px; margin-bottom: 40px;">
+        <div class="dashboard-header">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h2 class="dashboard-title">👑 台指期 V7 終極王者版 長線波段與正金字塔訊號控制台</h2>
+                <span class="strategy-badge badge-kgi-v7" id="v7-schedule-badge">⏰ GitHub YML 原定推送：每日 18:00 (UTC+8)</span>
+            </div>
+            <div id="v7-timestamp" class="update-time">排程更新最後時間：載入中…</div>
+        </div>
+        <div id="v7-signal-container">
+            <div class="loading-state">刻正獲取最新台指期 V7 波段訊號卡片 (Daily_main4_v7_signal.JSON)…</div>
+        </div>
+    </div>
+
+    <!-- 原系統控制台主要掛載點 (若有外部資產 dashboard.js 則掛載) -->
+    <div class="container" id="app">
+        <p style="text-align:center;color:#94a3b8;padding:60px 0;">載入中…</p>
+    </div>
+
+    <script src="assets/dashboard.js"></script>
+
+    <script>
+        // 輔助函式：時區格式化為台北時間 (UTC+8)
+        function formatToTaipeiTime(utcString) {
+            if (!utcString) return '';
+            let parsableStr = utcString.trim();
+            if (parsableStr.endsWith('UTC')) {
+                parsableStr = parsableStr.replace(/\s*UTC$/, '').replace(' ', 'T') + 'Z';
+            } else if (!parsableStr.endsWith('Z') && !parsableStr.includes('+')) {
+                parsableStr = parsableStr.replace(' ', 'T') + 'Z';
+            }
+            const date = new Date(parsableStr);
+            if (isNaN(date.getTime())) return utcString;
+            return new Intl.DateTimeFormat('zh-TW', {
+                timeZone: 'Asia/Taipei',
+                year: 'numeric', month: '2-digit', day: '2-digit',
+                hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+            }).format(date).replace(/\//g, '-');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. 抓取即時市場指數 (daily_update.json)
+            loadMarketData();
+
+            // 2. 抓取並渲染 AI CFO 早安晨報 (Daily_AI_CFO.json)
+            loadDailyAiCfoBriefing();
+
+            // 3. 抓取 Stock_Agent 訊號 (latest_signals.json)
+            loadStockAgentSignals();
+
+            // 4. 抓取台指期 V7 長線波段訊號卡片 (Daily_main4_v7_signal.JSON)
+            loadKgiV7SignalData();
+
+            // 檢查 #app 是否有被外部腳本填入內容，若無則自動隱藏避免留白
+            setTimeout(() => {
+                const appElem = document.getElementById('app');
+                if (appElem && appElem.innerText.trim() === '載入中…') {
+                    appElem.style.display = 'none';
+                }
+            }, 1000);
+        });
+
+        // ==========================================
+        // 1. 讀取並渲染市場指數 (daily_update.json)
+        // ==========================================
+        function loadMarketData() {
+            const container = document.getElementById('stock-container');
+            const timeContainer = document.getElementById('update-timestamp');
+
+            const candidateUrls = [
+                `daily_update.json?t=${Date.now()}`,
+                `https://cdn.jsdelivr.net/gh/MakishinH/daily_update_data@main/daily_update.json?t=${Date.now()}`
+            ];
+
+            function tryFetch(idx) {
+                if (idx >= candidateUrls.length) {
+                    if (container) {
+                        container.innerHTML = '<div class="loading-state" style="color: #ef4444;">⚠️ 無法載入最新市場數據 (daily_update.json)</div>';
+                    }
+                    return;
+                }
+
+                fetch(candidateUrls[idx])
+                    .then(res => {
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.json();
+                    })
+                    .then(data => renderMarketData(data))
+                    .catch(err => {
+                        console.warn(`市場數據載入失敗 (${candidateUrls[idx]}):`, err);
+                        tryFetch(idx + 1);
+                    });
+            }
+
+            tryFetch(0);
+        }
+
+        function renderMarketData(data) {
+            const container = document.getElementById('stock-container');
+            const timeContainer = document.getElementById('update-timestamp');
+            if (!container) return;
+
+            let gridHtml = '';
+            let latestTime = '';
+            for (const symbol in data) {
+                const item = data[symbol];
+                const isUp = item.changePercent > 0;
+                const isDown = item.changePercent < 0;
+                const colorClass = isUp ? 'up' : (isDown ? 'down' : 'neutral');
+                const sign = isUp ? '+' : '';
+                if (item.updatedAt) latestTime = item.updatedAt;
+                gridHtml += `
+                    <div class="stock-card">
+                        <div class="stock-header">
+                            <span class="stock-name">${item.name || symbol}</span>
+                            <span class="stock-symbol">${symbol}</span>
+                        </div>
+                        <div class="stock-price">${Number(item.price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                        <div><span class="stock-change ${colorClass}">${sign}${Number(item.change).toFixed(2)} (${sign}${Number(item.changePercent).toFixed(2)}%)</span></div>
+                    </div>`;
+            }
+            container.innerHTML = gridHtml;
+            const taipeiTime = formatToTaipeiTime(latestTime);
+            if (timeContainer && taipeiTime) timeContainer.innerText = `排程更新最後時間: ${taipeiTime} (台北)`;
+        }
+
+        // ========================================================
+        // 2. 讀取並渲染 AI CFO 早安晨會卡片 (Daily_AI_CFO.json)
+        // ========================================================
+        function loadDailyAiCfoBriefing() {
+            const container = document.getElementById('cfo-container');
+
+            const candidateUrls = [
+                `Daily_AI_CFO.json?t=${Date.now()}`,
+                `https://cdn.jsdelivr.net/gh/MakishinH/daily_update_data@main/Daily_AI_CFO.json?t=${Date.now()}`
+            ];
+
+            function tryFetch(idx) {
+                if (idx >= candidateUrls.length) {
+                    if (container) {
+                        container.innerHTML = '<div class="loading-state" style="color: #94a3b8;">⚠️ 今日早安簡報尚在生成中或排程未啟動 (Daily_AI_CFO.json)</div>';
+                    }
+                    return;
+                }
+
+                fetch(candidateUrls[idx])
+                    .then(res => {
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.json();
+                    })
+                    .then(data => renderCfoBriefing(data))
+                    .catch(err => {
+                        console.warn(`AI CFO 簡報資料讀取失敗 (${candidateUrls[idx]}):`, err);
+                        tryFetch(idx + 1);
+                    });
+            }
+
+            tryFetch(0);
+        }
+
+        function parseUsStocksHtml(text) {
+            if (!text) return '<div class="cfo-section-desc">暫無美股數據</div>';
+            const lines = text.trim().split('\n');
+            let overview = [];
+            let stocks = [];
+            let footer = [];
+
+            lines.forEach(rawLine => {
+                const line = rawLine.trim();
+                if (!line) return;
+                if (line.startsWith('•') || line.startsWith('*') || line.startsWith('-')) {
+                    stocks.push(line.replace(/^[•*-]\s*/, ''));
+                } else if (stocks.length > 0) {
+                    footer.push(line);
+                } else {
+                    overview.push(line);
+                }
+            });
+
+            let html = '';
+
+            if (overview.length > 0) {
+                html += `
+                    <div class="cfo-us-overview-box">
+                        <span class="cfo-pill cfo-pill-flat">⚪ 平</span>
+                        <div class="cfo-us-stock-text">${overview.join(' ')}</div>
+                    </div>`;
+            }
+
+            stocks.forEach(stockStr => {
+                const isUp = stockStr.includes('+') || stockStr.includes('漲') || stockStr.includes('飆') || stockStr.includes('彈');
+                const isDown = stockStr.includes('-') || stockStr.includes('跌') || stockStr.includes('挫') || stockStr.includes('拉回');
+                const pillClass = isUp ? 'cfo-pill-up' : (isDown ? 'cfo-pill-down' : 'cfo-pill-flat');
+                const pillLabel = isUp ? '🔴 漲' : (isDown ? '🟢 跌' : '⚪ 平');
+
+                const formattedStr = stockStr.replace(/(\$[\d,]+(?:\.\d+)?)/g, '<b class="cfo-stock-price">$1</b>');
+
+                html += `
+                    <div class="cfo-us-stock-row">
+                        <span class="cfo-pill ${pillClass}">${pillLabel}</span>
+                        <div class="cfo-us-stock-text">${formattedStr}</div>
+                    </div>`;
+            });
+
+            if (footer.length > 0) {
+                html += `
+                    <div class="cfo-us-footer-box">
+                        💡 <b>資金板塊總結：</b>${footer.join(' ').replace(/^.*?資金板塊總結[：:]\s*/, '')}
+                    </div>`;
+            }
+
+            return html || `<div class="cfo-section-desc">${text}</div>`;
+        }
+
+        function renderCfoBriefing(data) {
+            const container = document.getElementById('cfo-container');
+            const titleElem = document.getElementById('cfo-main-title');
+            const timeElem = document.getElementById('cfo-timestamp');
+            if (!container) return;
+
+            if (data.today_str && titleElem) {
+                titleElem.innerText = `☀️ 早安簡報 | ${data.today_str}`;
+            }
+            if (data.updated_at && timeElem) {
+                timeElem.innerText = `排程更新最後時間: ${data.updated_at}`;
+            }
+
+            let newsCardsHtml = '';
+            if (Array.isArray(data.top_news) && data.top_news.length > 0) {
+                data.top_news.forEach((n, idx) => {
+                    const numStr = String(idx + 1).padStart(2, '0');
+                    newsCardsHtml += `
+                        <div class="cfo-news-card">
+                            <div class="cfo-news-header">
+                                <span class="cfo-news-num">${numStr}</span>
+                                <div class="cfo-news-heading">${n.title}</div>
+                            </div>
+                            <div class="cfo-news-snippet">${n.snippet || ''}</div>
+                        </div>`;
+                });
+            } else {
+                newsCardsHtml = '<div class="cfo-section-desc">暫無頭條新聞摘要</div>';
+            }
+
+            const usStocksHtml = parseUsStocksHtml(data.us_stocks);
+
+            const twMarketHtml = `
+                <div class="cfo-section-title">📊 前一交易日盤面動態：</div>
+                <div class="cfo-section-desc">${data.tw_market || '暫無台股大盤資料'}</div>
+                <div class="cfo-section-title" style="margin-top: 18px;">🎯 今日開盤氣氛預估與盤面重點：</div>
+                <div class="cfo-section-desc">${data.tw_outlook || '維持中性震盪觀察。'}</div>
+            `;
+
+            const w = data.weather || {};
+
+            container.innerHTML = `
+                <div class="cfo-container-card">
+                    <div class="cfo-summary-banner">
+                        <div style="font-size: 0.95rem; font-weight: 500; margin-bottom: 8px;">
+                            <b>📢 晨報速覽：</b>${data.summary || '今日市場數據已就緒，請見下方模組分析。'}
+                        </div>
+                        <div class="cfo-weather-inline">
+                            <span class="cfo-weather-pill">⛅ ${w.location || '台北'}：${w.condition || '晴時多雲'}</span>
+                            <span>🌡️ 氣溫預測：<b>${w.temp_range || '未提供'}</b></span>
+                            <span>🌧️ 降雨機率：<b>${w.rain_prob || '0%'}</b></span>
+                            <span style="color: #b45309; font-weight: 500;">💡 ${w.notice || '早晚溫差顯著，建議採取洋蔥式穿法'}</span>
+                        </div>
+                    </div>
+
+                    <div class="cfo-3col-grid">
+                        <div class="cfo-col-card">
+                            <div class="cfo-col-header">
+                                <div class="cfo-col-title">
+                                    <span>📰</span> 今日重大財經與科技頭條
+                                </div>
+                                <span class="cfo-badge-news">焦點 5 大頭條</span>
+                            </div>
+                            <div class="cfo-col-body">
+                                ${newsCardsHtml}
+                            </div>
+                        </div>
+
+                        <div class="cfo-col-card">
+                            <div class="cfo-col-header">
+                                <div class="cfo-col-title">
+                                    <span style="font-weight: 800; font-size: 0.85rem; color: #64748b; letter-spacing: -0.5px;">US</span> 昨夜美股行情與科技股動態
+                                </div>
+                                <span class="cfo-badge-us">美股盤後觀察</span>
+                            </div>
+                            <div class="cfo-col-body">
+                                ${usStocksHtml}
+                            </div>
+                        </div>
+
+                        <div class="cfo-col-card">
+                            <div class="cfo-col-header">
+                                <div class="cfo-col-title">
+                                    <span style="font-weight: 800; font-size: 0.85rem; color: #64748b; letter-spacing: -0.5px;">TW</span> 台股盤勢剖析與開盤預估
+                                </div>
+                                <span class="cfo-badge-tw">加權指數與前瞻</span>
+                            </div>
+                            <div class="cfo-col-body">
+                                ${twMarketHtml}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cfo-greeting-banner">
+                        ✨ ${data.greeting || '祝您今天投資與工作順利，Good morning！'}
+                    </div>
+                </div>
+            `;
+        }
+
+        // ========================================================
+        // 3. 讀取並渲染 Stock_Agent 訊號卡片 (latest_signals.json)
+        // ========================================================
+        function loadStockAgentSignals() {
+            const container = document.getElementById('signals-container');
+            const timeContainer = document.getElementById('signals-timestamp');
+            if (!container) return;
+
+            const candidateUrls = [
+                `latest_signals.json?t=${Date.now()}`,
+                `https://cdn.jsdelivr.net/gh/MakishinH/daily_update_data@main/latest_signals.json?t=${Date.now()}`,
+                `https://cdn.jsdelivr.net/gh/MakishinH/Stock_Agent@main/daily_signals/latest_signals.json?t=${Date.now()}`
+            ];
+
+            function tryFetchSignal(index) {
+                if (index >= candidateUrls.length) {
+                    container.innerHTML = '<div class="loading-state" style="color: #ef4444;">⚠️ 無法取得 AI 策略最新訊號資料 (latest_signals.json)</div>';
+                    return;
+                }
+                fetch(candidateUrls[index])
+                    .then(res => {
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.json();
+                    })
+                    .then(data => renderSignals(data))
+                    .catch(err => {
+                        console.warn(`策略訊號載入失敗 (${candidateUrls[index]}):`, err);
+                        tryFetchSignal(index + 1);
+                    });
+            }
+
+            function renderSignals(payload) {
+                const signals = payload.signals || [];
+                if (!signals.length) {
+                    container.innerHTML = '<div class="loading-state">目前尚無策略訊號資料</div>';
+                    return;
+                }
+                let cardsHtml = '';
+                signals.forEach(item => {
+                    const isETF = item.ticker && item.ticker.startsWith('00');
+                    const badgeClass = isETF ? 'badge-etf' : 'badge-v7';
+                    let actionClass = 'action-flat';
+                    const act = item.action || '';
+                    if (act.includes('BUY') || act.includes('進場')) actionClass = 'action-buy';
+                    else if (act.includes('HOLD') || act.includes('續抱')) actionClass = (act.includes('空單') || act.includes('反1')) ? 'action-hold-short' : 'action-hold-long';
+                    else if (act.includes('SHORT')) actionClass = 'action-hold-short';
+
+                    const fVal = Number(item.foreign_net_buy || 0);
+                    const tVal = Number(item.trust_net_buy || 0);
+                    const revVal = Number(item.revenue_yoy_pct || 0);
+
+                    cardsHtml += `
+                        <div class="stock-card signal-card">
+                            <div class="stock-header">
+                                <div><span class="stock-name">${item.name}</span><span class="stock-symbol">${item.ticker}</span></div>
+                                <span class="strategy-badge ${badgeClass}">${item.strategy_title}</span>
+                            </div>
+                            <div class="signal-price-row">
+                                <div class="stock-price">${Number(item.close).toLocaleString('en-US', { minimumFractionDigits: isETF ? 2 : 1, maximumFractionDigits: 2 })}</div>
+                                <div><span class="action-pill ${actionClass}">${item.action}</span></div>
+                            </div>
+                            <div class="signal-metrics-grid">
+                                <div class="metric-box"><span class="metric-label">外資買賣超</span><span class="metric-val ${fVal > 0 ? 'up' : (fVal < 0 ? 'down' : 'neutral')}">${fVal > 0 ? '+' : ''}${fVal.toLocaleString()} 張</span></div>
+                                <div class="metric-box"><span class="metric-label">投信買賣超</span><span class="metric-val ${tVal > 0 ? 'up' : (tVal < 0 ? 'down' : 'neutral')}">${tVal > 0 ? '+' : ''}${tVal.toLocaleString()} 張</span></div>
+                                <div class="metric-box"><span class="metric-label">月營收 YoY</span><span class="metric-val ${revVal > 0 ? 'up' : (revVal < 0 ? 'down' : 'neutral')}">${revVal > 0 ? '+' : ''}${revVal.toFixed(1)}%</span></div>
+                                <div class="metric-box"><span class="metric-label">資料基準日</span><span class="metric-val date-val">${item.trade_date}</span></div>
+                            </div>
+                        </div>`;
+                });
+                container.innerHTML = cardsHtml;
+                if (payload.updated_at && timeContainer) timeContainer.innerText = `排程更新最後時間: ${payload.updated_at}`;
+            }
+
+            tryFetchSignal(0);
+        }
+
+        // =========================================================================
+        // 4. 👑 讀取並渲染台指期 V7 波段訊號卡片 (Daily_main4_v7_signal.JSON)
+        // =========================================================================
+        let globalV7Payload = null;
+        let currentV7ViewMode = 'current'; // 'current' 或 'last_wave'
+
+        function loadKgiV7SignalData() {
+            const container = document.getElementById('v7-signal-container');
+            const timeContainer = document.getElementById('v7-timestamp');
+            const badgeContainer = document.getElementById('v7-schedule-badge');
+            if (!container) return;
+
+            const candidateUrls = [
+                `Daily_main4_v7_signal.JSON?t=${Date.now()}`,
+                `https://cdn.jsdelivr.net/gh/MakishinH/daily_update_data@main/Daily_main4_v7_signal.JSON?t=${Date.now()}`,
+                `https://cdn.jsdelivr.net/gh/MakishinH/KGI_API_BuySell@main/Daily_main4_v7_signal.JSON?t=${Date.now()}`
+            ];
+
+            function tryFetchV7(idx) {
+                if (idx >= candidateUrls.length) {
+                    container.innerHTML = '<div class="loading-state" style="color: #ef4444;">⚠️ 無法取得台指期 V7 波段訊號資料 (Daily_main4_v7_signal.JSON)</div>';
+                    return;
+                }
+                fetch(candidateUrls[idx])
+                    .then(res => {
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.json();
+                    })
+                    .then(data => {
+                        globalV7Payload = data;
+                        if (badgeContainer && data.scheduled_run_time) {
+                            badgeContainer.innerText = `⏰ GitHub YML 原定推送：${data.scheduled_run_time} (UTC+8)`;
+                        }
+                        if (timeContainer) {
+                            const genAt = data.generated_at || (data.current && data.current.updated_at) || '';
+                            const dataDt = (data.current && data.current.datetime) ? ` | 行情基準：${data.current.datetime}` : '';
+                            timeContainer.innerText = `排程更新最後時間: ${genAt}${dataDt}`;
+                        }
+                        renderKgiV7Dashboard('current');
+                    })
+                    .catch(err => {
+                        console.warn(`V7 訊號載入失敗 (${candidateUrls[idx]}):`, err);
+                        tryFetchV7(idx + 1);
+                    });
+            }
+
+            tryFetchV7(0);
+        }
+
+        function switchV7WaveMode(mode) {
+            currentV7ViewMode = mode;
+            renderKgiV7Dashboard(mode);
+        }
+
+        function formatSingleSlotCard(slotKey, defaultTitle, defaultWt, slotData, isFirst) {
+            if (!slotData || typeof slotData !== 'object') {
+                return `
+                    <div class="v7-slot-card empty-slot">
+                        <div class="v7-slot-top">
+                            <span class="v7-slot-key">${slotKey.toUpperCase()}</span>
+                            <span class="v7-slot-wt" style="background:#f1f5f9;color:#64748b;border-color:#cbd5e1;">${defaultWt}</span>
+                        </div>
+                        <div style="font-size:0.8rem;font-weight:700;color:#64748b;">${defaultTitle}</div>
+                        <div class="v7-empty-placeholder">
+                            <div style="font-size:1.3rem;margin-bottom:4px;">⬜</div>
+                            <div>尚未進行到 (空白)</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const rawDiff = Number(slotData.point_diff_vs_latest || 0);
+            const wtDiff = Number(slotData.weighted_point_diff || 0);
+            const ntdMtx = Number(slotData.unrealized_ntd_mtx || 0);
+            const diffClass = rawDiff > 0 ? 'up' : (rawDiff < 0 ? 'down' : 'neutral');
+            const diffSign = rawDiff > 0 ? '+' : '';
+            const wtSign = wtDiff > 0 ? '+' : '';
+
+            return `
+                <div class="v7-slot-card ${isFirst ? 'filled-first' : 'filled-entry'}">
+                    <div>
+                        <div class="v7-slot-top">
+                            <span class="v7-slot-key" style="background:${isFirst ? '#0284c7' : '#d97706'};color:#fff;">${slotKey.toUpperCase()}</span>
+                            <span class="v7-slot-wt">${slotData.weight_pct || defaultWt}</span>
+                        </div>
+                        <div style="font-size:0.78rem;font-weight:700;color:#334155;margin-bottom:2px;">${slotData.card_title || defaultTitle}</div>
+                        <div class="v7-slot-price">${Number(slotData.entry_price).toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} <span style="font-size:0.75rem;font-weight:600;color:#64748b;">點</span></div>
+                        <div class="v7-slot-datetime">📅 ${slotData.entry_datetime || slotData.entry_date}</div>
+                        <div class="v7-slot-reason">🎯 ${slotData.trigger_reason || '順勢突破進場'}</div>
+                    </div>
+                    <div class="v7-slot-diff-box">
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span class="metric-label">與最新點差</span>
+                            <span class="metric-val ${diffClass}">${diffSign}${rawDiff.toFixed(1)} 點</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span class="metric-label">加權點差 (${slotData.weight_pct})</span>
+                            <span style="font-size:0.78rem;font-weight:700;color:${wtDiff >= 0 ? '#dc2626' : '#16a34a'};">${wtSign}${wtDiff.toFixed(1)} 點</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span class="metric-label">小台損益</span>
+                            <span style="font-size:0.76rem;font-weight:700;color:#334155;">NT$ ${ntdMtx >= 0 ? '+' : ''}${ntdMtx.toLocaleString()}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function formatExitSlotCard(exitData) {
+            if (!exitData || typeof exitData !== 'object') {
+                return `
+                    <div class="v7-slot-card empty-slot">
+                        <div class="v7-slot-top">
+                            <span class="v7-slot-key">EXIT</span>
+                            <span class="v7-slot-wt" style="background:#f1f5f9;color:#64748b;border-color:#cbd5e1;">全數平倉</span>
+                        </div>
+                        <div style="font-size:0.8rem;font-weight:700;color:#64748b;">波段出場結算卡</div>
+                        <div class="v7-empty-placeholder">
+                            <div style="font-size:1.3rem;margin-bottom:4px;">🛡️</div>
+                            <div>尚未出場 (空白)</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const netPts = Number(exitData.net_pnl_pts || 0);
+            const ntdMtx = Math.round(netPts * 50);
+            const pnlClass = netPts > 0 ? 'up' : (netPts < 0 ? 'down' : 'neutral');
+            const sign = netPts > 0 ? '+' : '';
+
+            return `
+                <div class="v7-slot-card filled-exit">
+                    <div>
+                        <div class="v7-slot-top">
+                            <span class="v7-slot-key" style="background:#059669;color:#fff;">EXIT</span>
+                            <span class="v7-slot-wt" style="background:#d1fae5;color:#065f46;border-color:#6ee7b7;">已平倉結算</span>
+                        </div>
+                        <div style="font-size:0.78rem;font-weight:700;color:#065f46;margin-bottom:2px;">🔻 波段全數平倉出場</div>
+                        <div class="v7-slot-price">${Number(exitData.exit_price).toLocaleString('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} <span style="font-size:0.75rem;font-weight:600;color:#64748b;">點</span></div>
+                        <div class="v7-slot-datetime">📅 ${exitData.exit_date} ${exitData.exit_time || '08:45:00'}</div>
+                        <div class="v7-slot-reason">🛡️ ${exitData.exit_reason || '四重防線平倉'}</div>
+                    </div>
+                    <div class="v7-slot-diff-box">
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span class="metric-label">波段總淨利</span>
+                            <span class="metric-val ${pnlClass}">${sign}${netPts.toFixed(1)} 點</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span class="metric-label">小台結算損益</span>
+                            <span style="font-size:0.8rem;font-weight:700;color:${netPts >= 0 ? '#dc2626' : '#16a34a'};">NT$ ${sign}${ntdMtx.toLocaleString()}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderKgiV7Dashboard(mode) {
+            const container = document.getElementById('v7-signal-container');
+            if (!container || !globalV7Payload) return;
+
+            const data = globalV7Payload;
+            const cur = data.current || {};
+            const ind = data.indicator_cards || {};
+            const cciCard = ind.cci_card || {};
+            const maCard = ind.ma_card || {};
+            const macdCard = ind.macd_card || {};
+            const defCard = ind.defense_card || {};
+            const lastWave = data.last_completed_wave_cards || null;
+
+            // 決定第 2 層顯示當前波段或上一波完結回顧
+            const useLastWave = (mode === 'last_wave' && lastWave);
+            const slotSource = useLastWave ? lastWave : data;
+
+            // 持倉狀態膠囊樣式
+            const wStatus = cur.wave_status || 'FLAT';
+            let statusPillClass = 'action-flat';
+            if (wStatus.includes('HOLDING')) statusPillClass = 'action-hold-long';
+            else if (wStatus.includes('PENDING') || wStatus.includes('TRIGGER')) statusPillClass = 'action-buy';
+
+            const wtX = Number(cur.current_total_weight_x || 0);
+            const wtProgressPct = Math.min(100, Math.round((wtX / 2.0) * 100));
+
+            const avgPriceStr = cur.avg_entry_price !== "" && cur.avg_entry_price !== undefined
+                ? `${Number(cur.avg_entry_price).toLocaleString('en-US', {minimumFractionDigits: 1})} 點`
+                : '-- (空手)';
+            const totWtDiffStr = cur.total_weighted_point_diff !== "" && cur.total_weighted_point_diff !== undefined
+                ? `${Number(cur.total_weighted_point_diff) >= 0 ? '+' : ''}${Number(cur.total_weighted_point_diff).toFixed(1)} 點`
+                : '--';
+            const totMtxStr = cur.total_unrealized_ntd_mtx !== "" && cur.total_unrealized_ntd_mtx !== undefined
+                ? `NT$ ${Number(cur.total_unrealized_ntd_mtx) >= 0 ? '+' : ''}${Number(cur.total_unrealized_ntd_mtx).toLocaleString()}`
+                : '--';
+            const totTxfStr = cur.total_unrealized_ntd_txf !== "" && cur.total_unrealized_ntd_txf !== undefined
+                ? `NT$ ${Number(cur.total_unrealized_ntd_txf) >= 0 ? '+' : ''}${Number(cur.total_unrealized_ntd_txf).toLocaleString()}`
+                : '--';
+
+            // 組裝 6 張進出場卡片 (First ~ Fifth + Exit)
+            const slotsHtml = `
+                ${formatSingleSlotCard('first',  '第一筆進場 (底倉 100%)', '100%', slotSource.first, true)}
+                ${formatSingleSlotCard('second', '第二筆進場 (第1加 +40%)', '+40%', slotSource.second, false)}
+                ${formatSingleSlotCard('third',  '第三筆進場 (第2加 +30%)', '+30%', slotSource.third, false)}
+                ${formatSingleSlotCard('fourth', '第四筆進場 (第3加 +20%)', '+20%', slotSource.fourth, false)}
+                ${formatSingleSlotCard('fifth',  '第五筆進場 (第4加 +10%封頂)', '+10%', slotSource.fifth, false)}
+                ${formatExitSlotCard(slotSource.exit)}
+            `;
+
+            // 組裝 MA 五線表格列
+            const maRows = [
+                { name: 'MA5 (週線)', obj: maCard.ma5 || {} },
+                { name: 'MA10 (雙週)', obj: maCard.ma10 || {} },
+                { name: 'MA20 (月線)', obj: maCard.ma20_monthly || {} },
+                { name: 'MA60 (季線)', obj: maCard.ma60_quarterly || {} },
+                { name: 'MA120 (半年)', obj: maCard.ma120_semiannual || {} }
+            ].map(item => {
+                const o = item.obj;
+                const isUp = Boolean(o.is_rising);
+                const slopeVal = Number(o.slope || 0);
+                const angleVal = Number(o.angle_deg || 0);
+                return `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>${o.price ? Number(o.price).toLocaleString('en-US', {minimumFractionDigits: 1}) : '--'}</td>
+                        <td style="color:${isUp ? '#dc2626' : '#16a34a'};">${isUp ? '▲' : '▼'} ${slopeVal >= 0 ? '+' : ''}${slopeVal.toFixed(1)}</td>
+                        <td style="color:${angleVal >= 20 ? '#dc2626' : '#475569'};">${angleVal >= 0 ? '+' : ''}${angleVal.toFixed(1)}°</td>
+                    </tr>
+                `;
+            }).join('');
+
+            const bias60Val = maCard.ma60_quarterly ? Number(maCard.ma60_quarterly.bias60_pct || 0) : 0;
+            const l1 = defCard.line1_dual_cci_exit || {};
+            const l2 = defCard.line2_ma20_breakdown_exit || {};
+            const l3 = defCard.line3_dynamic_breakeven || {};
+            const l4 = defCard.line4_hard_stop_loss || {};
+
+            const lastWaveBtnLabel = lastWave
+                ? `📜 檢視上一波完結戰績 (${lastWave.wave_entry_date} ~ ${lastWave.wave_exit_date} | ${Number(lastWave.net_pnl_pts) >= 0 ? '+' : ''}${lastWave.net_pnl_pts}點)`
+                : `📜 上一波完結回顧`;
+
+            container.innerHTML = `
+                <div class="v7-master-container">
+                    <!-- 第 1 層：Current 最新日線行情與當前波段部位橫幅 -->
+                    <div class="v7-current-banner">
+                        <div class="v7-price-block">
+                            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+                                <span style="font-size:0.8rem;font-weight:700;color:#475569;">📍 CURRENT 台指期日線收盤 (${cur.date || '--'})</span>
+                                <span class="strategy-badge badge-etf" style="font-size:0.7rem;">${cur.time || '13:45:00'}</span>
+                            </div>
+                            <div class="v7-price-main">${cur.close_price ? Number(cur.close_price).toLocaleString('en-US', {minimumFractionDigits: 1}) : '--'} <span style="font-size:0.95rem;font-weight:600;color:#64748b;">點</span></div>
+                            <div class="v7-ohlc-sub">
+                                <span>開盤: <b>${cur.open ? Number(cur.open).toLocaleString() : '--'}</b></span>
+                                <span>最高: <b style="color:#dc2626;">${cur.high ? Number(cur.high).toLocaleString() : '--'}</b></span>
+                                <span>最低: <b style="color:#16a34a;">${cur.low ? Number(cur.low).toLocaleString() : '--'}</b></span>
+                            </div>
+                        </div>
+
+                        <div class="v7-status-block">
+                            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                                <span class="action-pill ${statusPillClass}">${cur.wave_status || 'FLAT'}</span>
+                                <span style="font-size:0.78rem;color:#64748b;font-weight:600;">已進場筆數: <b>${cur.filled_entries_count || 0} / 5 筆</b></span>
+                            </div>
+                            <div class="v7-signal-desc">${cur.today_signal_description || '今日無新訊號'}</div>
+                            <div class="v7-weight-bar-wrap">
+                                <span>正金字塔持倉權重: <b>${cur.current_total_weight_pct || '0%'} (${wtX.toFixed(1)}x / 上限 2.0x)</b></span>
+                                <div class="v7-weight-track">
+                                    <div class="v7-weight-fill" style="width:${wtProgressPct}%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="v7-pnl-block">
+                            <div class="metric-box">
+                                <span class="metric-label">加權平均成本</span>
+                                <span class="metric-val neutral">${avgPriceStr}</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">總加權未實現點差</span>
+                                <span class="metric-val ${Number(cur.total_weighted_point_diff || 0) > 0 ? 'up' : (Number(cur.total_weighted_point_diff || 0) < 0 ? 'down' : 'neutral')}">${totWtDiffStr}</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">小台指 (MTX) 未實現損益</span>
+                                <span class="metric-val ${Number(cur.total_unrealized_ntd_mtx || 0) > 0 ? 'up' : (Number(cur.total_unrealized_ntd_mtx || 0) < 0 ? 'down' : 'neutral')}">${totMtxStr}</span>
+                            </div>
+                            <div class="metric-box">
+                                <span class="metric-label">大台指 (TX) 未實現損益</span>
+                                <span class="metric-val ${Number(cur.total_unrealized_ntd_txf || 0) > 0 ? 'up' : (Number(cur.total_unrealized_ntd_txf || 0) < 0 ? 'down' : 'neutral')}">${totTxfStr}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第 2 層：正金字塔 5 段進場 (First ~ Fifth) + 出場 (Exit) 6 格水平卡片 -->
+                    <div class="v7-section-subtitle">
+                        <div>
+                            🎯 <b>正金字塔遞減加碼與出場追蹤卡</b>
+                            <span style="font-size:0.8rem;font-weight:500;color:#64748b;margin-left:6px;">
+                                (底倉 100% → 第1加 40% → 第2加 30% → 第3加 20% → 第4加 10% 封頂 | 未進行到的卡片維持空白)
+                            </span>
+                        </div>
+                        <div class="v7-mode-tabs">
+                            <button class="v7-mode-btn ${!useLastWave ? 'active' : ''}" onclick="switchV7WaveMode('current')">
+                                🟢 當前即時波段狀態 (${cur.filled_entries_count || 0} 筆持倉)
+                            </button>
+                            ${lastWave ? `
+                            <button class="v7-mode-btn ${useLastWave ? 'active' : ''}" onclick="switchV7WaveMode('last_wave')">
+                                ${lastWaveBtnLabel}
+                            </button>` : ''}
+                        </div>
+                    </div>
+
+                    ${useLastWave ? `
+                    <div style="background:#fffbeb;border:1px solid #fde68a;color:#92400e;padding:8px 14px;border-radius:8px;margin-bottom:12px;font-size:0.82rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+                        <span>📜 正在檢視【最近一筆已完結波段回顧】：${lastWave.wave_entry_date} 進場 ～ ${lastWave.wave_exit_date} 出場 (持倉 ${lastWave.holding_days} 天，最高權重 ${lastWave.max_weight_reached})</span>
+                        <span>波段總結算淨利：<b style="color:#dc2626;">+${lastWave.net_pnl_pts} 點 (小台 NT$ +${Number(lastWave.net_pnl_ntd_mtx).toLocaleString()} / 大台 NT$ +${Number(lastWave.net_pnl_ntd_txf).toLocaleString()})</b></span>
+                    </div>` : ''}
+
+                    <div class="v7-slots-grid">
+                        ${slotsHtml}
+                    </div>
+
+                    <!-- 第 3 層：四大技術指標與四重出場防線診斷卡 (Indicator Cards) -->
+                    <div class="v7-section-subtitle" style="margin-top:4px;">
+                        <div>🔬 <b>當日技術指標與四重出場防線即時診斷卡片 (${cur.date || '--'})</b></div>
+                        <span style="font-size:0.76rem;color:#64748b;">對應 JSON 欄位：indicator_cards (cci_card / ma_card / macd_card / defense_card)</span>
+                    </div>
+
+                    <div class="v7-indicators-grid">
+                        <!-- 指標卡 1：CCI 動量與雙週期趨勢卡 -->
+                        <div class="v7-ind-card">
+                            <div class="v7-ind-header">
+                                <span>📊 CCI 動量與趨勢卡</span>
+                                <span class="cfo-pill ${cciCard.is_cci14_above_150 ? 'cfo-pill-up' : 'cfo-pill-flat'}">
+                                    ${cciCard.is_cci14_above_150 ? '🔥 > +150 強勢突破' : '⚪ 未達 +150'}
+                                </span>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">CCI(14) 進場動量指標</span>
+                                <b style="font-size:0.95rem;color:${Number(cciCard.cci14_entry_indicator) > 150 ? '#dc2626' : '#0f172a'};">
+                                    ${Number(cciCard.cci14_entry_indicator || 0) >= 0 ? '+' : ''}${Number(cciCard.cci14_entry_indicator || 0).toFixed(2)}
+                                </b>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">前一日 CCI(14)</span>
+                                <b>${Number(cciCard.cci14_prev_day || 0) >= 0 ? '+' : ''}${Number(cciCard.cci14_prev_day || 0).toFixed(2)}</b>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">今日是否重破 +150 加碼</span>
+                                <b style="color:${cciCard.is_cci14_rebreak_150_today ? '#dc2626' : '#64748b'};">${cciCard.is_cci14_rebreak_150_today ? '⭐ 是 (觸發加碼)' : '否'}</b>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">CCI(12) 短線出場指標</span>
+                                <b style="color:${Number(cciCard.cci12_short_exit_indicator) < -100 ? '#16a34a' : '#334155'};">
+                                    ${Number(cciCard.cci12_short_exit_indicator || 0).toFixed(2)} <span style="font-size:0.7rem;color:#94a3b8;">(門檻 &lt; -100)</span>
+                                </b>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">CCI(24) 中線出場指標</span>
+                                <b style="color:${Number(cciCard.cci24_mid_exit_indicator) < 0 ? '#16a34a' : '#334155'};">
+                                    ${Number(cciCard.cci24_mid_exit_indicator || 0).toFixed(2)} <span style="font-size:0.7rem;color:#94a3b8;">(門檻 &lt; 0)</span>
+                                </b>
+                            </div>
+                            <div class="v7-ind-summary-foot" style="margin-top:10px;">
+                                ${cciCard.status_summary || ''}
+                            </div>
+                        </div>
+
+                        <!-- 指標卡 2：MA 五線均線與斜率角度卡 -->
+                        <div class="v7-ind-card">
+                            <div class="v7-ind-header">
+                                <span>📈 MA 五線均線斜率卡</span>
+                                <span class="cfo-pill ${maCard.is_v4_full_resonance ? 'cfo-pill-up' : 'cfo-pill-flat'}">
+                                    ${maCard.is_v4_full_resonance ? '🔥 五線全共振' : '⚪ 未全共振'}
+                                </span>
+                            </div>
+                            <table class="v7-ma-table">
+                                <thead>
+                                    <tr>
+                                        <th>均線</th>
+                                        <th>點位</th>
+                                        <th>斜率</th>
+                                        <th>角度</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${maRows}
+                                </tbody>
+                            </table>
+                            <div style="display:flex;justify-content:space-between;font-size:0.76rem;color:#475569;margin-bottom:6px;">
+                                <span>季線乖離率: <b style="color:${Math.abs(bias60Val) > 12 ? '#dc2626' : '#0f172a'};">${bias60Val >= 0 ? '+' : ''}${bias60Val.toFixed(2)}%</b> (上限 12%)</span>
+                                <span>五線多頭: <b>${maCard.is_five_ma_bull_aligned ? '是' : '否'}</b></span>
+                            </div>
+                            <div class="v7-ind-summary-foot">
+                                ${maCard.status_summary || ''}
+                            </div>
+                        </div>
+
+                        <!-- 指標卡 3：MACD 多空動能柱狀體卡 -->
+                        <div class="v7-ind-card">
+                            <div class="v7-ind-header">
+                                <span>⚡ MACD 多空動能卡</span>
+                                <span class="cfo-pill ${macdCard.is_osc_positive ? 'cfo-pill-up' : 'cfo-pill-down'}">
+                                    ${macdCard.is_osc_positive ? '🔴 紅柱多方' : '🟢 綠柱空方'}
+                                </span>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">OSC 柱狀體 (DIF - MACD)</span>
+                                <b style="font-size:1.05rem;color:${macdCard.is_osc_positive ? '#dc2626' : '#16a34a'};">
+                                    ${Number(macdCard.osc || 0) >= 0 ? '+' : ''}${Number(macdCard.osc || 0).toFixed(2)}
+                                </b>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">DIF 快線</span>
+                                <b>${Number(macdCard.dif || 0) >= 0 ? '+' : ''}${Number(macdCard.dif || 0).toFixed(2)}</b>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">MACD 慢線</span>
+                                <b>${Number(macdCard.macd || 0) >= 0 ? '+' : ''}${Number(macdCard.macd || 0).toFixed(2)}</b>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">V7 進場動能條件 (OSC &gt; 0)</span>
+                                <b style="color:${macdCard.is_osc_positive ? '#dc2626' : '#64748b'};">${macdCard.is_osc_positive ? '✔️ 通過' : '❌ 未通過'}</b>
+                            </div>
+                            <div class="v7-ind-summary-foot" style="margin-top:10px;">
+                                ${macdCard.status_summary || ''}
+                            </div>
+                        </div>
+
+                        <!-- 指標卡 4：V7 四重出場防線即時狀態卡 -->
+                        <div class="v7-ind-card">
+                            <div class="v7-ind-header">
+                                <span>🛡️ V7 四重出場防線卡</span>
+                                <span class="cfo-pill ${(l1.triggered || l2.triggered) ? 'cfo-pill-down' : 'cfo-pill-flat'}">
+                                    ${(l1.triggered || l2.triggered) ? '🚨 防線亮燈' : '🟢 防線监控'}
+                                </span>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">① 雙CCI轉空 (12&lt;-100&amp;24&lt;0)</span>
+                                <b style="color:${l1.triggered ? '#dc2626' : '#16a34a'};">${l1.triggered ? '🚨 觸發' : '🟢 安全'}</b>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">② 破月線+月線下彎+OSC&lt;0</span>
+                                <b style="color:${l2.triggered ? '#dc2626' : '#16a34a'};">${l2.triggered ? '🚨 觸發' : '🟢 安全'}</b>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">③ 一階/二階保本防守價</span>
+                                <b>${l3.tier1_defense_price ? `${l3.tier1_defense_price} / ${l3.tier2_defense_price}` : '-- (未持倉)'}</b>
+                            </div>
+                            <div class="v7-ind-row">
+                                <span style="color:#64748b;">④ 硬性停損防線 (-800點)</span>
+                                <b>${l4.hard_stop_price ? `${l4.hard_stop_price} 點` : '-- (未持倉)'}</b>
+                            </div>
+                            <div class="v7-ind-summary-foot" style="margin-top:10px;">
+                                ${l2.current_values || '四重出場防線全天候自動監控中'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

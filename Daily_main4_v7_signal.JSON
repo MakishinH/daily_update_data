@@ -1,0 +1,165 @@
+{
+  "strategy_name": "台指期 A++ 日線長線波段策略 V7 終極王者版 (正金字塔遞減加碼 40%->30%->20%->10% 封頂)",
+  "file_name": "Daily_main4_v7_signal.JSON",
+  "generated_at": "2026-10-29 21:29:06",
+  "scheduled_run_time": "每日 18:00 自動更新",
+  "current": {
+    "card_title": "📍 最新日線行情與當前部位狀態卡 (Current)",
+    "date": "2026-10-22",
+    "time": "13:45:00 (日盤收盤)",
+    "datetime": "2026-10-22 13:45:00",
+    "updated_at": "2026-10-29 21:29:06",
+    "open": 47164.0,
+    "high": 47337.0,
+    "low": 46217.0,
+    "close_price": 46272.0,
+    "wave_status": "FLAT (空手等待新波段訊號)",
+    "today_signal_event": "FLAT_WAITING",
+    "today_signal_description": "⚪ 空手觀望中 (今日未觸發第一筆進場條件)",
+    "filled_entries_count": 0,
+    "current_total_weight_pct": "0%",
+    "current_total_weight_x": 0.0,
+    "avg_entry_price": "",
+    "point_diff_vs_first_entry": "",
+    "point_diff_vs_avg_cost": "",
+    "total_weighted_point_diff": "",
+    "total_unrealized_ntd_mtx": "",
+    "total_unrealized_ntd_txf": ""
+  },
+  "first": "",
+  "second": "",
+  "third": "",
+  "fourth": "",
+  "fifth": "",
+  "exit": "",
+  "indicator_cards": {
+    "cci_card": {
+      "card_title": "📊 CCI 動量與雙週期趨勢訊號卡",
+      "date": "2026-10-22",
+      "cci14_entry_indicator": -91.74,
+      "cci14_prev_day": -97.54,
+      "cci14_entry_threshold": 150.0,
+      "is_cci14_above_150": false,
+      "is_cci14_rebreak_150_today": false,
+      "cci12_short_exit_indicator": -80.21,
+      "cci24_mid_exit_indicator": -96.63,
+      "is_dual_cci_exit_triggered": false,
+      "status_summary": "🟢 CCI(14)=-91.7 (未達+150) | CCI(12)=-80.2, CCI(24)=-96.6 (未觸發出場)"
+    },
+    "ma_card": {
+      "card_title": "📈 MA 五線均線排列與斜率角度訊號卡",
+      "date": "2026-10-22",
+      "close_price": 46272.0,
+      "ma5": {
+        "price": 46665.0,
+        "slope": -141.4,
+        "angle_deg": -89.6,
+        "is_rising": false
+      },
+      "ma10": {
+        "price": 47615.4,
+        "slope": -370.7,
+        "angle_deg": -89.8,
+        "is_rising": false
+      },
+      "ma20_monthly": {
+        "price": 48214.8,
+        "slope": -90.25,
+        "angle_deg": -89.4,
+        "is_rising": false,
+        "is_close_above_ma20": false
+      },
+      "ma60_quarterly": {
+        "price": 46343.9,
+        "slope": 39.45,
+        "angle_deg": 88.5,
+        "is_rising": true,
+        "bias60_pct": -0.16,
+        "max_bias60_limit_pct": 12.0,
+        "is_overheated": false
+      },
+      "ma120_semiannual": {
+        "price": 45249.8,
+        "slope": 54.36,
+        "angle_deg": 88.9,
+        "is_angle_above_20deg": true,
+        "is_rising": true
+      },
+      "is_five_ma_bull_aligned": false,
+      "is_all_five_slopes_positive": false,
+      "is_v4_full_resonance": false,
+      "status_summary": "MA多頭排列: 否 | 五線斜率全正: 否 | 季線乖離: -0.16%"
+    },
+    "macd_card": {
+      "card_title": "⚡ MACD 多空動能柱狀體訊號卡",
+      "date": "2026-10-22",
+      "dif": -92.33,
+      "macd": 320.2,
+      "osc": -412.53,
+      "is_osc_positive": false,
+      "status_summary": "🔴 綠柱空方控盤 (OSC = -412.53)"
+    },
+    "defense_card": {
+      "card_title": "🛡️ V7 四重出場防線即時狀態卡",
+      "line1_dual_cci_exit": {
+        "rule": "CCI(12) < -100 且 CCI(24) < 0",
+        "triggered": false,
+        "current_values": "CCI12=-80.2, CCI24=-96.6"
+      },
+      "line2_ma20_breakdown_exit": {
+        "rule": "收盤跌破 MA20 且 MA20斜率 < 0 且 OSC < 0",
+        "triggered": true,
+        "current_values": "Close=46272, MA20=48215(斜率-90.2), OSC=-412.5"
+      },
+      "line3_dynamic_breakeven": {
+        "rule": "MFE>=800點守均成本+50點(且OSC<0)；MFE>=1500點守均成本+300點(且OSC<0)",
+        "current_wave_mfe_pts": "",
+        "tier1_defense_price": "",
+        "tier2_defense_price": ""
+      },
+      "line4_hard_stop_loss": {
+        "rule": "收盤價相對第一筆進場價浮虧 > 800 點強制停損",
+        "hard_stop_price": ""
+      }
+    }
+  },
+  "last_completed_wave_cards": {
+    "wave_entry_date": "2026-09-23",
+    "wave_exit_date": "2026-10-14",
+    "holding_days": 21,
+    "total_entries_count": 1,
+    "max_weight_reached": "100% (1.0x)",
+    "net_pnl_pts": 257.0,
+    "net_pnl_ntd_mtx": 12850,
+    "net_pnl_ntd_txf": 51400,
+    "exit_reason": "二階鎖底防禦(最高+1665點,守均成本+300) (次日開盤全平)",
+    "first": {
+      "card_title": "第一筆進場 (底倉 100%)",
+      "entry_date": "2026-09-23",
+      "entry_time": "08:45:00",
+      "entry_datetime": "2026-09-23 08:45:00",
+      "entry_price": 48529.0,
+      "weight_pct": "100%",
+      "weight_x": 1.0,
+      "trigger_reason": "CCI(14)>150且OSC>0動量突破 (訊號日:2026-09-22)",
+      "latest_reference_date": "2026-10-14",
+      "latest_reference_price": 48789.0,
+      "point_diff_vs_latest": 260.0,
+      "point_diff_text": "+260.0 點 (原始點差) | +260.0 點 (乘上 100% 權重後點差)",
+      "weighted_point_diff": 260.0,
+      "unrealized_ntd_mtx": 13000,
+      "unrealized_ntd_txf": 52000
+    },
+    "second": "",
+    "third": "",
+    "fourth": "",
+    "fifth": "",
+    "exit": {
+      "exit_date": "2026-10-14",
+      "exit_time": "08:45:00",
+      "exit_price": 48789.0,
+      "exit_reason": "二階鎖底防禦(最高+1665點,守均成本+300) (次日開盤全平)",
+      "net_pnl_pts": 257.0
+    }
+  }
+}
