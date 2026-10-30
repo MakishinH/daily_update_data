@@ -1,18 +1,18 @@
 {
   "strategy_name": "台指期 A++ 日線長線波段策略 V7 終極王者版 (正金字塔遞減加碼 40%->30%->20%->10% 封頂)",
   "file_name": "Daily_main4_v7_signal.JSON",
-  "generated_at": "2026-10-30 22:05:08",
+  "generated_at": "2026-10-30 22:07:07",
   "scheduled_run_time": "每日 18:00 自動更新",
   "current": {
     "card_title": "📍 最新日線行情與當前部位狀態卡 (Current)",
-    "date": "2026-10-22",
+    "date": "2026-10-30",
     "time": "13:45:00 (日盤收盤)",
-    "datetime": "2026-10-22 13:45:00",
-    "updated_at": "2026-10-30 22:05:08",
-    "open": 47164.0,
-    "high": 47337.0,
-    "low": 46217.0,
-    "close_price": 46272.0,
+    "datetime": "2026-10-30 13:45:00",
+    "updated_at": "2026-10-30 22:07:07",
+    "open": 45410.0,
+    "high": 45597.0,
+    "low": 44908.0,
+    "close_price": 45301.0,
     "wave_status": "FLAT (空手等待新波段訊號)",
     "today_signal_event": "FLAT_WAITING",
     "today_signal_description": "⚪ 空手觀望中 (今日未觸發第一筆進場條件)",
@@ -35,87 +35,87 @@
   "indicator_cards": {
     "cci_card": {
       "card_title": "📊 CCI 動量與雙週期趨勢訊號卡",
-      "date": "2026-10-22",
-      "cci14_entry_indicator": -91.74,
-      "cci14_prev_day": -97.54,
+      "date": "2026-10-30",
+      "cci14_entry_indicator": -142.76,
+      "cci14_prev_day": -58.66,
       "cci14_entry_threshold": 150.0,
       "is_cci14_above_150": false,
       "is_cci14_rebreak_150_today": false,
-      "cci12_short_exit_indicator": -80.21,
-      "cci24_mid_exit_indicator": -96.63,
-      "is_dual_cci_exit_triggered": false,
-      "status_summary": "🟢 CCI(14)=-91.7 (未達+150) | CCI(12)=-80.2, CCI(24)=-96.6 (未觸發出場)"
+      "cci12_short_exit_indicator": -170.8,
+      "cci24_mid_exit_indicator": -165.15,
+      "is_dual_cci_exit_triggered": true,
+      "status_summary": "🚨 CCI(12)=-170.8<-100 且 CCI(24)=-165.1<0 觸發雙CCI轉空出場！"
     },
     "ma_card": {
       "card_title": "📈 MA 五線均線排列與斜率角度訊號卡",
-      "date": "2026-10-22",
-      "close_price": 46272.0,
+      "date": "2026-10-30",
+      "close_price": 45301.0,
       "angle_normalization": "arctan(slope / 100) [100點/日 = 45°]",
       "ma5": {
-        "price": 46665.0,
-        "slope": -141.4,
-        "angle_deg": -54.7,
-        "raw_angle_deg": -89.6,
+        "price": 46295.0,
+        "slope": -269.4,
+        "angle_deg": -69.6,
+        "raw_angle_deg": -89.8,
         "is_rising": false
       },
       "ma10": {
-        "price": 47615.4,
-        "slope": -370.7,
-        "angle_deg": -74.9,
+        "price": 46550.7,
+        "slope": -349.1,
+        "angle_deg": -74.0,
         "raw_angle_deg": -89.8,
         "is_rising": false
       },
       "ma20_monthly": {
-        "price": 48214.8,
-        "slope": -90.25,
-        "angle_deg": -42.1,
-        "raw_angle_deg": -89.4,
+        "price": 47851.6,
+        "slope": -123.3,
+        "angle_deg": -51.0,
+        "raw_angle_deg": -89.5,
         "is_rising": false,
         "is_close_above_ma20": false
       },
       "ma60_quarterly": {
-        "price": 46343.9,
-        "slope": 39.45,
-        "angle_deg": 21.5,
-        "raw_angle_deg": 88.5,
+        "price": 46604.2,
+        "slope": 27.05,
+        "angle_deg": 15.1,
+        "raw_angle_deg": 87.9,
         "is_rising": true,
-        "bias60_pct": -0.16,
+        "bias60_pct": -2.8,
         "max_bias60_limit_pct": 12.0,
         "is_overheated": false
       },
       "ma120_semiannual": {
-        "price": 45249.8,
-        "slope": 54.36,
-        "angle_deg": 28.5,
-        "raw_angle_deg": 88.9,
+        "price": 45452.2,
+        "slope": 35.55,
+        "angle_deg": 19.6,
+        "raw_angle_deg": 88.4,
         "is_angle_above_20deg": true,
         "is_rising": true
       },
       "is_five_ma_bull_aligned": false,
       "is_all_five_slopes_positive": false,
       "is_v4_full_resonance": false,
-      "status_summary": "MA多頭排列: 否 | 五線斜率全正: 否 | 季線乖離: -0.16%"
+      "status_summary": "MA多頭排列: 否 | 五線斜率全正: 否 | 季線乖離: -2.80%"
     },
     "macd_card": {
       "card_title": "⚡ MACD 多空動能柱狀體訊號卡",
-      "date": "2026-10-22",
-      "dif": -92.33,
-      "macd": 320.2,
-      "osc": -412.53,
+      "date": "2026-10-30",
+      "dif": -345.5,
+      "macd": -14.95,
+      "osc": -330.55,
       "is_osc_positive": false,
-      "status_summary": "🔴 綠柱空方控盤 (OSC = -412.53)"
+      "status_summary": "🔴 綠柱空方控盤 (OSC = -330.55)"
     },
     "defense_card": {
       "card_title": "🛡️ V7 四重出場防線即時狀態卡",
       "line1_dual_cci_exit": {
         "rule": "CCI(12) < -100 且 CCI(24) < 0",
-        "triggered": false,
-        "current_values": "CCI12=-80.2, CCI24=-96.6"
+        "triggered": true,
+        "current_values": "CCI12=-170.8, CCI24=-165.1"
       },
       "line2_ma20_breakdown_exit": {
         "rule": "收盤跌破 MA20 且 MA20斜率 < 0 且 OSC < 0",
         "triggered": true,
-        "current_values": "Close=46272, MA20=48215(斜率-90.2), OSC=-412.5"
+        "current_values": "Close=45301, MA20=47852(斜率-123.3), OSC=-330.6"
       },
       "line3_dynamic_breakeven": {
         "rule": "MFE>=800點守均成本+50點(且OSC<0)；MFE>=1500點守均成本+300點(且OSC<0)",
