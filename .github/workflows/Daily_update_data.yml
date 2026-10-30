@@ -2,40 +2,79 @@ name: Update Daily Finance Data
 
 on:
   schedule:
-# 1. 台灣時間週一至週六 07:00 -> UTC 週日至週五 23:00
+    # 1. 台灣時間週一至週六 07:00 -> UTC 週日至週五 23:00 (雲端保底)
     - cron: '0 23 * * 0-5'
-
-    # 2. 台灣時間週一至週五 22:00 -> UTC 週一至週五 14:00
+    # 2. 台灣時間週一至週五 22:00 -> UTC 週一至週五 14:00 (雲端保底)
     - cron: '0 14 * * 1-5'
-  workflow_dispatch: # 支援手動觸發測試
+  workflow_dispatch: # 支援 Ubuntu VM Crontab 準點喚醒與手動觸發測試
+
+concurrency:
+  group: daily-finance-crawler
+  cancel-in-progress: false
 
 jobs:
   run-crawler:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 賦予寫入權限以便提交檔案
+      contents: write
 
     steps:
       - name: 檢出專案程式碼
         uses: actions/checkout@v4
 
+      - name: 🛡️ 防重複執行檢查 (若近 4 小時內已由 Ubuntu VM 準點更新則略過延遲的 schedule 保底)
+        id: guard
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "🚀 觸發來源為 ${{ github.event_name }} (Ubuntu VM 準點喚醒或手動觸發)，立即執行！"
+            echo "should_run=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          python3 - << 'EOF'
+          import json, os
+          from datetime import datetime, timezone
+          fn = "daily_update.json"
+          should_run = "true"
+          if os.path.exists(fn):
+              try:
+                  with open(fn, "r", encoding="utf-8") as f:
+                      d = json.load(f)
+                  first_k = next(iter(d))
+                  upd_str = d[first_k].get("updatedAt", "").replace(" UTC", "")
+                  if upd_str:
+                      upd_dt = datetime.strptime(upd_str[:19], "%Y-%m-%d %H:%M:%S").replace(tzinfo=timezone.utc)
+                      diff_hours = abs((datetime.now(timezone.utc) - upd_dt).total_seconds()) / 3600.0
+                      if diff_hours < 4.0:
+                          print(f"⏭️ 偵測到 {fn} 已於 {upd_str} UTC ({diff_hours:.1f} 小時前) 由 Ubuntu VM 更新完畢，略過本次延遲的 schedule 保底排程！")
+                          should_run = "false"
+              except Exception as e:
+                  print(f"⚠️ 檢查時間戳記略過: {e}")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"should_run={should_run}\n")
+          EOF
+
       - name: 設定 Python 環境
+        if: steps.guard.outputs.should_run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: 安裝相依套件
+        if: steps.guard.outputs.should_run == 'true'
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: 執行資料抓取
+        if: steps.guard.outputs.should_run == 'true'
         run: python main.py
 
       - name: 提交並推送更新
+        if: steps.guard.outputs.should_run == 'true'
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add daily_update.json
           git commit -m "Auto update: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" || exit 0
-          git push
+          git pull --rebase origin main
+          git push origin main || (sleep 3 && git pull --rebase origin main && git push origin main)
