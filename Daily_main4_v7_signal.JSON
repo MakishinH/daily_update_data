@@ -1,14 +1,14 @@
 {
   "strategy_name": "台指期 A++ 日線長線波段策略 V7 終極王者版 (正金字塔遞減加碼 40%->30%->20%->10% 封頂)",
   "file_name": "Daily_main4_v7_signal.JSON",
-  "generated_at": "2026-10-30 22:07:07",
+  "generated_at": "2026-10-30 23:34:42",
   "scheduled_run_time": "每日 18:00 自動更新",
   "current": {
     "card_title": "📍 最新日線行情與當前部位狀態卡 (Current)",
     "date": "2026-10-30",
     "time": "13:45:00 (日盤收盤)",
     "datetime": "2026-10-30 13:45:00",
-    "updated_at": "2026-10-30 22:07:07",
+    "updated_at": "2026-10-30 23:34:42",
     "open": 45410.0,
     "high": 45597.0,
     "low": 44908.0,
