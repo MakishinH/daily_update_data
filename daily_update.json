@@ -5,7 +5,7 @@
     "change": 209.8,
     "changePercent": 0.41,
     "previousClose": 51774.18,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "^GSPC": {
     "name": "S&P 500 指數",
@@ -13,7 +13,7 @@
     "change": -39.55,
     "changePercent": -0.52,
     "previousClose": 7580.95,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "^IXIC": {
     "name": "NASDAQ 指數",
@@ -21,7 +21,7 @@
     "change": -276.36,
     "changePercent": -1.09,
     "previousClose": 25440.68,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "^N225": {
     "name": "日經 225 指數",
@@ -29,7 +29,7 @@
     "change": -0.41,
     "changePercent": -0.0,
     "previousClose": 63082.27,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "^KS11": {
     "name": "韓國綜合股價指數",
@@ -37,7 +37,7 @@
     "change": 193.11,
     "changePercent": 3.41,
     "previousClose": 5665.97,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "TSM": {
     "name": "台積電 ADR",
@@ -45,7 +45,7 @@
     "change": -10.16,
     "changePercent": -2.48,
     "previousClose": 408.79,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "NVDA": {
     "name": "輝達",
@@ -53,7 +53,7 @@
     "change": -3.19,
     "changePercent": -1.55,
     "previousClose": 205.25,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "AAPL": {
     "name": "蘋果",
@@ -61,7 +61,7 @@
     "change": -6.78,
     "changePercent": -1.96,
     "previousClose": 345.1,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "TSLA": {
     "name": "特斯拉",
@@ -69,7 +69,7 @@
     "change": 3.6,
     "changePercent": 0.9,
     "previousClose": 400.22,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "SPCX": {
     "name": "太空探索",
@@ -77,7 +77,7 @@
     "change": 0.34,
     "changePercent": 0.25,
     "previousClose": 136.03,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "AVGO": {
     "name": "博通",
@@ -85,7 +85,7 @@
     "change": -4.9,
     "changePercent": -1.5,
     "previousClose": 327.13,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "AMD": {
     "name": "超微",
@@ -93,7 +93,7 @@
     "change": -41.38,
     "changePercent": -8.14,
     "previousClose": 508.22,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "GOOGL": {
     "name": "Google",
@@ -101,7 +101,7 @@
     "change": -2.49,
     "changePercent": -0.88,
     "previousClose": 281.48,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "META": {
     "name": "Meta",
@@ -109,7 +109,7 @@
     "change": -7.27,
     "changePercent": -1.18,
     "previousClose": 614.0,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "AMZN": {
     "name": "亞馬遜",
@@ -117,7 +117,7 @@
     "change": 4.83,
     "changePercent": 2.01,
     "previousClose": 240.8,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "BRK-B": {
     "name": "波克夏",
@@ -125,7 +125,7 @@
     "change": 12.81,
     "changePercent": 2.36,
     "previousClose": 543.3,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "^TWII": {
     "name": "台股加權指數",
@@ -133,7 +133,7 @@
     "change": -272.94,
     "changePercent": -0.6,
     "previousClose": 45193.08,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "0050.TW": {
     "name": "元大台灣50",
@@ -141,7 +141,7 @@
     "change": -0.9,
     "changePercent": -0.86,
     "previousClose": 105.0,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   },
   "00631L.TW": {
     "name": "元大50正2",
@@ -149,6 +149,6 @@
     "change": -0.42,
     "changePercent": -1.23,
     "previousClose": 34.25,
-    "updatedAt": "2026-11-02 22:42:17 UTC"
+    "updatedAt": "2026-11-02 23:00:22 UTC"
   }
 }
