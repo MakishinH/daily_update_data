@@ -5,7 +5,7 @@
     "change": 209.8,
     "changePercent": 0.41,
     "previousClose": 51774.18,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "^GSPC": {
     "name": "S&P 500 指數",
@@ -13,15 +13,15 @@
     "change": -39.55,
     "changePercent": -0.52,
     "previousClose": 7580.95,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "^IXIC": {
     "name": "NASDAQ 指數",
-    "price": 25164.32,
-    "change": -276.36,
+    "price": 25164.36,
+    "change": -276.31,
     "changePercent": -1.09,
     "previousClose": 25440.68,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "^N225": {
     "name": "日經 225 指數",
@@ -29,23 +29,23 @@
     "change": -0.41,
     "changePercent": -0.0,
     "previousClose": 63082.27,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "^KS11": {
     "name": "韓國綜合股價指數",
-    "price": 5859.08,
-    "change": 193.11,
-    "changePercent": 3.41,
-    "previousClose": 5665.97,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "price": 5664.33,
+    "change": -227.21,
+    "changePercent": -3.86,
+    "previousClose": 5891.54,
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "TSM": {
     "name": "台積電 ADR",
     "price": 398.63,
-    "change": -10.16,
+    "change": -10.12,
     "changePercent": -2.48,
-    "previousClose": 408.79,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "previousClose": 408.75,
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "NVDA": {
     "name": "輝達",
@@ -53,7 +53,7 @@
     "change": -3.19,
     "changePercent": -1.55,
     "previousClose": 205.25,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "AAPL": {
     "name": "蘋果",
@@ -61,7 +61,7 @@
     "change": -6.78,
     "changePercent": -1.96,
     "previousClose": 345.1,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "TSLA": {
     "name": "特斯拉",
@@ -69,7 +69,7 @@
     "change": 3.6,
     "changePercent": 0.9,
     "previousClose": 400.22,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "SPCX": {
     "name": "太空探索",
@@ -77,7 +77,7 @@
     "change": 0.34,
     "changePercent": 0.25,
     "previousClose": 136.03,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "AVGO": {
     "name": "博通",
@@ -85,7 +85,7 @@
     "change": -4.9,
     "changePercent": -1.5,
     "previousClose": 327.13,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "AMD": {
     "name": "超微",
@@ -93,7 +93,7 @@
     "change": -41.38,
     "changePercent": -8.14,
     "previousClose": 508.22,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "GOOGL": {
     "name": "Google",
@@ -101,7 +101,7 @@
     "change": -2.49,
     "changePercent": -0.88,
     "previousClose": 281.48,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "META": {
     "name": "Meta",
@@ -109,7 +109,7 @@
     "change": -7.27,
     "changePercent": -1.18,
     "previousClose": 614.0,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "AMZN": {
     "name": "亞馬遜",
@@ -117,38 +117,38 @@
     "change": 4.83,
     "changePercent": 2.01,
     "previousClose": 240.8,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "BRK-B": {
     "name": "波克夏",
     "price": 556.11,
-    "change": 12.81,
-    "changePercent": 2.36,
-    "previousClose": 543.3,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "change": 12.71,
+    "changePercent": 2.34,
+    "previousClose": 543.4,
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "^TWII": {
     "name": "台股加權指數",
-    "price": 44920.14,
-    "change": -272.94,
-    "changePercent": -0.6,
-    "previousClose": 45193.08,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "price": 43923.14,
+    "change": -1093.73,
+    "changePercent": -2.43,
+    "previousClose": 45016.87,
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "0050.TW": {
     "name": "元大台灣50",
-    "price": 104.1,
-    "change": -0.9,
-    "changePercent": -0.86,
-    "previousClose": 105.0,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "price": 102.15,
+    "change": -2.05,
+    "changePercent": -1.97,
+    "previousClose": 104.2,
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   },
   "00631L.TW": {
     "name": "元大50正2",
-    "price": 33.83,
-    "change": -0.42,
-    "changePercent": -1.23,
-    "previousClose": 34.25,
-    "updatedAt": "2026-11-02 23:00:22 UTC"
+    "price": 32.41,
+    "change": -1.46,
+    "changePercent": -4.31,
+    "previousClose": 33.87,
+    "updatedAt": "2026-11-03 03:47:54 UTC"
   }
 }
