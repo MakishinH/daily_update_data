@@ -1,7 +1,7 @@
 {
     "version": "V1",
-    "update_time": "2026-11-08 05:52:21",
-    "source_update_time": "2026-11-08 05:51:51",
+    "update_time": "2026-11-08 15:51:30",
+    "source_update_time": "2026-11-08 15:50:53",
     "summary_counts": {
         "total": 64,
         "STRONG_BUY": 32,
@@ -1729,13 +1729,13 @@
         {
             "stock_id": "3017",
             "name": "奇鋐",
-            "latest_month": "2026-09",
+            "latest_month": "2026-10",
             "latest_quarter": "2026-06-30",
-            "cumulative_revenue_billion": 1572.48,
-            "cumulative_yoy_percent": 71.17,
-            "latest_month_mom_percent": 7.89,
-            "latest_month_yoy_percent": 44.92,
-            "revenue_rating": "⭐⭐⭐⭐⭐ 強勢成長 (累計YoY +71.17%)",
+            "cumulative_revenue_billion": 1793.51,
+            "cumulative_yoy_percent": 65.58,
+            "latest_month_mom_percent": 5.16,
+            "latest_month_yoy_percent": 34.35,
+            "revenue_rating": "⭐⭐⭐⭐⭐ 強勢成長 (累計YoY +65.58%)",
             "revenue_stars": 5,
             "latest_quarter_revenue_billion": 491.21,
             "latest_quarter_revenue_qoq_percent": 0.17,
@@ -1750,25 +1750,17 @@
             "liabilities_stars": 5,
             "capital_billion": 39.32,
             "avg_operating_margin_percent": 20.63,
-            "est_cumulative_eps_op_basis": 82.5,
-            "est_cumulative_eps_after_tax": 64.35,
-            "projected_full_year_eps": 85.8,
+            "est_cumulative_eps_op_basis": 94.1,
+            "est_cumulative_eps_after_tax": 73.4,
+            "projected_full_year_eps": 88.08,
             "prev_year_2025_eps": 49.17,
             "latest_dividend": 17.9,
             "payout_ratio": 0.45,
-            "est_next_dividend": 38.61,
+            "est_next_dividend": 39.64,
             "score": 9,
             "outlook": "🔥 強烈偏多 (交屋高峰+新案擴張+獲利創高)",
             "outlook_tag": "STRONG_BUY",
             "monthly_revenue": [
-                {
-                    "month": "2025-10",
-                    "revenue": 16451489000,
-                    "mom_percent": 13.43,
-                    "yoy_percent": 132.33,
-                    "cumulative_revenue": 108315849000,
-                    "cumulative_growth_percent": 86.95
-                },
                 {
                     "month": "2025-11",
                     "revenue": 17382240000,
@@ -1856,6 +1848,14 @@
                     "yoy_percent": 44.92,
                     "cumulative_revenue": 157248258000,
                     "cumulative_growth_percent": 71.17
+                },
+                {
+                    "month": "2026-10",
+                    "revenue": 22102758000,
+                    "mom_percent": 5.16,
+                    "yoy_percent": 34.35,
+                    "cumulative_revenue": 179351016000,
+                    "cumulative_growth_percent": 65.58
                 }
             ],
             "quarterly_revenue": [
@@ -10854,13 +10854,13 @@
         "3017": {
             "stock_id": "3017",
             "name": "奇鋐",
-            "latest_month": "2026-09",
+            "latest_month": "2026-10",
             "latest_quarter": "2026-06-30",
-            "cumulative_revenue_billion": 1572.48,
-            "cumulative_yoy_percent": 71.17,
-            "latest_month_mom_percent": 7.89,
-            "latest_month_yoy_percent": 44.92,
-            "revenue_rating": "⭐⭐⭐⭐⭐ 強勢成長 (累計YoY +71.17%)",
+            "cumulative_revenue_billion": 1793.51,
+            "cumulative_yoy_percent": 65.58,
+            "latest_month_mom_percent": 5.16,
+            "latest_month_yoy_percent": 34.35,
+            "revenue_rating": "⭐⭐⭐⭐⭐ 強勢成長 (累計YoY +65.58%)",
             "revenue_stars": 5,
             "latest_quarter_revenue_billion": 491.21,
             "latest_quarter_revenue_qoq_percent": 0.17,
@@ -10875,25 +10875,17 @@
             "liabilities_stars": 5,
             "capital_billion": 39.32,
             "avg_operating_margin_percent": 20.63,
-            "est_cumulative_eps_op_basis": 82.5,
-            "est_cumulative_eps_after_tax": 64.35,
-            "projected_full_year_eps": 85.8,
+            "est_cumulative_eps_op_basis": 94.1,
+            "est_cumulative_eps_after_tax": 73.4,
+            "projected_full_year_eps": 88.08,
             "prev_year_2025_eps": 49.17,
             "latest_dividend": 17.9,
             "payout_ratio": 0.45,
-            "est_next_dividend": 38.61,
+            "est_next_dividend": 39.64,
             "score": 9,
             "outlook": "🔥 強烈偏多 (交屋高峰+新案擴張+獲利創高)",
             "outlook_tag": "STRONG_BUY",
             "monthly_revenue": [
-                {
-                    "month": "2025-10",
-                    "revenue": 16451489000,
-                    "mom_percent": 13.43,
-                    "yoy_percent": 132.33,
-                    "cumulative_revenue": 108315849000,
-                    "cumulative_growth_percent": 86.95
-                },
                 {
                     "month": "2025-11",
                     "revenue": 17382240000,
@@ -10981,6 +10973,14 @@
                     "yoy_percent": 44.92,
                     "cumulative_revenue": 157248258000,
                     "cumulative_growth_percent": 71.17
+                },
+                {
+                    "month": "2026-10",
+                    "revenue": 22102758000,
+                    "mom_percent": 5.16,
+                    "yoy_percent": 34.35,
+                    "cumulative_revenue": 179351016000,
+                    "cumulative_growth_percent": 65.58
                 }
             ],
             "quarterly_revenue": [
