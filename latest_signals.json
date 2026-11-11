@@ -1,33 +1,33 @@
 {
-  "updated_at": "2026-11-11 17:00:56",
+  "updated_at": "2026-11-11 22:20:49",
   "report_date": "2026-11-11",
   "count": 10,
   "signals": [
     {
       "trade_date": "2026-11-11",
-      "strategy_title": "0052 V2",
-      "full_strategy_title": "0052 富邦科技 高Beta雙向多空翻倍策略",
+      "strategy_title": "0052 V3",
+      "full_strategy_title": "0052 富邦科技 高Beta三態雙擎多空翻倍策略 (V3)",
       "ticker": "0052",
       "name": "富邦科技",
       "sector": "ETF科技龍頭",
       "close": 59.85,
       "foreign_net_buy": 2333.0,
       "trust_net_buy": 550.0,
-      "revenue_yoy_pct": 11.46,
-      "action": "🔴 HOLD (續抱 0052 2.0X 空單)"
+      "revenue_yoy_pct": 13.99,
+      "action": "✅ HOLD (續抱 0052 2.0X 多單)"
     },
     {
       "trade_date": "2026-11-11",
-      "strategy_title": "00631L V2",
-      "full_strategy_title": "00631L00632L 元大台灣50正反向雙擎多空翻倍策略",
+      "strategy_title": "00631L V3",
+      "full_strategy_title": "00631L00632L 元大台灣50正反向三態雙擎多空翻倍策略 (V3)",
       "ticker": "00631L",
       "name": "元大台灣50正2",
       "sector": "槓桿ETF/2X多頭",
       "close": 32.53,
       "foreign_net_buy": 21655.0,
       "trust_net_buy": 3762.0,
-      "revenue_yoy_pct": 14.84,
-      "action": "🔴 HOLD (續抱 00632R 反1空單避險)"
+      "revenue_yoy_pct": 18.66,
+      "action": "✅ HOLD (續抱 00631L 正2多單)"
     },
     {
       "trade_date": "2026-11-11",
@@ -38,7 +38,7 @@
       "sector": "電源供應/AI散熱與儲能",
       "close": 1295.0,
       "foreign_net_buy": -3143.0,
-      "trust_net_buy": 779.0,
+      "trust_net_buy": 789.0,
       "revenue_yoy_pct": 30.12,
       "action": "⚪ FLAT (空手觀望)"
     },
@@ -51,7 +51,7 @@
       "sector": "半導體/晶圓代工",
       "close": 2395.0,
       "foreign_net_buy": 6038.0,
-      "trust_net_buy": 1542.0,
+      "trust_net_buy": 2385.0,
       "revenue_yoy_pct": 59.71,
       "action": "⚪ FLAT (空手觀望)"
     },
@@ -103,7 +103,7 @@
       "sector": "半導體/IC設計",
       "close": 3990.0,
       "foreign_net_buy": -426.0,
-      "trust_net_buy": 591.0,
+      "trust_net_buy": 590.0,
       "revenue_yoy_pct": 5.77,
       "action": "⚪ FLAT (空手觀望)"
     },
@@ -129,7 +129,7 @@
       "sector": "AI散熱模組",
       "close": 3040.0,
       "foreign_net_buy": -749.0,
-      "trust_net_buy": 385.0,
+      "trust_net_buy": 491.0,
       "revenue_yoy_pct": 34.35,
       "action": "⚪ FLAT (空手觀望)"
     }
