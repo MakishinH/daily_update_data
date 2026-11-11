@@ -1,7 +1,7 @@
 {
     "version": "V1",
-    "update_time": "2026-11-11 05:14:44",
-    "source_update_time": "2026-11-11 05:14:17",
+    "update_time": "2026-11-11 16:58:11",
+    "source_update_time": "2026-11-11 16:57:39",
     "summary_counts": {
         "total": 64,
         "STRONG_BUY": 29,
@@ -1046,23 +1046,23 @@
             "stock_id": "2537",
             "name": "聯上發",
             "latest_month": "2026-10",
-            "latest_quarter": "2026-06-30",
+            "latest_quarter": "2026-09-30",
             "cumulative_revenue_billion": 15.24,
             "cumulative_yoy_percent": 155.05,
             "latest_month_mom_percent": -58.92,
             "latest_month_yoy_percent": -22.18,
             "revenue_rating": "⭐⭐⭐⭐⭐ 交屋大爆發 (累計YoY +155.05%)",
             "revenue_stars": 5,
-            "latest_quarter_revenue_billion": 2.52,
-            "latest_quarter_revenue_qoq_percent": -79.19,
-            "latest_inventories_billion": 153.66,
-            "inventories_qoq_percent": 2.48,
-            "inventory_replenish_billion": 6.24,
-            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +2.48%, 回補 +6.24億)",
+            "latest_quarter_revenue_billion": 0.59,
+            "latest_quarter_revenue_qoq_percent": -76.59,
+            "latest_inventories_billion": 157.59,
+            "inventories_qoq_percent": 2.56,
+            "inventory_replenish_billion": 4.52,
+            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +2.56%, 回補 +4.52億)",
             "inventory_stars": 5,
-            "latest_current_liabilities_billion": 129.32,
-            "current_liabilities_qoq_percent": 0.91,
-            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +0.91%)",
+            "latest_current_liabilities_billion": 132.12,
+            "current_liabilities_qoq_percent": 2.17,
+            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +2.17%)",
             "liabilities_stars": 5,
             "capital_billion": 30.06,
             "avg_operating_margin_percent": 17.04,
@@ -1176,15 +1176,6 @@
             ],
             "quarterly_revenue": [
                 {
-                    "quarter": "2025-09-30",
-                    "revenue": 164348000,
-                    "qoq_percent": 28.19,
-                    "inventories": 15224630000,
-                    "inventories_qoq_percent": 4.37,
-                    "current_liabilities": 12981125000,
-                    "current_liabilities_qoq_percent": 4.5
-                },
-                {
                     "quarter": "2025-12-31",
                     "revenue": 658492000,
                     "qoq_percent": 300.67,
@@ -1210,6 +1201,15 @@
                     "inventories_qoq_percent": 2.48,
                     "current_liabilities": 12932315000,
                     "current_liabilities_qoq_percent": 0.91
+                },
+                {
+                    "quarter": "2026-09-30",
+                    "revenue": 59074000,
+                    "qoq_percent": -76.59,
+                    "inventories": 15758605000,
+                    "inventories_qoq_percent": 2.55,
+                    "current_liabilities": 13211991000,
+                    "current_liabilities_qoq_percent": 2.16
                 }
             ]
         },
@@ -1556,177 +1556,6 @@
             ]
         },
         {
-            "stock_id": "5274",
-            "name": "信驊",
-            "latest_month": "2026-10",
-            "latest_quarter": "2026-06-30",
-            "cumulative_revenue_billion": 138.34,
-            "cumulative_yoy_percent": 87.65,
-            "latest_month_mom_percent": 24.03,
-            "latest_month_yoy_percent": 177.78,
-            "revenue_rating": "⭐⭐⭐⭐⭐ 強勢成長 (累計YoY +87.65%)",
-            "revenue_stars": 5,
-            "latest_quarter_revenue_billion": 38.71,
-            "latest_quarter_revenue_qoq_percent": 23.03,
-            "latest_inventories_billion": 4.71,
-            "inventories_qoq_percent": 33.43,
-            "inventory_replenish_billion": 39.89,
-            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +33.43%, 回補 +39.89億)",
-            "inventory_stars": 5,
-            "latest_current_liabilities_billion": 62.01,
-            "current_liabilities_qoq_percent": 2.26,
-            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +2.26%)",
-            "liabilities_stars": 5,
-            "capital_billion": 4.16,
-            "avg_operating_margin_percent": 50.19,
-            "est_cumulative_eps_op_basis": 166.91,
-            "est_cumulative_eps_after_tax": 130.19,
-            "projected_full_year_eps": 156.23,
-            "prev_year_2025_eps": 103.92,
-            "latest_dividend": 60.0,
-            "payout_ratio": 0.65,
-            "est_next_dividend": 101.55,
-            "score": 9,
-            "outlook": "🔥 強烈偏多 (交屋高峰+新案擴張+獲利創高)",
-            "outlook_tag": "STRONG_BUY",
-            "monthly_revenue": [
-                {
-                    "month": "2025-11",
-                    "revenue": 840288000,
-                    "mom_percent": 15.01,
-                    "yoy_percent": 23.38,
-                    "cumulative_revenue": 8212661000,
-                    "cumulative_growth_percent": 43.51
-                },
-                {
-                    "month": "2025-12",
-                    "revenue": 872214000,
-                    "mom_percent": 3.8,
-                    "yoy_percent": 18.37,
-                    "cumulative_revenue": 9084875000,
-                    "cumulative_growth_percent": 40.64
-                },
-                {
-                    "month": "2026-01",
-                    "revenue": 900364000,
-                    "mom_percent": 3.23,
-                    "yoy_percent": 28.46,
-                    "cumulative_revenue": 900364000,
-                    "cumulative_growth_percent": 28.46
-                },
-                {
-                    "month": "2026-02",
-                    "revenue": 1010964000,
-                    "mom_percent": 12.28,
-                    "yoy_percent": 65.94,
-                    "cumulative_revenue": 1911328000,
-                    "cumulative_growth_percent": 45.89
-                },
-                {
-                    "month": "2026-03",
-                    "revenue": 1235429000,
-                    "mom_percent": 22.2,
-                    "yoy_percent": 63.63,
-                    "cumulative_revenue": 3146757000,
-                    "cumulative_growth_percent": 52.38
-                },
-                {
-                    "month": "2026-04",
-                    "revenue": 1279040000,
-                    "mom_percent": 3.53,
-                    "yoy_percent": 81.59,
-                    "cumulative_revenue": 4425797000,
-                    "cumulative_growth_percent": 59.81
-                },
-                {
-                    "month": "2026-05",
-                    "revenue": 1282174000,
-                    "mom_percent": 0.25,
-                    "yoy_percent": 68.74,
-                    "cumulative_revenue": 5707971000,
-                    "cumulative_growth_percent": 61.73
-                },
-                {
-                    "month": "2026-06",
-                    "revenue": 1310195000,
-                    "mom_percent": 2.19,
-                    "yoy_percent": 67.47,
-                    "cumulative_revenue": 7018166000,
-                    "cumulative_growth_percent": 62.77
-                },
-                {
-                    "month": "2026-07",
-                    "revenue": 1524018000,
-                    "mom_percent": 16.32,
-                    "yoy_percent": 97.59,
-                    "cumulative_revenue": 8542184000,
-                    "cumulative_growth_percent": 68.06
-                },
-                {
-                    "month": "2026-08",
-                    "revenue": 1625937000,
-                    "mom_percent": 6.69,
-                    "yoy_percent": 118.42,
-                    "cumulative_revenue": 10168121000,
-                    "cumulative_growth_percent": 74.49
-                },
-                {
-                    "month": "2026-09",
-                    "revenue": 1636326000,
-                    "mom_percent": 0.64,
-                    "yoy_percent": 100.93,
-                    "cumulative_revenue": 11804447000,
-                    "cumulative_growth_percent": 77.73
-                },
-                {
-                    "month": "2026-10",
-                    "revenue": 2029553000,
-                    "mom_percent": 24.03,
-                    "yoy_percent": 177.78,
-                    "cumulative_revenue": 13834000000,
-                    "cumulative_growth_percent": 87.65
-                }
-            ],
-            "quarterly_revenue": [
-                {
-                    "quarter": "2025-09-30",
-                    "revenue": 2330084000,
-                    "qoq_percent": 3.72,
-                    "inventories": 177431000,
-                    "inventories_qoq_percent": -24.21,
-                    "current_liabilities": 2816743000,
-                    "current_liabilities_qoq_percent": -23.41
-                },
-                {
-                    "quarter": "2025-12-31",
-                    "revenue": 2443126000,
-                    "qoq_percent": 4.85,
-                    "inventories": 279678000,
-                    "inventories_qoq_percent": 57.63,
-                    "current_liabilities": 2443581000,
-                    "current_liabilities_qoq_percent": -13.25
-                },
-                {
-                    "quarter": "2026-03-31",
-                    "revenue": 3146757000,
-                    "qoq_percent": 28.8,
-                    "inventories": 353438000,
-                    "inventories_qoq_percent": 26.37,
-                    "current_liabilities": 6064401000,
-                    "current_liabilities_qoq_percent": 148.18
-                },
-                {
-                    "quarter": "2026-06-30",
-                    "revenue": 3871409000,
-                    "qoq_percent": 23.03,
-                    "inventories": 470533000,
-                    "inventories_qoq_percent": 33.13,
-                    "current_liabilities": 6200544000,
-                    "current_liabilities_qoq_percent": 2.24
-                }
-            ]
-        },
-        {
             "stock_id": "3017",
             "name": "奇鋐",
             "latest_month": "2026-10",
@@ -2069,177 +1898,6 @@
             ]
         },
         {
-            "stock_id": "3048",
-            "name": "益登",
-            "latest_month": "2026-10",
-            "latest_quarter": "2026-06-30",
-            "cumulative_revenue_billion": 1293.09,
-            "cumulative_yoy_percent": 35.95,
-            "latest_month_mom_percent": -7.72,
-            "latest_month_yoy_percent": 28.06,
-            "revenue_rating": "⭐⭐⭐⭐⭐ 強勢成長 (累計YoY +35.95%)",
-            "revenue_stars": 5,
-            "latest_quarter_revenue_billion": 395.02,
-            "latest_quarter_revenue_qoq_percent": 17.91,
-            "latest_inventories_billion": 131.68,
-            "inventories_qoq_percent": 11.87,
-            "inventory_replenish_billion": 408.99,
-            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +11.87%, 回補 +408.99億)",
-            "inventory_stars": 5,
-            "latest_current_liabilities_billion": 269.78,
-            "current_liabilities_qoq_percent": 8.08,
-            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +8.08%)",
-            "liabilities_stars": 5,
-            "capital_billion": 26.98,
-            "avg_operating_margin_percent": 2.5,
-            "est_cumulative_eps_op_basis": 11.98,
-            "est_cumulative_eps_after_tax": 9.34,
-            "projected_full_year_eps": 11.21,
-            "prev_year_2025_eps": 2.01,
-            "latest_dividend": 1.0,
-            "payout_ratio": 0.5,
-            "est_next_dividend": 5.61,
-            "score": 9,
-            "outlook": "🔥 強烈偏多 (交屋高峰+新案擴張+獲利創高)",
-            "outlook_tag": "STRONG_BUY",
-            "monthly_revenue": [
-                {
-                    "month": "2025-11",
-                    "revenue": 10475548000,
-                    "mom_percent": -3.66,
-                    "yoy_percent": -2.98,
-                    "cumulative_revenue": 105589650000,
-                    "cumulative_growth_percent": 2.65
-                },
-                {
-                    "month": "2025-12",
-                    "revenue": 9982878000,
-                    "mom_percent": -4.7,
-                    "yoy_percent": -3.95,
-                    "cumulative_revenue": 115572528000,
-                    "cumulative_growth_percent": 2.05
-                },
-                {
-                    "month": "2026-01",
-                    "revenue": 11447656000,
-                    "mom_percent": 14.67,
-                    "yoy_percent": 13.51,
-                    "cumulative_revenue": 11447656000,
-                    "cumulative_growth_percent": 13.51
-                },
-                {
-                    "month": "2026-02",
-                    "revenue": 9591029000,
-                    "mom_percent": -16.22,
-                    "yoy_percent": 10.73,
-                    "cumulative_revenue": 21038685000,
-                    "cumulative_growth_percent": 12.23
-                },
-                {
-                    "month": "2026-03",
-                    "revenue": 12463552000,
-                    "mom_percent": 29.95,
-                    "yoy_percent": 26.71,
-                    "cumulative_revenue": 33502237000,
-                    "cumulative_growth_percent": 17.21
-                },
-                {
-                    "month": "2026-04",
-                    "revenue": 13078408000,
-                    "mom_percent": 4.93,
-                    "yoy_percent": 22.19,
-                    "cumulative_revenue": 46580645000,
-                    "cumulative_growth_percent": 18.57
-                },
-                {
-                    "month": "2026-05",
-                    "revenue": 13850848000,
-                    "mom_percent": 5.91,
-                    "yoy_percent": 61.74,
-                    "cumulative_revenue": 60431493000,
-                    "cumulative_growth_percent": 26.29
-                },
-                {
-                    "month": "2026-06",
-                    "revenue": 12572672000,
-                    "mom_percent": -9.23,
-                    "yoy_percent": 60.1,
-                    "cumulative_revenue": 73004165000,
-                    "cumulative_growth_percent": 31.06
-                },
-                {
-                    "month": "2026-07",
-                    "revenue": 13745878000,
-                    "mom_percent": 9.33,
-                    "yoy_percent": 54.6,
-                    "cumulative_revenue": 86750043000,
-                    "cumulative_growth_percent": 34.3
-                },
-                {
-                    "month": "2026-08",
-                    "revenue": 13544810000,
-                    "mom_percent": -1.46,
-                    "yoy_percent": 50.31,
-                    "cumulative_revenue": 100294853000,
-                    "cumulative_growth_percent": 36.26
-                },
-                {
-                    "month": "2026-09",
-                    "revenue": 15089037000,
-                    "mom_percent": 11.4,
-                    "yoy_percent": 41.88,
-                    "cumulative_revenue": 115383890000,
-                    "cumulative_growth_percent": 36.97
-                },
-                {
-                    "month": "2026-10",
-                    "revenue": 13924909000,
-                    "mom_percent": -7.72,
-                    "yoy_percent": 28.06,
-                    "cumulative_revenue": 129308799000,
-                    "cumulative_growth_percent": 35.95
-                }
-            ],
-            "quarterly_revenue": [
-                {
-                    "quarter": "2025-09-30",
-                    "revenue": 28537480000,
-                    "qoq_percent": 5.23,
-                    "inventories": 9429403000,
-                    "inventories_qoq_percent": 17.3,
-                    "current_liabilities": 22440950000,
-                    "current_liabilities_qoq_percent": 38.24
-                },
-                {
-                    "quarter": "2025-12-31",
-                    "revenue": 31332450000,
-                    "qoq_percent": 9.79,
-                    "inventories": 10168201000,
-                    "inventories_qoq_percent": 7.84,
-                    "current_liabilities": 17897386000,
-                    "current_liabilities_qoq_percent": -20.25
-                },
-                {
-                    "quarter": "2026-03-31",
-                    "revenue": 33502237000,
-                    "qoq_percent": 6.93,
-                    "inventories": 11771440000,
-                    "inventories_qoq_percent": 15.77,
-                    "current_liabilities": 24960693000,
-                    "current_liabilities_qoq_percent": 39.47
-                },
-                {
-                    "quarter": "2026-06-30",
-                    "revenue": 39501928000,
-                    "qoq_percent": 17.91,
-                    "inventories": 13167682000,
-                    "inventories_qoq_percent": 11.86,
-                    "current_liabilities": 26978413000,
-                    "current_liabilities_qoq_percent": 8.08
-                }
-            ]
-        },
-        {
             "stock_id": "8028",
             "name": "昇陽半導體",
             "latest_month": "2026-10",
@@ -2578,6 +2236,177 @@
                     "inventories_qoq_percent": -3.72,
                     "current_liabilities": 7563749000,
                     "current_liabilities_qoq_percent": -18.37
+                }
+            ]
+        },
+        {
+            "stock_id": "5274",
+            "name": "信驊",
+            "latest_month": "2026-10",
+            "latest_quarter": "2026-09-30",
+            "cumulative_revenue_billion": 138.34,
+            "cumulative_yoy_percent": 87.65,
+            "latest_month_mom_percent": 24.03,
+            "latest_month_yoy_percent": 177.78,
+            "revenue_rating": "⭐⭐⭐⭐⭐ 強勢成長 (累計YoY +87.65%)",
+            "revenue_stars": 5,
+            "latest_quarter_revenue_billion": 47.86,
+            "latest_quarter_revenue_qoq_percent": 23.63,
+            "latest_inventories_billion": 7.85,
+            "inventories_qoq_percent": 66.67,
+            "inventory_replenish_billion": 51.0,
+            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +66.67%, 回補 +51.0億)",
+            "inventory_stars": 5,
+            "latest_current_liabilities_billion": 45.03,
+            "current_liabilities_qoq_percent": -27.38,
+            "liabilities_rating": "⭐⭐⭐⭐ 成屋入帳大舉還債 (負債大降 -27.38%)",
+            "liabilities_stars": 4,
+            "capital_billion": 4.16,
+            "avg_operating_margin_percent": 50.19,
+            "est_cumulative_eps_op_basis": 166.91,
+            "est_cumulative_eps_after_tax": 130.19,
+            "projected_full_year_eps": 156.23,
+            "prev_year_2025_eps": 103.92,
+            "latest_dividend": 60.0,
+            "payout_ratio": 0.65,
+            "est_next_dividend": 101.55,
+            "score": 8,
+            "outlook": "🔥 強烈偏多 (交屋高峰+新案擴張+獲利創高)",
+            "outlook_tag": "STRONG_BUY",
+            "monthly_revenue": [
+                {
+                    "month": "2025-11",
+                    "revenue": 840288000,
+                    "mom_percent": 15.01,
+                    "yoy_percent": 23.38,
+                    "cumulative_revenue": 8212661000,
+                    "cumulative_growth_percent": 43.51
+                },
+                {
+                    "month": "2025-12",
+                    "revenue": 872214000,
+                    "mom_percent": 3.8,
+                    "yoy_percent": 18.37,
+                    "cumulative_revenue": 9084875000,
+                    "cumulative_growth_percent": 40.64
+                },
+                {
+                    "month": "2026-01",
+                    "revenue": 900364000,
+                    "mom_percent": 3.23,
+                    "yoy_percent": 28.46,
+                    "cumulative_revenue": 900364000,
+                    "cumulative_growth_percent": 28.46
+                },
+                {
+                    "month": "2026-02",
+                    "revenue": 1010964000,
+                    "mom_percent": 12.28,
+                    "yoy_percent": 65.94,
+                    "cumulative_revenue": 1911328000,
+                    "cumulative_growth_percent": 45.89
+                },
+                {
+                    "month": "2026-03",
+                    "revenue": 1235429000,
+                    "mom_percent": 22.2,
+                    "yoy_percent": 63.63,
+                    "cumulative_revenue": 3146757000,
+                    "cumulative_growth_percent": 52.38
+                },
+                {
+                    "month": "2026-04",
+                    "revenue": 1279040000,
+                    "mom_percent": 3.53,
+                    "yoy_percent": 81.59,
+                    "cumulative_revenue": 4425797000,
+                    "cumulative_growth_percent": 59.81
+                },
+                {
+                    "month": "2026-05",
+                    "revenue": 1282174000,
+                    "mom_percent": 0.25,
+                    "yoy_percent": 68.74,
+                    "cumulative_revenue": 5707971000,
+                    "cumulative_growth_percent": 61.73
+                },
+                {
+                    "month": "2026-06",
+                    "revenue": 1310195000,
+                    "mom_percent": 2.19,
+                    "yoy_percent": 67.47,
+                    "cumulative_revenue": 7018166000,
+                    "cumulative_growth_percent": 62.77
+                },
+                {
+                    "month": "2026-07",
+                    "revenue": 1524018000,
+                    "mom_percent": 16.32,
+                    "yoy_percent": 97.59,
+                    "cumulative_revenue": 8542184000,
+                    "cumulative_growth_percent": 68.06
+                },
+                {
+                    "month": "2026-08",
+                    "revenue": 1625937000,
+                    "mom_percent": 6.69,
+                    "yoy_percent": 118.42,
+                    "cumulative_revenue": 10168121000,
+                    "cumulative_growth_percent": 74.49
+                },
+                {
+                    "month": "2026-09",
+                    "revenue": 1636326000,
+                    "mom_percent": 0.64,
+                    "yoy_percent": 100.93,
+                    "cumulative_revenue": 11804447000,
+                    "cumulative_growth_percent": 77.73
+                },
+                {
+                    "month": "2026-10",
+                    "revenue": 2029553000,
+                    "mom_percent": 24.03,
+                    "yoy_percent": 177.78,
+                    "cumulative_revenue": 13834000000,
+                    "cumulative_growth_percent": 87.65
+                }
+            ],
+            "quarterly_revenue": [
+                {
+                    "quarter": "2025-12-31",
+                    "revenue": 2443126000,
+                    "qoq_percent": 4.85,
+                    "inventories": 279678000,
+                    "inventories_qoq_percent": 57.63,
+                    "current_liabilities": 2443581000,
+                    "current_liabilities_qoq_percent": -13.25
+                },
+                {
+                    "quarter": "2026-03-31",
+                    "revenue": 3146757000,
+                    "qoq_percent": 28.8,
+                    "inventories": 353438000,
+                    "inventories_qoq_percent": 26.37,
+                    "current_liabilities": 6064401000,
+                    "current_liabilities_qoq_percent": 148.18
+                },
+                {
+                    "quarter": "2026-06-30",
+                    "revenue": 3871409000,
+                    "qoq_percent": 23.03,
+                    "inventories": 470533000,
+                    "inventories_qoq_percent": 33.13,
+                    "current_liabilities": 6200544000,
+                    "current_liabilities_qoq_percent": 2.24
+                },
+                {
+                    "quarter": "2026-09-30",
+                    "revenue": 4786281000,
+                    "qoq_percent": 23.63,
+                    "inventories": 784570000,
+                    "inventories_qoq_percent": 66.74,
+                    "current_liabilities": 4503491000,
+                    "current_liabilities_qoq_percent": -27.37
                 }
             ]
         },
@@ -4463,6 +4292,177 @@
             ]
         },
         {
+            "stock_id": "3048",
+            "name": "益登",
+            "latest_month": "2026-10",
+            "latest_quarter": "2026-09-30",
+            "cumulative_revenue_billion": 1293.09,
+            "cumulative_yoy_percent": 35.95,
+            "latest_month_mom_percent": -7.72,
+            "latest_month_yoy_percent": 28.06,
+            "revenue_rating": "⭐⭐⭐⭐⭐ 強勢成長 (累計YoY +35.95%)",
+            "revenue_stars": 5,
+            "latest_quarter_revenue_billion": 423.8,
+            "latest_quarter_revenue_qoq_percent": 7.29,
+            "latest_inventories_billion": 129.63,
+            "inventories_qoq_percent": -1.56,
+            "inventory_replenish_billion": 421.75,
+            "inventory_rating": "⭐⭐⭐⭐⭐ 大量交屋且新案強勢回補 (+421.75億)",
+            "inventory_stars": 5,
+            "latest_current_liabilities_billion": 266.52,
+            "current_liabilities_qoq_percent": -1.21,
+            "liabilities_rating": "⭐⭐⭐ 正常交屋結轉 (負債QoQ -1.21%)",
+            "liabilities_stars": 3,
+            "capital_billion": 26.98,
+            "avg_operating_margin_percent": 2.5,
+            "est_cumulative_eps_op_basis": 11.98,
+            "est_cumulative_eps_after_tax": 9.34,
+            "projected_full_year_eps": 11.21,
+            "prev_year_2025_eps": 2.01,
+            "latest_dividend": 1.0,
+            "payout_ratio": 0.5,
+            "est_next_dividend": 5.61,
+            "score": 7,
+            "outlook": "🔥 強烈偏多 (交屋高峰+新案擴張+獲利創高)",
+            "outlook_tag": "STRONG_BUY",
+            "monthly_revenue": [
+                {
+                    "month": "2025-11",
+                    "revenue": 10475548000,
+                    "mom_percent": -3.66,
+                    "yoy_percent": -2.98,
+                    "cumulative_revenue": 105589650000,
+                    "cumulative_growth_percent": 2.65
+                },
+                {
+                    "month": "2025-12",
+                    "revenue": 9982878000,
+                    "mom_percent": -4.7,
+                    "yoy_percent": -3.95,
+                    "cumulative_revenue": 115572528000,
+                    "cumulative_growth_percent": 2.05
+                },
+                {
+                    "month": "2026-01",
+                    "revenue": 11447656000,
+                    "mom_percent": 14.67,
+                    "yoy_percent": 13.51,
+                    "cumulative_revenue": 11447656000,
+                    "cumulative_growth_percent": 13.51
+                },
+                {
+                    "month": "2026-02",
+                    "revenue": 9591029000,
+                    "mom_percent": -16.22,
+                    "yoy_percent": 10.73,
+                    "cumulative_revenue": 21038685000,
+                    "cumulative_growth_percent": 12.23
+                },
+                {
+                    "month": "2026-03",
+                    "revenue": 12463552000,
+                    "mom_percent": 29.95,
+                    "yoy_percent": 26.71,
+                    "cumulative_revenue": 33502237000,
+                    "cumulative_growth_percent": 17.21
+                },
+                {
+                    "month": "2026-04",
+                    "revenue": 13078408000,
+                    "mom_percent": 4.93,
+                    "yoy_percent": 22.19,
+                    "cumulative_revenue": 46580645000,
+                    "cumulative_growth_percent": 18.57
+                },
+                {
+                    "month": "2026-05",
+                    "revenue": 13850848000,
+                    "mom_percent": 5.91,
+                    "yoy_percent": 61.74,
+                    "cumulative_revenue": 60431493000,
+                    "cumulative_growth_percent": 26.29
+                },
+                {
+                    "month": "2026-06",
+                    "revenue": 12572672000,
+                    "mom_percent": -9.23,
+                    "yoy_percent": 60.1,
+                    "cumulative_revenue": 73004165000,
+                    "cumulative_growth_percent": 31.06
+                },
+                {
+                    "month": "2026-07",
+                    "revenue": 13745878000,
+                    "mom_percent": 9.33,
+                    "yoy_percent": 54.6,
+                    "cumulative_revenue": 86750043000,
+                    "cumulative_growth_percent": 34.3
+                },
+                {
+                    "month": "2026-08",
+                    "revenue": 13544810000,
+                    "mom_percent": -1.46,
+                    "yoy_percent": 50.31,
+                    "cumulative_revenue": 100294853000,
+                    "cumulative_growth_percent": 36.26
+                },
+                {
+                    "month": "2026-09",
+                    "revenue": 15089037000,
+                    "mom_percent": 11.4,
+                    "yoy_percent": 41.88,
+                    "cumulative_revenue": 115383890000,
+                    "cumulative_growth_percent": 36.97
+                },
+                {
+                    "month": "2026-10",
+                    "revenue": 13924909000,
+                    "mom_percent": -7.72,
+                    "yoy_percent": 28.06,
+                    "cumulative_revenue": 129308799000,
+                    "cumulative_growth_percent": 35.95
+                }
+            ],
+            "quarterly_revenue": [
+                {
+                    "quarter": "2025-12-31",
+                    "revenue": 31332450000,
+                    "qoq_percent": 9.79,
+                    "inventories": 10168201000,
+                    "inventories_qoq_percent": 7.84,
+                    "current_liabilities": 17897386000,
+                    "current_liabilities_qoq_percent": -20.25
+                },
+                {
+                    "quarter": "2026-03-31",
+                    "revenue": 33502237000,
+                    "qoq_percent": 6.93,
+                    "inventories": 11771440000,
+                    "inventories_qoq_percent": 15.77,
+                    "current_liabilities": 24960693000,
+                    "current_liabilities_qoq_percent": 39.47
+                },
+                {
+                    "quarter": "2026-06-30",
+                    "revenue": 39501928000,
+                    "qoq_percent": 17.91,
+                    "inventories": 13167682000,
+                    "inventories_qoq_percent": 11.86,
+                    "current_liabilities": 26978413000,
+                    "current_liabilities_qoq_percent": 8.08
+                },
+                {
+                    "quarter": "2026-09-30",
+                    "revenue": 42379725000,
+                    "qoq_percent": 7.29,
+                    "inventories": 12962934000,
+                    "inventories_qoq_percent": -1.55,
+                    "current_liabilities": 26651510000,
+                    "current_liabilities_qoq_percent": -1.21
+                }
+            ]
+        },
+        {
             "stock_id": "5206",
             "name": "坤悅",
             "latest_month": "2026-10",
@@ -6002,177 +6002,6 @@
             ]
         },
         {
-            "stock_id": "4506",
-            "name": "崇友",
-            "latest_month": "2026-10",
-            "latest_quarter": "2026-06-30",
-            "cumulative_revenue_billion": 56.16,
-            "cumulative_yoy_percent": 6.27,
-            "latest_month_mom_percent": -20.69,
-            "latest_month_yoy_percent": 3.82,
-            "revenue_rating": "⭐⭐⭐⭐ 穩健/轉強 (累計YoY 6.27%)",
-            "revenue_stars": 4,
-            "latest_quarter_revenue_billion": 15.76,
-            "latest_quarter_revenue_qoq_percent": -13.35,
-            "latest_inventories_billion": 30.64,
-            "inventories_qoq_percent": 3.72,
-            "inventory_replenish_billion": 16.86,
-            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +3.72%, 回補 +16.86億)",
-            "inventory_stars": 5,
-            "latest_current_liabilities_billion": 60.05,
-            "current_liabilities_qoq_percent": 23.92,
-            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +23.92%)",
-            "liabilities_stars": 5,
-            "capital_billion": 17.7,
-            "avg_operating_margin_percent": 21.52,
-            "est_cumulative_eps_op_basis": 6.83,
-            "est_cumulative_eps_after_tax": 5.33,
-            "projected_full_year_eps": 6.4,
-            "prev_year_2025_eps": 6.52,
-            "latest_dividend": 5.3,
-            "payout_ratio": 0.81,
-            "est_next_dividend": 5.18,
-            "score": 6,
-            "outlook": "📈 偏多向上 (基本面轉強/獲利成長)",
-            "outlook_tag": "BULLISH",
-            "monthly_revenue": [
-                {
-                    "month": "2025-11",
-                    "revenue": 361530000,
-                    "mom_percent": -32.26,
-                    "yoy_percent": -36.53,
-                    "cumulative_revenue": 5645736000,
-                    "cumulative_growth_percent": 13.25
-                },
-                {
-                    "month": "2025-12",
-                    "revenue": 375083000,
-                    "mom_percent": 3.75,
-                    "yoy_percent": -25.29,
-                    "cumulative_revenue": 6020819000,
-                    "cumulative_growth_percent": 9.72
-                },
-                {
-                    "month": "2026-01",
-                    "revenue": 659335000,
-                    "mom_percent": 75.78,
-                    "yoy_percent": 10.49,
-                    "cumulative_revenue": 659335000,
-                    "cumulative_growth_percent": 10.49
-                },
-                {
-                    "month": "2026-02",
-                    "revenue": 468857000,
-                    "mom_percent": -28.89,
-                    "yoy_percent": 28.82,
-                    "cumulative_revenue": 1128192000,
-                    "cumulative_growth_percent": 17.43
-                },
-                {
-                    "month": "2026-03",
-                    "revenue": 691130000,
-                    "mom_percent": 47.41,
-                    "yoy_percent": 9.29,
-                    "cumulative_revenue": 1819322000,
-                    "cumulative_growth_percent": 14.2
-                },
-                {
-                    "month": "2026-04",
-                    "revenue": 516685000,
-                    "mom_percent": -25.24,
-                    "yoy_percent": 4.3,
-                    "cumulative_revenue": 2336007000,
-                    "cumulative_growth_percent": 11.85
-                },
-                {
-                    "month": "2026-05",
-                    "revenue": 558786000,
-                    "mom_percent": 8.15,
-                    "yoy_percent": 0.59,
-                    "cumulative_revenue": 2894793000,
-                    "cumulative_growth_percent": 9.49
-                },
-                {
-                    "month": "2026-06",
-                    "revenue": 500976000,
-                    "mom_percent": -10.35,
-                    "yoy_percent": 12.28,
-                    "cumulative_revenue": 3395769000,
-                    "cumulative_growth_percent": 9.89
-                },
-                {
-                    "month": "2026-07",
-                    "revenue": 486652000,
-                    "mom_percent": -2.86,
-                    "yoy_percent": -15.44,
-                    "cumulative_revenue": 3882421000,
-                    "cumulative_growth_percent": 5.91
-                },
-                {
-                    "month": "2026-08",
-                    "revenue": 480763000,
-                    "mom_percent": -1.21,
-                    "yoy_percent": -11.65,
-                    "cumulative_revenue": 4363184000,
-                    "cumulative_growth_percent": 3.64
-                },
-                {
-                    "month": "2026-09",
-                    "revenue": 698558000,
-                    "mom_percent": 45.3,
-                    "yoy_percent": 29.2,
-                    "cumulative_revenue": 5061742000,
-                    "cumulative_growth_percent": 6.55
-                },
-                {
-                    "month": "2026-10",
-                    "revenue": 554036000,
-                    "mom_percent": -20.69,
-                    "yoy_percent": 3.82,
-                    "cumulative_revenue": 5615778000,
-                    "cumulative_growth_percent": 6.27
-                }
-            ],
-            "quarterly_revenue": [
-                {
-                    "quarter": "2025-09-30",
-                    "revenue": 1660338000,
-                    "qoq_percent": 10.9,
-                    "inventories": 2980976000,
-                    "inventories_qoq_percent": -0.42,
-                    "current_liabilities": 4822505000,
-                    "current_liabilities_qoq_percent": -13.23
-                },
-                {
-                    "quarter": "2025-12-31",
-                    "revenue": 1270278000,
-                    "qoq_percent": -23.49,
-                    "inventories": 3106276000,
-                    "inventories_qoq_percent": 4.2,
-                    "current_liabilities": 5237561000,
-                    "current_liabilities_qoq_percent": 8.61
-                },
-                {
-                    "quarter": "2026-03-31",
-                    "revenue": 1819322000,
-                    "qoq_percent": 43.22,
-                    "inventories": 2954160000,
-                    "inventories_qoq_percent": -4.9,
-                    "current_liabilities": 4845587000,
-                    "current_liabilities_qoq_percent": -7.48
-                },
-                {
-                    "quarter": "2026-06-30",
-                    "revenue": 1576447000,
-                    "qoq_percent": -13.35,
-                    "inventories": 3064407000,
-                    "inventories_qoq_percent": 3.73,
-                    "current_liabilities": 6005237000,
-                    "current_liabilities_qoq_percent": 23.93
-                }
-            ]
-        },
-        {
             "stock_id": "2433",
             "name": "互盛電",
             "latest_month": "2026-10",
@@ -6511,6 +6340,177 @@
                     "inventories_qoq_percent": -19.28,
                     "current_liabilities": 3748556000,
                     "current_liabilities_qoq_percent": -17.23
+                }
+            ]
+        },
+        {
+            "stock_id": "5213",
+            "name": "亞昕",
+            "latest_month": "2026-10",
+            "latest_quarter": "2026-09-30",
+            "cumulative_revenue_billion": 55.84,
+            "cumulative_yoy_percent": -49.87,
+            "latest_month_mom_percent": 48.74,
+            "latest_month_yoy_percent": 130.54,
+            "revenue_rating": "⭐⭐⭐⭐ 穩健/轉強 (累計YoY -49.87%)",
+            "revenue_stars": 4,
+            "latest_quarter_revenue_billion": 6.29,
+            "latest_quarter_revenue_qoq_percent": -81.29,
+            "latest_inventories_billion": 588.9,
+            "inventories_qoq_percent": 1.09,
+            "inventory_replenish_billion": 12.65,
+            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +1.09%, 回補 +12.65億)",
+            "inventory_stars": 5,
+            "latest_current_liabilities_billion": 446.49,
+            "current_liabilities_qoq_percent": 4.62,
+            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +4.62%)",
+            "liabilities_stars": 5,
+            "capital_billion": 72.13,
+            "avg_operating_margin_percent": 18.36,
+            "est_cumulative_eps_op_basis": 1.42,
+            "est_cumulative_eps_after_tax": 1.11,
+            "projected_full_year_eps": 1.33,
+            "prev_year_2025_eps": 3.14,
+            "latest_dividend": 2.8,
+            "payout_ratio": 0.89,
+            "est_next_dividend": 1.18,
+            "score": 6,
+            "outlook": "📈 偏多向上 (基本面轉強/獲利成長)",
+            "outlook_tag": "BULLISH",
+            "monthly_revenue": [
+                {
+                    "month": "2025-11",
+                    "revenue": 46618000,
+                    "mom_percent": -68.58,
+                    "yoy_percent": -94.94,
+                    "cumulative_revenue": 11185042000,
+                    "cumulative_growth_percent": 324.86
+                },
+                {
+                    "month": "2025-12",
+                    "revenue": 6845037000,
+                    "mom_percent": 14583.25,
+                    "yoy_percent": 13.04,
+                    "cumulative_revenue": 18030079000,
+                    "cumulative_growth_percent": 107.53
+                },
+                {
+                    "month": "2026-01",
+                    "revenue": 302521000,
+                    "mom_percent": -95.58,
+                    "yoy_percent": -54.24,
+                    "cumulative_revenue": 302521000,
+                    "cumulative_growth_percent": -54.24
+                },
+                {
+                    "month": "2026-02",
+                    "revenue": 431871000,
+                    "mom_percent": 42.76,
+                    "yoy_percent": -82.43,
+                    "cumulative_revenue": 734392000,
+                    "cumulative_growth_percent": -76.46
+                },
+                {
+                    "month": "2026-03",
+                    "revenue": 516283000,
+                    "mom_percent": 19.55,
+                    "yoy_percent": -88.91,
+                    "cumulative_revenue": 1250675000,
+                    "cumulative_growth_percent": -83.91
+                },
+                {
+                    "month": "2026-04",
+                    "revenue": 2063645000,
+                    "mom_percent": 299.71,
+                    "yoy_percent": 14.3,
+                    "cumulative_revenue": 3314320000,
+                    "cumulative_growth_percent": -65.41
+                },
+                {
+                    "month": "2026-05",
+                    "revenue": 839186000,
+                    "mom_percent": -59.33,
+                    "yoy_percent": 211.34,
+                    "cumulative_revenue": 4153506000,
+                    "cumulative_growth_percent": -57.83
+                },
+                {
+                    "month": "2026-06",
+                    "revenue": 459287000,
+                    "mom_percent": -45.27,
+                    "yoy_percent": -40.52,
+                    "cumulative_revenue": 4612793000,
+                    "cumulative_growth_percent": -56.57
+                },
+                {
+                    "month": "2026-07",
+                    "revenue": 279577000,
+                    "mom_percent": -39.13,
+                    "yoy_percent": 76.24,
+                    "cumulative_revenue": 4892370000,
+                    "cumulative_growth_percent": -54.62
+                },
+                {
+                    "month": "2026-08",
+                    "revenue": 119623000,
+                    "mom_percent": -57.21,
+                    "yoy_percent": -27.69,
+                    "cumulative_revenue": 5011993000,
+                    "cumulative_growth_percent": -54.21
+                },
+                {
+                    "month": "2026-09",
+                    "revenue": 229945000,
+                    "mom_percent": 92.22,
+                    "yoy_percent": 424.53,
+                    "cumulative_revenue": 5241938000,
+                    "cumulative_growth_percent": -52.3
+                },
+                {
+                    "month": "2026-10",
+                    "revenue": 342025000,
+                    "mom_percent": 48.74,
+                    "yoy_percent": 130.54,
+                    "cumulative_revenue": 5583963000,
+                    "cumulative_growth_percent": -49.87
+                }
+            ],
+            "quarterly_revenue": [
+                {
+                    "quarter": "2025-12-31",
+                    "revenue": 7037430000,
+                    "qoq_percent": 1799.13,
+                    "inventories": 57012355000,
+                    "inventories_qoq_percent": -1.37,
+                    "current_liabilities": 46011514000,
+                    "current_liabilities_qoq_percent": 5.85
+                },
+                {
+                    "quarter": "2026-03-31",
+                    "revenue": 1250786000,
+                    "qoq_percent": -82.23,
+                    "inventories": 58930293000,
+                    "inventories_qoq_percent": 3.36,
+                    "current_liabilities": 45365683000,
+                    "current_liabilities_qoq_percent": -1.4
+                },
+                {
+                    "quarter": "2026-06-30",
+                    "revenue": 3362053000,
+                    "qoq_percent": 168.8,
+                    "inventories": 58254432000,
+                    "inventories_qoq_percent": -1.15,
+                    "current_liabilities": 42676310000,
+                    "current_liabilities_qoq_percent": -5.93
+                },
+                {
+                    "quarter": "2026-09-30",
+                    "revenue": 628989000,
+                    "qoq_percent": -81.29,
+                    "inventories": 58889831000,
+                    "inventories_qoq_percent": 1.09,
+                    "current_liabilities": 44648781000,
+                    "current_liabilities_qoq_percent": 4.62
                 }
             ]
         },
@@ -7883,6 +7883,177 @@
             ]
         },
         {
+            "stock_id": "4506",
+            "name": "崇友",
+            "latest_month": "2026-10",
+            "latest_quarter": "2026-09-30",
+            "cumulative_revenue_billion": 56.16,
+            "cumulative_yoy_percent": 6.27,
+            "latest_month_mom_percent": -20.69,
+            "latest_month_yoy_percent": 3.82,
+            "revenue_rating": "⭐⭐⭐⭐ 穩健/轉強 (累計YoY 6.27%)",
+            "revenue_stars": 4,
+            "latest_quarter_revenue_billion": 16.66,
+            "latest_quarter_revenue_qoq_percent": 5.68,
+            "latest_inventories_billion": 30.88,
+            "inventories_qoq_percent": 0.78,
+            "inventory_replenish_billion": 16.9,
+            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +0.78%, 回補 +16.9億)",
+            "inventory_stars": 5,
+            "latest_current_liabilities_billion": 49.79,
+            "current_liabilities_qoq_percent": -17.09,
+            "liabilities_rating": "⭐⭐⭐ 正常交屋結轉 (負債QoQ -17.09%)",
+            "liabilities_stars": 3,
+            "capital_billion": 17.7,
+            "avg_operating_margin_percent": 21.52,
+            "est_cumulative_eps_op_basis": 6.83,
+            "est_cumulative_eps_after_tax": 5.33,
+            "projected_full_year_eps": 6.4,
+            "prev_year_2025_eps": 6.52,
+            "latest_dividend": 5.3,
+            "payout_ratio": 0.81,
+            "est_next_dividend": 5.18,
+            "score": 4,
+            "outlook": "⚖️ 中性穩健 (穩定交屋/殖利率護體)",
+            "outlook_tag": "NEUTRAL",
+            "monthly_revenue": [
+                {
+                    "month": "2025-11",
+                    "revenue": 361530000,
+                    "mom_percent": -32.26,
+                    "yoy_percent": -36.53,
+                    "cumulative_revenue": 5645736000,
+                    "cumulative_growth_percent": 13.25
+                },
+                {
+                    "month": "2025-12",
+                    "revenue": 375083000,
+                    "mom_percent": 3.75,
+                    "yoy_percent": -25.29,
+                    "cumulative_revenue": 6020819000,
+                    "cumulative_growth_percent": 9.72
+                },
+                {
+                    "month": "2026-01",
+                    "revenue": 659335000,
+                    "mom_percent": 75.78,
+                    "yoy_percent": 10.49,
+                    "cumulative_revenue": 659335000,
+                    "cumulative_growth_percent": 10.49
+                },
+                {
+                    "month": "2026-02",
+                    "revenue": 468857000,
+                    "mom_percent": -28.89,
+                    "yoy_percent": 28.82,
+                    "cumulative_revenue": 1128192000,
+                    "cumulative_growth_percent": 17.43
+                },
+                {
+                    "month": "2026-03",
+                    "revenue": 691130000,
+                    "mom_percent": 47.41,
+                    "yoy_percent": 9.29,
+                    "cumulative_revenue": 1819322000,
+                    "cumulative_growth_percent": 14.2
+                },
+                {
+                    "month": "2026-04",
+                    "revenue": 516685000,
+                    "mom_percent": -25.24,
+                    "yoy_percent": 4.3,
+                    "cumulative_revenue": 2336007000,
+                    "cumulative_growth_percent": 11.85
+                },
+                {
+                    "month": "2026-05",
+                    "revenue": 558786000,
+                    "mom_percent": 8.15,
+                    "yoy_percent": 0.59,
+                    "cumulative_revenue": 2894793000,
+                    "cumulative_growth_percent": 9.49
+                },
+                {
+                    "month": "2026-06",
+                    "revenue": 500976000,
+                    "mom_percent": -10.35,
+                    "yoy_percent": 12.28,
+                    "cumulative_revenue": 3395769000,
+                    "cumulative_growth_percent": 9.89
+                },
+                {
+                    "month": "2026-07",
+                    "revenue": 486652000,
+                    "mom_percent": -2.86,
+                    "yoy_percent": -15.44,
+                    "cumulative_revenue": 3882421000,
+                    "cumulative_growth_percent": 5.91
+                },
+                {
+                    "month": "2026-08",
+                    "revenue": 480763000,
+                    "mom_percent": -1.21,
+                    "yoy_percent": -11.65,
+                    "cumulative_revenue": 4363184000,
+                    "cumulative_growth_percent": 3.64
+                },
+                {
+                    "month": "2026-09",
+                    "revenue": 698558000,
+                    "mom_percent": 45.3,
+                    "yoy_percent": 29.2,
+                    "cumulative_revenue": 5061742000,
+                    "cumulative_growth_percent": 6.55
+                },
+                {
+                    "month": "2026-10",
+                    "revenue": 554036000,
+                    "mom_percent": -20.69,
+                    "yoy_percent": 3.82,
+                    "cumulative_revenue": 5615778000,
+                    "cumulative_growth_percent": 6.27
+                }
+            ],
+            "quarterly_revenue": [
+                {
+                    "quarter": "2025-12-31",
+                    "revenue": 1270278000,
+                    "qoq_percent": -23.49,
+                    "inventories": 3106276000,
+                    "inventories_qoq_percent": 4.2,
+                    "current_liabilities": 5237561000,
+                    "current_liabilities_qoq_percent": 8.61
+                },
+                {
+                    "quarter": "2026-03-31",
+                    "revenue": 1819322000,
+                    "qoq_percent": 43.22,
+                    "inventories": 2954160000,
+                    "inventories_qoq_percent": -4.9,
+                    "current_liabilities": 4845587000,
+                    "current_liabilities_qoq_percent": -7.48
+                },
+                {
+                    "quarter": "2026-06-30",
+                    "revenue": 1576447000,
+                    "qoq_percent": -13.35,
+                    "inventories": 3064407000,
+                    "inventories_qoq_percent": 3.73,
+                    "current_liabilities": 6005237000,
+                    "current_liabilities_qoq_percent": 23.93
+                },
+                {
+                    "quarter": "2026-09-30",
+                    "revenue": 1665973000,
+                    "qoq_percent": 5.68,
+                    "inventories": 3087665000,
+                    "inventories_qoq_percent": 0.76,
+                    "current_liabilities": 4979081000,
+                    "current_liabilities_qoq_percent": -17.09
+                }
+            ]
+        },
+        {
             "stock_id": "5876",
             "name": "上海商銀",
             "latest_month": "2026-10",
@@ -8355,177 +8526,6 @@
                     "inventories_qoq_percent": 3.42,
                     "current_liabilities": 11333777000,
                     "current_liabilities_qoq_percent": -20.61
-                }
-            ]
-        },
-        {
-            "stock_id": "5213",
-            "name": "亞昕",
-            "latest_month": "2026-10",
-            "latest_quarter": "2026-06-30",
-            "cumulative_revenue_billion": 55.84,
-            "cumulative_yoy_percent": -49.87,
-            "latest_month_mom_percent": 48.74,
-            "latest_month_yoy_percent": 130.54,
-            "revenue_rating": "⭐⭐⭐⭐ 穩健/轉強 (累計YoY -49.87%)",
-            "revenue_stars": 4,
-            "latest_quarter_revenue_billion": 33.62,
-            "latest_quarter_revenue_qoq_percent": 168.8,
-            "latest_inventories_billion": 582.54,
-            "inventories_qoq_percent": -1.15,
-            "inventory_replenish_billion": 26.86,
-            "inventory_rating": "⭐⭐⭐⭐⭐ 大量交屋且新案強勢回補 (+26.86億)",
-            "inventory_stars": 5,
-            "latest_current_liabilities_billion": 426.76,
-            "current_liabilities_qoq_percent": -5.93,
-            "liabilities_rating": "⭐⭐⭐ 正常交屋結轉 (負債QoQ -5.93%)",
-            "liabilities_stars": 3,
-            "capital_billion": 72.13,
-            "avg_operating_margin_percent": 18.36,
-            "est_cumulative_eps_op_basis": 1.42,
-            "est_cumulative_eps_after_tax": 1.11,
-            "projected_full_year_eps": 1.33,
-            "prev_year_2025_eps": 3.14,
-            "latest_dividend": 2.8,
-            "payout_ratio": 0.89,
-            "est_next_dividend": 1.18,
-            "score": 4,
-            "outlook": "⚖️ 中性穩健 (穩定交屋/殖利率護體)",
-            "outlook_tag": "NEUTRAL",
-            "monthly_revenue": [
-                {
-                    "month": "2025-11",
-                    "revenue": 46618000,
-                    "mom_percent": -68.58,
-                    "yoy_percent": -94.94,
-                    "cumulative_revenue": 11185042000,
-                    "cumulative_growth_percent": 324.86
-                },
-                {
-                    "month": "2025-12",
-                    "revenue": 6845037000,
-                    "mom_percent": 14583.25,
-                    "yoy_percent": 13.04,
-                    "cumulative_revenue": 18030079000,
-                    "cumulative_growth_percent": 107.53
-                },
-                {
-                    "month": "2026-01",
-                    "revenue": 302521000,
-                    "mom_percent": -95.58,
-                    "yoy_percent": -54.24,
-                    "cumulative_revenue": 302521000,
-                    "cumulative_growth_percent": -54.24
-                },
-                {
-                    "month": "2026-02",
-                    "revenue": 431871000,
-                    "mom_percent": 42.76,
-                    "yoy_percent": -82.43,
-                    "cumulative_revenue": 734392000,
-                    "cumulative_growth_percent": -76.46
-                },
-                {
-                    "month": "2026-03",
-                    "revenue": 516283000,
-                    "mom_percent": 19.55,
-                    "yoy_percent": -88.91,
-                    "cumulative_revenue": 1250675000,
-                    "cumulative_growth_percent": -83.91
-                },
-                {
-                    "month": "2026-04",
-                    "revenue": 2063645000,
-                    "mom_percent": 299.71,
-                    "yoy_percent": 14.3,
-                    "cumulative_revenue": 3314320000,
-                    "cumulative_growth_percent": -65.41
-                },
-                {
-                    "month": "2026-05",
-                    "revenue": 839186000,
-                    "mom_percent": -59.33,
-                    "yoy_percent": 211.34,
-                    "cumulative_revenue": 4153506000,
-                    "cumulative_growth_percent": -57.83
-                },
-                {
-                    "month": "2026-06",
-                    "revenue": 459287000,
-                    "mom_percent": -45.27,
-                    "yoy_percent": -40.52,
-                    "cumulative_revenue": 4612793000,
-                    "cumulative_growth_percent": -56.57
-                },
-                {
-                    "month": "2026-07",
-                    "revenue": 279577000,
-                    "mom_percent": -39.13,
-                    "yoy_percent": 76.24,
-                    "cumulative_revenue": 4892370000,
-                    "cumulative_growth_percent": -54.62
-                },
-                {
-                    "month": "2026-08",
-                    "revenue": 119623000,
-                    "mom_percent": -57.21,
-                    "yoy_percent": -27.69,
-                    "cumulative_revenue": 5011993000,
-                    "cumulative_growth_percent": -54.21
-                },
-                {
-                    "month": "2026-09",
-                    "revenue": 229945000,
-                    "mom_percent": 92.22,
-                    "yoy_percent": 424.53,
-                    "cumulative_revenue": 5241938000,
-                    "cumulative_growth_percent": -52.3
-                },
-                {
-                    "month": "2026-10",
-                    "revenue": 342025000,
-                    "mom_percent": 48.74,
-                    "yoy_percent": 130.54,
-                    "cumulative_revenue": 5583963000,
-                    "cumulative_growth_percent": -49.87
-                }
-            ],
-            "quarterly_revenue": [
-                {
-                    "quarter": "2025-09-30",
-                    "revenue": 370560000,
-                    "qoq_percent": -86.99,
-                    "inventories": 57806262000,
-                    "inventories_qoq_percent": 4.68,
-                    "current_liabilities": 43470203000,
-                    "current_liabilities_qoq_percent": 0.18
-                },
-                {
-                    "quarter": "2025-12-31",
-                    "revenue": 7037430000,
-                    "qoq_percent": 1799.13,
-                    "inventories": 57012355000,
-                    "inventories_qoq_percent": -1.37,
-                    "current_liabilities": 46011514000,
-                    "current_liabilities_qoq_percent": 5.85
-                },
-                {
-                    "quarter": "2026-03-31",
-                    "revenue": 1250786000,
-                    "qoq_percent": -82.23,
-                    "inventories": 58930293000,
-                    "inventories_qoq_percent": 3.36,
-                    "current_liabilities": 45365683000,
-                    "current_liabilities_qoq_percent": -1.4
-                },
-                {
-                    "quarter": "2026-06-30",
-                    "revenue": 3362053000,
-                    "qoq_percent": 168.8,
-                    "inventories": 58254432000,
-                    "inventories_qoq_percent": -1.15,
-                    "current_liabilities": 42676310000,
-                    "current_liabilities_qoq_percent": -5.93
                 }
             ]
         },
@@ -14275,24 +14275,24 @@
             "stock_id": "4506",
             "name": "崇友",
             "latest_month": "2026-10",
-            "latest_quarter": "2026-06-30",
+            "latest_quarter": "2026-09-30",
             "cumulative_revenue_billion": 56.16,
             "cumulative_yoy_percent": 6.27,
             "latest_month_mom_percent": -20.69,
             "latest_month_yoy_percent": 3.82,
             "revenue_rating": "⭐⭐⭐⭐ 穩健/轉強 (累計YoY 6.27%)",
             "revenue_stars": 4,
-            "latest_quarter_revenue_billion": 15.76,
-            "latest_quarter_revenue_qoq_percent": -13.35,
-            "latest_inventories_billion": 30.64,
-            "inventories_qoq_percent": 3.72,
-            "inventory_replenish_billion": 16.86,
-            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +3.72%, 回補 +16.86億)",
+            "latest_quarter_revenue_billion": 16.66,
+            "latest_quarter_revenue_qoq_percent": 5.68,
+            "latest_inventories_billion": 30.88,
+            "inventories_qoq_percent": 0.78,
+            "inventory_replenish_billion": 16.9,
+            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +0.78%, 回補 +16.9億)",
             "inventory_stars": 5,
-            "latest_current_liabilities_billion": 60.05,
-            "current_liabilities_qoq_percent": 23.92,
-            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +23.92%)",
-            "liabilities_stars": 5,
+            "latest_current_liabilities_billion": 49.79,
+            "current_liabilities_qoq_percent": -17.09,
+            "liabilities_rating": "⭐⭐⭐ 正常交屋結轉 (負債QoQ -17.09%)",
+            "liabilities_stars": 3,
             "capital_billion": 17.7,
             "avg_operating_margin_percent": 21.52,
             "est_cumulative_eps_op_basis": 6.83,
@@ -14302,9 +14302,9 @@
             "latest_dividend": 5.3,
             "payout_ratio": 0.81,
             "est_next_dividend": 5.18,
-            "score": 6,
-            "outlook": "📈 偏多向上 (基本面轉強/獲利成長)",
-            "outlook_tag": "BULLISH",
+            "score": 4,
+            "outlook": "⚖️ 中性穩健 (穩定交屋/殖利率護體)",
+            "outlook_tag": "NEUTRAL",
             "monthly_revenue": [
                 {
                     "month": "2025-11",
@@ -14405,15 +14405,6 @@
             ],
             "quarterly_revenue": [
                 {
-                    "quarter": "2025-09-30",
-                    "revenue": 1660338000,
-                    "qoq_percent": 10.9,
-                    "inventories": 2980976000,
-                    "inventories_qoq_percent": -0.42,
-                    "current_liabilities": 4822505000,
-                    "current_liabilities_qoq_percent": -13.23
-                },
-                {
                     "quarter": "2025-12-31",
                     "revenue": 1270278000,
                     "qoq_percent": -23.49,
@@ -14439,6 +14430,15 @@
                     "inventories_qoq_percent": 3.73,
                     "current_liabilities": 6005237000,
                     "current_liabilities_qoq_percent": 23.93
+                },
+                {
+                    "quarter": "2026-09-30",
+                    "revenue": 1665973000,
+                    "qoq_percent": 5.68,
+                    "inventories": 3087665000,
+                    "inventories_qoq_percent": 0.76,
+                    "current_liabilities": 4979081000,
+                    "current_liabilities_qoq_percent": -17.09
                 }
             ]
         },
@@ -15985,24 +15985,24 @@
             "stock_id": "5213",
             "name": "亞昕",
             "latest_month": "2026-10",
-            "latest_quarter": "2026-06-30",
+            "latest_quarter": "2026-09-30",
             "cumulative_revenue_billion": 55.84,
             "cumulative_yoy_percent": -49.87,
             "latest_month_mom_percent": 48.74,
             "latest_month_yoy_percent": 130.54,
             "revenue_rating": "⭐⭐⭐⭐ 穩健/轉強 (累計YoY -49.87%)",
             "revenue_stars": 4,
-            "latest_quarter_revenue_billion": 33.62,
-            "latest_quarter_revenue_qoq_percent": 168.8,
-            "latest_inventories_billion": 582.54,
-            "inventories_qoq_percent": -1.15,
-            "inventory_replenish_billion": 26.86,
-            "inventory_rating": "⭐⭐⭐⭐⭐ 大量交屋且新案強勢回補 (+26.86億)",
+            "latest_quarter_revenue_billion": 6.29,
+            "latest_quarter_revenue_qoq_percent": -81.29,
+            "latest_inventories_billion": 588.9,
+            "inventories_qoq_percent": 1.09,
+            "inventory_replenish_billion": 12.65,
+            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +1.09%, 回補 +12.65億)",
             "inventory_stars": 5,
-            "latest_current_liabilities_billion": 426.76,
-            "current_liabilities_qoq_percent": -5.93,
-            "liabilities_rating": "⭐⭐⭐ 正常交屋結轉 (負債QoQ -5.93%)",
-            "liabilities_stars": 3,
+            "latest_current_liabilities_billion": 446.49,
+            "current_liabilities_qoq_percent": 4.62,
+            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +4.62%)",
+            "liabilities_stars": 5,
             "capital_billion": 72.13,
             "avg_operating_margin_percent": 18.36,
             "est_cumulative_eps_op_basis": 1.42,
@@ -16012,9 +16012,9 @@
             "latest_dividend": 2.8,
             "payout_ratio": 0.89,
             "est_next_dividend": 1.18,
-            "score": 4,
-            "outlook": "⚖️ 中性穩健 (穩定交屋/殖利率護體)",
-            "outlook_tag": "NEUTRAL",
+            "score": 6,
+            "outlook": "📈 偏多向上 (基本面轉強/獲利成長)",
+            "outlook_tag": "BULLISH",
             "monthly_revenue": [
                 {
                     "month": "2025-11",
@@ -16115,15 +16115,6 @@
             ],
             "quarterly_revenue": [
                 {
-                    "quarter": "2025-09-30",
-                    "revenue": 370560000,
-                    "qoq_percent": -86.99,
-                    "inventories": 57806262000,
-                    "inventories_qoq_percent": 4.68,
-                    "current_liabilities": 43470203000,
-                    "current_liabilities_qoq_percent": 0.18
-                },
-                {
                     "quarter": "2025-12-31",
                     "revenue": 7037430000,
                     "qoq_percent": 1799.13,
@@ -16149,6 +16140,15 @@
                     "inventories_qoq_percent": -1.15,
                     "current_liabilities": 42676310000,
                     "current_liabilities_qoq_percent": -5.93
+                },
+                {
+                    "quarter": "2026-09-30",
+                    "revenue": 628989000,
+                    "qoq_percent": -81.29,
+                    "inventories": 58889831000,
+                    "inventories_qoq_percent": 1.09,
+                    "current_liabilities": 44648781000,
+                    "current_liabilities_qoq_percent": 4.62
                 }
             ]
         },
@@ -18037,23 +18037,23 @@
             "stock_id": "2537",
             "name": "聯上發",
             "latest_month": "2026-10",
-            "latest_quarter": "2026-06-30",
+            "latest_quarter": "2026-09-30",
             "cumulative_revenue_billion": 15.24,
             "cumulative_yoy_percent": 155.05,
             "latest_month_mom_percent": -58.92,
             "latest_month_yoy_percent": -22.18,
             "revenue_rating": "⭐⭐⭐⭐⭐ 交屋大爆發 (累計YoY +155.05%)",
             "revenue_stars": 5,
-            "latest_quarter_revenue_billion": 2.52,
-            "latest_quarter_revenue_qoq_percent": -79.19,
-            "latest_inventories_billion": 153.66,
-            "inventories_qoq_percent": 2.48,
-            "inventory_replenish_billion": 6.24,
-            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +2.48%, 回補 +6.24億)",
+            "latest_quarter_revenue_billion": 0.59,
+            "latest_quarter_revenue_qoq_percent": -76.59,
+            "latest_inventories_billion": 157.59,
+            "inventories_qoq_percent": 2.56,
+            "inventory_replenish_billion": 4.52,
+            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +2.56%, 回補 +4.52億)",
             "inventory_stars": 5,
-            "latest_current_liabilities_billion": 129.32,
-            "current_liabilities_qoq_percent": 0.91,
-            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +0.91%)",
+            "latest_current_liabilities_billion": 132.12,
+            "current_liabilities_qoq_percent": 2.17,
+            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +2.17%)",
             "liabilities_stars": 5,
             "capital_billion": 30.06,
             "avg_operating_margin_percent": 17.04,
@@ -18167,15 +18167,6 @@
             ],
             "quarterly_revenue": [
                 {
-                    "quarter": "2025-09-30",
-                    "revenue": 164348000,
-                    "qoq_percent": 28.19,
-                    "inventories": 15224630000,
-                    "inventories_qoq_percent": 4.37,
-                    "current_liabilities": 12981125000,
-                    "current_liabilities_qoq_percent": 4.5
-                },
-                {
                     "quarter": "2025-12-31",
                     "revenue": 658492000,
                     "qoq_percent": 300.67,
@@ -18201,6 +18192,15 @@
                     "inventories_qoq_percent": 2.48,
                     "current_liabilities": 12932315000,
                     "current_liabilities_qoq_percent": 0.91
+                },
+                {
+                    "quarter": "2026-09-30",
+                    "revenue": 59074000,
+                    "qoq_percent": -76.59,
+                    "inventories": 15758605000,
+                    "inventories_qoq_percent": 2.55,
+                    "current_liabilities": 13211991000,
+                    "current_liabilities_qoq_percent": 2.16
                 }
             ]
         },
@@ -19576,24 +19576,24 @@
             "stock_id": "3048",
             "name": "益登",
             "latest_month": "2026-10",
-            "latest_quarter": "2026-06-30",
+            "latest_quarter": "2026-09-30",
             "cumulative_revenue_billion": 1293.09,
             "cumulative_yoy_percent": 35.95,
             "latest_month_mom_percent": -7.72,
             "latest_month_yoy_percent": 28.06,
             "revenue_rating": "⭐⭐⭐⭐⭐ 強勢成長 (累計YoY +35.95%)",
             "revenue_stars": 5,
-            "latest_quarter_revenue_billion": 395.02,
-            "latest_quarter_revenue_qoq_percent": 17.91,
-            "latest_inventories_billion": 131.68,
-            "inventories_qoq_percent": 11.87,
-            "inventory_replenish_billion": 408.99,
-            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +11.87%, 回補 +408.99億)",
+            "latest_quarter_revenue_billion": 423.8,
+            "latest_quarter_revenue_qoq_percent": 7.29,
+            "latest_inventories_billion": 129.63,
+            "inventories_qoq_percent": -1.56,
+            "inventory_replenish_billion": 421.75,
+            "inventory_rating": "⭐⭐⭐⭐⭐ 大量交屋且新案強勢回補 (+421.75億)",
             "inventory_stars": 5,
-            "latest_current_liabilities_billion": 269.78,
-            "current_liabilities_qoq_percent": 8.08,
-            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +8.08%)",
-            "liabilities_stars": 5,
+            "latest_current_liabilities_billion": 266.52,
+            "current_liabilities_qoq_percent": -1.21,
+            "liabilities_rating": "⭐⭐⭐ 正常交屋結轉 (負債QoQ -1.21%)",
+            "liabilities_stars": 3,
             "capital_billion": 26.98,
             "avg_operating_margin_percent": 2.5,
             "est_cumulative_eps_op_basis": 11.98,
@@ -19603,7 +19603,7 @@
             "latest_dividend": 1.0,
             "payout_ratio": 0.5,
             "est_next_dividend": 5.61,
-            "score": 9,
+            "score": 7,
             "outlook": "🔥 強烈偏多 (交屋高峰+新案擴張+獲利創高)",
             "outlook_tag": "STRONG_BUY",
             "monthly_revenue": [
@@ -19706,15 +19706,6 @@
             ],
             "quarterly_revenue": [
                 {
-                    "quarter": "2025-09-30",
-                    "revenue": 28537480000,
-                    "qoq_percent": 5.23,
-                    "inventories": 9429403000,
-                    "inventories_qoq_percent": 17.3,
-                    "current_liabilities": 22440950000,
-                    "current_liabilities_qoq_percent": 38.24
-                },
-                {
                     "quarter": "2025-12-31",
                     "revenue": 31332450000,
                     "qoq_percent": 9.79,
@@ -19740,6 +19731,15 @@
                     "inventories_qoq_percent": 11.86,
                     "current_liabilities": 26978413000,
                     "current_liabilities_qoq_percent": 8.08
+                },
+                {
+                    "quarter": "2026-09-30",
+                    "revenue": 42379725000,
+                    "qoq_percent": 7.29,
+                    "inventories": 12962934000,
+                    "inventories_qoq_percent": -1.55,
+                    "current_liabilities": 26651510000,
+                    "current_liabilities_qoq_percent": -1.21
                 }
             ]
         },
@@ -21346,24 +21346,24 @@
             "stock_id": "5274",
             "name": "信驊",
             "latest_month": "2026-10",
-            "latest_quarter": "2026-06-30",
+            "latest_quarter": "2026-09-30",
             "cumulative_revenue_billion": 138.34,
             "cumulative_yoy_percent": 87.65,
             "latest_month_mom_percent": 24.03,
             "latest_month_yoy_percent": 177.78,
             "revenue_rating": "⭐⭐⭐⭐⭐ 強勢成長 (累計YoY +87.65%)",
             "revenue_stars": 5,
-            "latest_quarter_revenue_billion": 38.71,
-            "latest_quarter_revenue_qoq_percent": 23.03,
-            "latest_inventories_billion": 4.71,
-            "inventories_qoq_percent": 33.43,
-            "inventory_replenish_billion": 39.89,
-            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +33.43%, 回補 +39.89億)",
+            "latest_quarter_revenue_billion": 47.86,
+            "latest_quarter_revenue_qoq_percent": 23.63,
+            "latest_inventories_billion": 7.85,
+            "inventories_qoq_percent": 66.67,
+            "inventory_replenish_billion": 51.0,
+            "inventory_rating": "⭐⭐⭐⭐⭐ 邊交屋邊擴張 (存貨逆勢 +66.67%, 回補 +51.0億)",
             "inventory_stars": 5,
-            "latest_current_liabilities_billion": 62.01,
-            "current_liabilities_qoq_percent": 2.26,
-            "liabilities_rating": "⭐⭐⭐⭐⭐ 展望向上 (有交屋且負債逆勢 +2.26%)",
-            "liabilities_stars": 5,
+            "latest_current_liabilities_billion": 45.03,
+            "current_liabilities_qoq_percent": -27.38,
+            "liabilities_rating": "⭐⭐⭐⭐ 成屋入帳大舉還債 (負債大降 -27.38%)",
+            "liabilities_stars": 4,
             "capital_billion": 4.16,
             "avg_operating_margin_percent": 50.19,
             "est_cumulative_eps_op_basis": 166.91,
@@ -21373,7 +21373,7 @@
             "latest_dividend": 60.0,
             "payout_ratio": 0.65,
             "est_next_dividend": 101.55,
-            "score": 9,
+            "score": 8,
             "outlook": "🔥 強烈偏多 (交屋高峰+新案擴張+獲利創高)",
             "outlook_tag": "STRONG_BUY",
             "monthly_revenue": [
@@ -21476,15 +21476,6 @@
             ],
             "quarterly_revenue": [
                 {
-                    "quarter": "2025-09-30",
-                    "revenue": 2330084000,
-                    "qoq_percent": 3.72,
-                    "inventories": 177431000,
-                    "inventories_qoq_percent": -24.21,
-                    "current_liabilities": 2816743000,
-                    "current_liabilities_qoq_percent": -23.41
-                },
-                {
                     "quarter": "2025-12-31",
                     "revenue": 2443126000,
                     "qoq_percent": 4.85,
@@ -21510,6 +21501,15 @@
                     "inventories_qoq_percent": 33.13,
                     "current_liabilities": 6200544000,
                     "current_liabilities_qoq_percent": 2.24
+                },
+                {
+                    "quarter": "2026-09-30",
+                    "revenue": 4786281000,
+                    "qoq_percent": 23.63,
+                    "inventories": 784570000,
+                    "inventories_qoq_percent": 66.74,
+                    "current_liabilities": 4503491000,
+                    "current_liabilities_qoq_percent": -27.37
                 }
             ]
         },
