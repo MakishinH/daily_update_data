@@ -1,14 +1,14 @@
 {
   "strategy_name": "台指期 A++ 日線長線波段策略 V7 終極王者版 (正金字塔遞減加碼 40%->30%->20%->10% 封頂)",
   "file_name": "Daily_main4_v7_signal.JSON",
-  "generated_at": "2026-11-11 18:01:58",
+  "generated_at": "2026-11-11 21:41:03",
   "scheduled_run_time": "每日 18:00 自動更新",
   "current": {
     "card_title": "📍 最新日線行情與當前部位狀態卡 (Current)",
     "date": "2026-11-11",
     "time": "13:45:00 (日盤收盤)",
     "datetime": "2026-11-11 13:45:00",
-    "updated_at": "2026-11-11 18:01:58",
+    "updated_at": "2026-11-11 21:41:03",
     "open": 42942.0,
     "high": 44250.0,
     "low": 42646.0,
@@ -128,6 +128,14 @@
         "hard_stop_price": ""
       }
     }
+  },
+  "telegram_notification": {
+    "rule": "進場 (第一筆底倉)、加碼 (第1~4次加碼)、出場 (四重防線全平) 訊號觸發後連續通知 3 個交易日 (第 1/3、2/3、3/3 天)",
+    "evaluation_date": "2026-11-11",
+    "should_send_today": false,
+    "active_alerts_count": 0,
+    "active_3day_alerts": [],
+    "message_preview": "今日無處於 3 日通知期內之進場/加碼/出場訊號 (保持靜音)"
   },
   "last_completed_wave_cards": {
     "wave_entry_date": "2026-09-23",
