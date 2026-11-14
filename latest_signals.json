@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14 10:17:02",
+  "updated_at": "2026-11-14 17:25:44",
   "report_date": "2026-11-14",
   "count": 10,
   "signals": [
@@ -70,8 +70,8 @@
     },
     {
       "trade_date": "2026-11-13",
-      "strategy_title": "2357 V7",
-      "full_strategy_title": "台股 2357 華碩 外資投信均衡雙引擎與低乖離鎖利策略 (v7 終極量身正式版)",
+      "strategy_title": "2357 V8",
+      "full_strategy_title": "台股 2357 華碩 極端倒貨防禦、保本停利與冷卻期進化策略 (v8 正式版)",
       "ticker": "2357",
       "name": "華碩",
       "sector": "AI PC/品牌電腦與伺服器",
@@ -96,8 +96,8 @@
     },
     {
       "trade_date": "2026-11-13",
-      "strategy_title": "2454 V7",
-      "full_strategy_title": "台股 2454 聯發科 強勢動能起漲與外資波段續抱策略 (v7 終極量身正式版)",
+      "strategy_title": "2454 V8",
+      "full_strategy_title": "台股 2454 聯發科 帶量確認與低乖離/強勢主升雙軌策略 (v8 正式版)",
       "ticker": "2454",
       "name": "聯發科",
       "sector": "半導體/IC設計",
