@@ -1,20 +1,20 @@
 {
-  "strategy_name": "3. 00631L × 微台/小台 90:10 全方位含高檔鎖利 (10%保證金×10x槓桿) 雙帳戶動態避險再平衡策略",
+  "strategy_name": "1. 00631L × 微台/小台 90:10 純大波段破線 ＋ 大跌斜率加劇強化放空 (10x➔15x) 雙帳戶再平衡策略",
   "file_name": "Daily_00631L_90_10_signal.JSON",
-  "generated_at": "2026-11-16 18:00:46",
+  "generated_at": "2026-11-16 21:48:56",
   "scheduled_run_time": "每日 18:00 自動更新",
   "backtest_summary": {
-    "strategy": "3. 90:10 全方位含高檔鎖利 (10%保證金×10x槓桿)",
-    "total_ret_pct": 2093.85,
-    "cagr_pct": 38.44,
-    "mdd_pct": -33.01,
-    "calmar": 1.16,
-    "sharpe": 1.28,
+    "strategy": "1. 90:10 純大波段破線 ＋ 大跌斜率加劇強化放空 (10x➔15x)",
+    "total_ret_pct": 2653.54,
+    "cagr_pct": 41.79,
+    "mdd_pct": -36.23,
+    "calmar": 1.15,
+    "sharpe": 1.26,
     "annual_win_rate_pct": 80.0,
-    "bottom_reinvest_times": 13,
-    "cum_bottom_share_boost_pct": 192.7,
-    "final_net_shares_mult": 0.83,
-    "total_short_cycles": 39
+    "bottom_reinvest_times": 10,
+    "cum_bottom_share_boost_pct": 244.3,
+    "final_net_shares_mult": 1.08,
+    "total_short_cycles": 29
   },
   "current": {
     "ticker": "00631L.TW",
@@ -32,36 +32,36 @@
     "pill_class": "action-hold-long",
     "is_short_active": false,
     "eff_hedge_ratio_pct": 0.0,
-    "today_instruction": "🟢 【恐慌止穩反彈・90:10 抱牢巡航】00631L 收盤 31.92 元，剛於 2026-11-12 完成恐慌止穩平空再平衡（單次增持 +7.63% 股數），且目前穩守 10 日均線 (30.63) 之上。今日維持 90% 00631L 續抱享受反彈，10% 期貨保證金留存專戶待命（空單 0 口）。",
-    "etf_weight_pct": 89.82,
-    "fut_weight_pct": 10.18,
-    "sim_1m_etf_ntd": 898217,
-    "sim_1m_fut_ntd": 101783,
-    "sim_1m_etf_shares": 28140,
-    "cum_bottom_share_boost_pct": 192.7,
-    "bottom_reinvest_times": 13,
-    "total_short_cycles": 39
+    "today_instruction": "🟢 【恐慌止穩反彈・90:10 抱牢巡航】00631L 收盤 31.92 元，剛於 2026-11-12 完成恐慌止穩平空再平衡，目前穩守 10 日均線 (30.63) 之上。不抓高檔月線小震盪，維持 90% 00631L 續抱享受反彈，10% 期貨保證金留存專戶待命（空單 0 口）。",
+    "etf_weight_pct": 93.17,
+    "fut_weight_pct": 6.83,
+    "sim_1m_etf_ntd": 931675,
+    "sim_1m_fut_ntd": 68325,
+    "sim_1m_etf_shares": 29188,
+    "cum_bottom_share_boost_pct": 244.3,
+    "bottom_reinvest_times": 10,
+    "total_short_cycles": 29
   },
   "current_slots": [
     {
       "slot_key": "ACCOUNT A",
-      "weight_badge": "現貨佔比 89.8%",
+      "weight_badge": "現貨佔比 93.2%",
       "card_title": "帳戶 A｜00631L 核心現貨長抱倉",
       "card_style": "filled-first",
-      "main_value": "28,140 股",
-      "main_unit": "(每百萬配置 NT$ 898,217)",
+      "main_value": "29,188 股",
+      "main_unit": "(每百萬配置 NT$ 931,675)",
       "sub_datetime": "📅 最新收盤價：31.92 元 (+0.93 / +3.00%)",
-      "reason_text": "🎯 策略核心：牛市享 90% 正2複利，大跌靠空單賺錢回補低接",
+      "reason_text": "🎯 策略核心：移除高檔月線雜訊，牛市享 90% 正2複利、大跌靠空單回補低接",
       "metrics": [
         {
           "label": "累積抄底增持股數",
-          "value": "+192.7% (2.93倍)",
+          "value": "+244.3% (3.44倍)",
           "color": "up"
         },
         {
-          "label": "淨持股倍數 (含校準)",
-          "value": "0.83x 原始股數",
-          "color": "neutral"
+          "label": "最終淨持股倍數",
+          "value": "1.08x 原始股數 (超越B&H)",
+          "color": "up"
         },
         {
           "label": "今日現貨動作",
@@ -73,10 +73,10 @@
     {
       "slot_key": "ACCOUNT B-1",
       "weight_badge": "待命中 (0 口)",
-      "card_title": "帳戶 B-1｜大波段破線空單 (MA60/120)",
+      "card_title": "帳戶 B-1｜大波段破季線/半年線空單",
       "card_style": "empty-slot",
-      "main_value": "0 口 (未破線)",
-      "main_unit": "微台指 4~5 口 / 小台 1 口",
+      "main_value": "0 口 (待命)",
+      "main_unit": "微台指 3~4 口 / 小台 1~1.5 口",
       "sub_datetime": "🛡️ 季線防線：34.24 元 ｜ 半年線防線：34.76 元",
       "reason_text": "🎯 觸發條件：跌破 MA60×0.95 且月季線空頭排列，或跌破 MA120×0.97",
       "metrics": [
@@ -87,29 +87,29 @@
         },
         {
           "label": "破線空單狀態",
-          "value": "🟢 多頭安全待命",
+          "value": "🟢 未觸發新空單",
           "color": "neutral"
         },
         {
           "label": "每百萬動用保證金",
-          "value": "NT$ 101,783 (10x槓桿)",
+          "value": "NT$ 68,325 (佔比 10%)",
           "color": "neutral"
         }
       ]
     },
     {
       "slot_key": "ACCOUNT B-2",
-      "weight_badge": "未過熱 (0 口)",
-      "card_title": "帳戶 B-2｜高檔泡沫破月線鎖利空單",
+      "weight_badge": "🟢 斜率平穩",
+      "card_title": "帳戶 B-2｜大跌斜率加劇持續強化空單",
       "card_style": "empty-slot",
-      "main_value": "乖離 -11.4%",
-      "main_unit": "(近20日最高 +2.7% / 門檻 +16%)",
-      "sub_datetime": "🔥 月線防守價：32.64 元 (MA20=33.31)",
-      "reason_text": "🎯 觸發條件：近20日季線乖離 ≥ +16% 後，收盤跌破月線 2% 且 OSC < 0",
+      "main_value": "月線斜率 -0.78%/日",
+      "main_unit": "(季線斜率 -0.19%/日)",
+      "sub_datetime": "📐 3日斜率加速度：+0.75% ｜ 5日季線加速度：+0.20%",
+      "reason_text": "🎯 觸發條件：破線期間若 MA20 與 MA60 同步下彎且斜率持續變陡，強制加空至 15x！",
       "metrics": [
         {
-          "label": "近20日泡沫警戒",
-          "value": "⚪ 未達 +16% 泡沫區",
+          "label": "大跌斜率加劇判定",
+          "value": "⚪ 未達加速下殺條件",
           "color": "neutral"
         },
         {
@@ -118,9 +118,9 @@
           "color": "down"
         },
         {
-          "label": "高檔鎖利動作",
-          "value": "🟢 續抱讓獲利奔跑",
-          "color": "neutral"
+          "label": "高檔假跌破過濾",
+          "value": "✔️ 已關閉月線雜訊 (少做10筆冤枉單)",
+          "color": "up"
         }
       ]
     },
@@ -129,48 +129,49 @@
       "weight_badge": "等待空單止盈",
       "card_title": "階段 4｜平空止盈 ➔ 90:10 逢低買進 00631L",
       "card_style": "empty-slot",
-      "main_value": "累計 13 次",
-      "main_unit": "(總交易 39 筆循環)",
-      "sub_datetime": "💎 最近一次加碼日：2026-11-12",
-      "reason_text": "🎯 平空條件：季線負乖離 ≤ -15% 或 RSI ≤ 30 後站上 MA10，或收復均線",
+      "main_value": "累計 10 次",
+      "main_unit": "(10年僅 29 筆精準循環)",
+      "sub_datetime": "💎 最近一次大賺抄底：2025-03-05 ~ 2025-04-21 (+40.77% 股數)",
+      "reason_text": "🎯 平空條件：季線負乖離 ≤ -15% 或 RSI ≤ 30 後站上 MA10，或收復季線",
       "metrics": [
         {
-          "label": "上次空單保證金報酬",
-          "value": "+54.09%",
+          "label": "2025/04 崩盤空單暴賺",
+          "value": "保證金 +244.4% (總資產 +24.4%)",
           "color": "up"
         },
         {
-          "label": "上次底部增持 00631L",
-          "value": "+7.63% 股數",
+          "label": "2025/04 底部免費增持",
+          "value": "單次多買 +40.77% 00631L 股數！",
           "color": "up"
         },
         {
-          "label": "雙帳戶目標比例",
-          "value": "90% 現貨 : 10% 保證金",
-          "color": "neutral"
+          "label": "十年累積抄底擴增",
+          "value": "股數翻 3.44 倍 (+244.3%)",
+          "color": "up"
         }
       ]
     }
   ],
   "last_completed_cycle": {
-    "entry_date": "2026-10-16",
-    "exit_date": "2026-11-12",
-    "trigger": "高檔泡沫破月線反手做空",
+    "entry_date": "2025-03-05",
+    "exit_date": "2025-04-21",
+    "trigger": "大波段破季線/半年線反手做空 (斜率加劇升至15x)",
     "exit_reason": "恐慌止穩平空 -> 空單獲利加碼00631L",
-    "margin_return_pct": 54.09,
-    "reinvest_to_etf_pct_of_eq": 6.39,
-    "bottom_etf_shares_boost_pct": 7.63,
-    "cum_bottom_boost_mult": 2.927,
+    "margin_return_pct": 244.41,
+    "total_eq_impact_pct": 24.38,
+    "reinvest_to_etf_pct_of_eq": 26.09,
+    "bottom_etf_shares_boost_pct": 40.77,
+    "cum_bottom_boost_mult": 3.443,
     "slots": [
       {
         "slot_key": "STEP 1",
-        "weight_badge": "空單進場",
-        "card_title": "步驟 ①｜2026-10-16 觸發反手空單",
+        "weight_badge": "破線+斜率加劇",
+        "card_title": "步驟 ①｜2025-03-05 大波段破線放空",
         "card_style": "filled-entry",
-        "main_value": "10% 保證金 × 10x",
-        "main_unit": "放空微台/小台對沖",
-        "sub_datetime": "📅 進場日期：2026-10-16",
-        "reason_text": "🎯 觸發原因：高檔泡沫破月線反手做空",
+        "main_value": "10% 保證金 × 15x",
+        "main_unit": "大跌斜率加劇強制滿載放空",
+        "sub_datetime": "📅 進場日期：2025-03-05",
+        "reason_text": "🎯 觸發原因：大波段破季線/半年線反手做空 (斜率加劇升至15x)",
         "metrics": [
           {
             "label": "00631L 現貨部位",
@@ -179,41 +180,41 @@
           },
           {
             "label": "期貨保證金專戶",
-            "value": "動用 10% 資金建立 100% 名目空單",
+            "value": "斜率變陡自動升級 15x 空單對沖",
             "color": "neutral"
           }
         ]
       },
       {
         "slot_key": "STEP 2",
-        "weight_badge": "波段下跌保護",
-        "card_title": "步驟 ②｜大盤回檔期間空單獲利膨脹",
+        "weight_badge": "崩盤空單暴賺",
+        "card_title": "步驟 ②｜主跌段斜率加劇・空單暴賺",
         "card_style": "filled-exit",
-        "main_value": "+54.09%",
-        "main_unit": "期貨保證金專戶報酬率",
-        "sub_datetime": "🛡️ 持倉期間：2026-10-16 ~ 2026-11-12",
-        "reason_text": "🎯 避險效果：以微台/小台空單獲利直接抵銷 00631L 波段帳面回撤",
+        "main_value": "+244.41%",
+        "main_unit": "(總資產淨賺 +24.38%)",
+        "sub_datetime": "🛡️ 持倉期間：2025-03-05 ~ 2025-04-21",
+        "reason_text": "🎯 避險效果：斜率加劇放大空單，10% 保證金翻了 3.4 倍，完全鎖住崩盤！",
         "metrics": [
           {
             "label": "保證金淨值變化",
-            "value": "10% 膨脹至 15.41%",
+            "value": "10% 暴增至 34.38%",
             "color": "up"
           },
           {
             "label": "心理優勢",
-            "value": "免除砍在阿呆谷、累積抄底銀彈",
+            "value": "大跌時每天看期貨空單數錢準備抄底",
             "color": "up"
           }
         ]
       },
       {
         "slot_key": "STEP 3",
-        "weight_badge": "平倉止盈",
-        "card_title": "步驟 ③｜2026-11-12 止穩回補平空",
+        "weight_badge": "恐慌止穩平空",
+        "card_title": "步驟 ③｜2025-04-21 止穩回補平空",
         "card_style": "filled-first",
-        "main_value": "+6.39%",
+        "main_value": "+26.09%",
         "main_unit": "佔總資產之超額獲利現金",
-        "sub_datetime": "📅 平倉日期：2026-11-12",
+        "sub_datetime": "📅 平倉日期：2025-04-21",
         "reason_text": "🎯 出場原因：恐慌止穩平空 -> 空單獲利加碼00631L",
         "metrics": [
           {
@@ -230,17 +231,17 @@
       },
       {
         "slot_key": "STEP 4",
-        "weight_badge": "股數 +7.63%",
-        "card_title": "步驟 ④｜超額獲利逢低買進 00631L",
+        "weight_badge": "股數 +40.77%",
+        "card_title": "步驟 ④｜超額獲利底部大買 00631L",
         "card_style": "filled-first",
-        "main_value": "+7.63%",
+        "main_value": "+40.77%",
         "main_unit": "單次免費擴增 00631L 股數",
-        "sub_datetime": "🏆 累計抄底擴增倍數：2.927x",
-        "reason_text": "🎯 核心威力：底部籌碼變多，下一波台股創高時將享受倍數爆發！",
+        "sub_datetime": "🏆 累計抄底擴增倍數：3.443x (+244.3%)",
+        "reason_text": "🎯 核心威力：一次大崩盤就幫您免費多買 40.7% 的 00631L 便宜股數！",
         "metrics": [
           {
             "label": "每百萬相當於加碼",
-            "value": "約 NT$ 63,900",
+            "value": "約 NT$ 260,900",
             "color": "up"
           },
           {
@@ -254,66 +255,71 @@
   },
   "recent_rebalance_logs": [
     {
-      "entry_date": "2026-06-11",
-      "exit_date": "2026-06-15",
-      "trigger": "高檔泡沫破月線反手做空",
-      "exit_reason": "趨勢回溫平空 -> 90:10再平衡",
-      "margin_return_pct": -52.35,
-      "reinvest_to_etf_pct_of_eq": 0.0,
-      "bottom_etf_shares_boost_pct": 0.0,
-      "cum_bottom_boost_mult": 2.526,
-      "net_etf_shares_mult": 0.871
+      "entry_date": "2025-03-05",
+      "exit_date": "2025-04-21",
+      "trigger": "大波段破季線/半年線反手做空 (斜率加劇升至15x)",
+      "exit_reason": "恐慌止穩平空 -> 空單獲利加碼00631L",
+      "margin_return_pct": 244.41,
+      "total_eq_impact_pct": 24.38,
+      "reinvest_to_etf_pct_of_eq": 26.09,
+      "bottom_etf_shares_boost_pct": 40.77,
+      "cum_bottom_boost_mult": 3.443,
+      "net_etf_shares_mult": 1.317
     },
     {
-      "entry_date": "2026-06-29",
-      "exit_date": "2026-07-01",
-      "trigger": "高檔泡沫破月線反手做空",
-      "exit_reason": "趨勢回溫平空 -> 90:10再平衡",
-      "margin_return_pct": -58.55,
+      "entry_date": "2025-06-03",
+      "exit_date": "2025-06-05",
+      "trigger": "大波段破季線/半年線反手做空 (斜率加劇升至15x)",
+      "exit_reason": "趨勢回溫站回季線平空 -> 90:10再平衡",
+      "margin_return_pct": -36.72,
+      "total_eq_impact_pct": -3.66,
       "reinvest_to_etf_pct_of_eq": 0.0,
       "bottom_etf_shares_boost_pct": 0.0,
-      "cum_bottom_boost_mult": 2.526,
-      "net_etf_shares_mult": 0.822
+      "cum_bottom_boost_mult": 3.443,
+      "net_etf_shares_mult": 1.295
     },
     {
-      "entry_date": "2026-07-13",
+      "entry_date": "2026-07-31",
       "exit_date": "2026-08-03",
-      "trigger": "高檔泡沫破月線反手做空",
-      "exit_reason": "趨勢回溫平空 -> 90:10再平衡",
-      "margin_return_pct": 55.0,
-      "reinvest_to_etf_pct_of_eq": 6.41,
-      "bottom_etf_shares_boost_pct": 7.66,
-      "cum_bottom_boost_mult": 2.719,
-      "net_etf_shares_mult": 0.832
+      "trigger": "大波段破季線/半年線反手做空 (斜率加劇升至15x)",
+      "exit_reason": "趨勢回溫站回季線平空 -> 90:10再平衡",
+      "margin_return_pct": -22.64,
+      "total_eq_impact_pct": -2.26,
+      "reinvest_to_etf_pct_of_eq": 0.0,
+      "bottom_etf_shares_boost_pct": 0.0,
+      "cum_bottom_boost_mult": 3.443,
+      "net_etf_shares_mult": 1.188
     },
     {
       "entry_date": "2026-08-04",
       "exit_date": "2026-08-13",
-      "trigger": "長線破位反手做空微台/小台",
-      "exit_reason": "保證金維持率保護平倉",
+      "trigger": "大波段破季線/半年線反手做空",
+      "exit_reason": "V轉強彈・保證金保護停損 (由90%現貨大漲吸收)",
       "margin_return_pct": -68.21,
+      "total_eq_impact_pct": -6.81,
       "reinvest_to_etf_pct_of_eq": 0.0,
       "bottom_etf_shares_boost_pct": 0.0,
-      "cum_bottom_boost_mult": 2.719,
-      "net_etf_shares_mult": 0.832
+      "cum_bottom_boost_mult": 3.443,
+      "net_etf_shares_mult": 1.16
     },
     {
-      "entry_date": "2026-10-16",
+      "entry_date": "2026-11-04",
       "exit_date": "2026-11-12",
-      "trigger": "高檔泡沫破月線反手做空",
+      "trigger": "大波段破季線/半年線反手做空 (斜率加劇升至15x)",
       "exit_reason": "恐慌止穩平空 -> 空單獲利加碼00631L",
-      "margin_return_pct": 54.09,
-      "reinvest_to_etf_pct_of_eq": 6.39,
-      "bottom_etf_shares_boost_pct": 7.63,
-      "cum_bottom_boost_mult": 2.927,
-      "net_etf_shares_mult": 0.831
+      "margin_return_pct": -33.72,
+      "total_eq_impact_pct": -3.36,
+      "reinvest_to_etf_pct_of_eq": 0.0,
+      "bottom_etf_shares_boost_pct": 0.0,
+      "cum_bottom_boost_mult": 3.443,
+      "net_etf_shares_mult": 1.081
     }
   ],
   "indicator_cards": {
     "trend_breakdown_card": {
       "card_title": "📈 1. 大波段破線空單雷達 (MA60 / MA120)",
       "is_triggered": true,
-      "badge_text": "🚨 破線放空中",
+      "badge_text": "🚨 破線條件成立",
       "ma60": 36.04,
       "ma60_break_line": 34.24,
       "ma60_slope": -0.07,
@@ -322,18 +328,16 @@
       "ma120_slope": 0.0,
       "status_summary": "收盤 31.92 vs 季線防線 34.24 / 半年線防線 34.76"
     },
-    "bubble_lock_card": {
-      "card_title": "🔥 2. 高檔泡沫鎖利雷達 (Bias60 & MA20)",
+    "slope_steep_card": {
+      "card_title": "📐 2. 大跌斜率加劇強制放空雷達 (Slope Accel)",
       "is_triggered": false,
-      "is_warning": false,
-      "badge_text": "⚪ 未過熱",
-      "current_bias60_pct": -11.43,
-      "max_bias60_20d_pct": 2.67,
-      "bubble_threshold_pct": 16.0,
-      "ma20": 33.31,
-      "ma20_break_line": 32.64,
+      "badge_text": "🟢 斜率未加速下殺",
+      "ma20_slope_pct": -0.78,
+      "ma60_slope_pct": -0.19,
+      "ma20_accel_3d": 0.75,
+      "ma60_accel_5d": 0.2,
       "osc": -0.08,
-      "status_summary": "近20日最高季線乖離 +2.67% (門檻 +16%) | 月線防線 32.64"
+      "status_summary": "月線斜率 -0.78%/日 (加速度 +0.75%) | 季線斜率 -0.19%/日"
     },
     "panic_rebound_card": {
       "card_title": "💎 3. 極端恐慌止穩回補雷達 (平空抄底)",
@@ -348,14 +352,13 @@
     },
     "position_calculator_card": {
       "card_title": "⚖️ 4. 每 100 萬總資金 90:10 口數速算表",
-      "badge_text": "10%保證金×10x槓桿",
+      "badge_text": "破線10x / 斜率加劇15x",
       "base_capital_ntd": 1000000,
       "target_etf_ntd": 900000,
       "target_margin_ntd": 100000,
-      "target_short_notional_ntd": 1000000,
-      "recommended_tmf_contracts": "微台指 (TMF) 2 ~ 3 口 (100萬名目曝險)",
-      "recommended_mtx_contracts": "或 小台指 (MTX) 0.5 ~ 1 口",
-      "status_summary": "十年回測：年化 38.44% | MDD -33.01% | Calmar 1.16 | 總交易 39 筆"
+      "recommended_tmf_contracts": "一般破線：微台 2~3 口 ｜ 斜率加劇：微台 3~4 口",
+      "recommended_mtx_contracts": "或 小台指 (MTX) 1 ~ 1.5 口",
+      "status_summary": "十年總報酬 +2653.5% (年化 41.79%) | MDD -36.23% | 總交易 29 筆"
     }
   }
 }
