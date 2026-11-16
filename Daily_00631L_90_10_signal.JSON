@@ -1,7 +1,7 @@
 {
   "strategy_name": "3. 00631L × 微台/小台 90:10 全方位含高檔鎖利 (10%保證金×10x槓桿) 雙帳戶動態避險再平衡策略",
   "file_name": "Daily_00631L_90_10_signal.JSON",
-  "generated_at": "2026-11-15 23:31:43",
+  "generated_at": "2026-11-16 18:00:46",
   "scheduled_run_time": "每日 18:00 自動更新",
   "backtest_summary": {
     "strategy": "3. 90:10 全方位含高檔鎖利 (10%保證金×10x槓桿)",
