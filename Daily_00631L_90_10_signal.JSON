@@ -2,7 +2,7 @@
   "strategy_version": "v2_agile_2x_fast",
   "strategy_name": "00631L × 微台/小台 90:10「2x 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空 (10x➔15x)」雙帳戶策略",
   "file_name": "Daily_00631L_90_10_signal.JSON",
-  "generated_at": "2026-11-16 23:48:23",
+  "generated_at": "2026-11-17 18:03:04",
   "scheduled_run_time": "每日 18:00 自動更新",
   "backtest_summary": {
     "strategy": "2x 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空 (10x➔15x)",
