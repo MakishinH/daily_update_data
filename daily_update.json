@@ -1,154 +1,154 @@
 {
   "^DJI": {
     "name": "道瓊工業指數",
-    "price": 50198.17,
-    "change": -560.96,
-    "changePercent": -1.11,
-    "previousClose": 50759.13,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 50191.91,
+    "change": -1.12,
+    "changePercent": -0.0,
+    "previousClose": 50193.03,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "^GSPC": {
     "name": "S&P 500 指數",
-    "price": 7323.63,
-    "change": -17.0,
-    "changePercent": -0.23,
-    "previousClose": 7340.63,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 7377.49,
+    "change": 55.21,
+    "changePercent": 0.75,
+    "previousClose": 7322.28,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "^IXIC": {
     "name": "NASDAQ 指數",
-    "price": 24429.88,
-    "change": 106.74,
-    "changePercent": 0.44,
-    "previousClose": 24323.14,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 24791.11,
+    "change": 364.44,
+    "changePercent": 1.49,
+    "previousClose": 24426.67,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "^N225": {
     "name": "日經 225 指數",
-    "price": 59178.26,
-    "change": 13.13,
-    "changePercent": 0.02,
+    "price": 59444.21,
+    "change": 279.08,
+    "changePercent": 0.47,
     "previousClose": 59165.13,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "^KS11": {
     "name": "韓國綜合股價指數",
-    "price": 5041.48,
-    "change": -22.99,
-    "changePercent": -0.45,
+    "price": 5137.89,
+    "change": 73.42,
+    "changePercent": 1.45,
     "previousClose": 5064.47,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "TSM": {
     "name": "台積電 ADR",
-    "price": 362.62,
-    "change": -17.68,
-    "changePercent": -4.65,
-    "previousClose": 380.3,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 371.92,
+    "change": 6.22,
+    "changePercent": 1.7,
+    "previousClose": 365.7,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "NVDA": {
     "name": "輝達",
-    "price": 150.96,
-    "change": -10.5,
-    "changePercent": -6.5,
-    "previousClose": 161.46,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 154.96,
+    "change": 3.11,
+    "changePercent": 2.05,
+    "previousClose": 151.85,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "AAPL": {
     "name": "蘋果",
-    "price": 352.45,
-    "change": 1.7,
-    "changePercent": 0.48,
-    "previousClose": 350.75,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 349.61,
+    "change": -4.23,
+    "changePercent": -1.19,
+    "previousClose": 353.84,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "TSLA": {
     "name": "特斯拉",
-    "price": 383.72,
-    "change": 0.14,
-    "changePercent": 0.04,
-    "previousClose": 383.58,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 386.37,
+    "change": 1.48,
+    "changePercent": 0.38,
+    "previousClose": 384.89,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "SPCX": {
     "name": "太空探索",
-    "price": 143.5,
-    "change": 0.25,
-    "changePercent": 0.17,
-    "previousClose": 143.25,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 144.52,
+    "change": -0.08,
+    "changePercent": -0.05,
+    "previousClose": 144.6,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "AVGO": {
     "name": "博通",
-    "price": 354.05,
-    "change": 3.56,
-    "changePercent": 1.02,
-    "previousClose": 350.49,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 363.65,
+    "change": 6.4,
+    "changePercent": 1.79,
+    "previousClose": 357.25,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "AMD": {
     "name": "超微",
-    "price": 530.14,
-    "change": 8.04,
-    "changePercent": 1.54,
-    "previousClose": 522.1,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 542.42,
+    "change": 9.22,
+    "changePercent": 1.73,
+    "previousClose": 533.2,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "GOOGL": {
     "name": "Google",
-    "price": 282.44,
-    "change": -0.85,
-    "changePercent": -0.3,
-    "previousClose": 283.29,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 293.37,
+    "change": 7.99,
+    "changePercent": 2.8,
+    "previousClose": 285.38,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "META": {
     "name": "Meta",
-    "price": 616.38,
-    "change": -6.15,
-    "changePercent": -0.99,
-    "previousClose": 622.53,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 627.78,
+    "change": 8.46,
+    "changePercent": 1.37,
+    "previousClose": 619.32,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "AMZN": {
     "name": "亞馬遜",
-    "price": 267.74,
-    "change": 8.33,
-    "changePercent": 3.21,
-    "previousClose": 259.41,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 271.89,
+    "change": 2.14,
+    "changePercent": 0.79,
+    "previousClose": 269.75,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "BRK-B": {
     "name": "波克夏",
-    "price": 574.62,
-    "change": -9.93,
-    "changePercent": -1.7,
-    "previousClose": 584.55,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "price": 569.79,
+    "change": -4.24,
+    "changePercent": -0.74,
+    "previousClose": 574.03,
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "^TWII": {
     "name": "台股加權指數",
-    "price": 38914.29,
-    "change": -1224.95,
-    "changePercent": -3.05,
+    "price": 38426.89,
+    "change": -1712.35,
+    "changePercent": -4.27,
     "previousClose": 40139.24,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "0050.TW": {
     "name": "元大台灣50",
-    "price": 91.25,
-    "change": -2.7,
-    "changePercent": -2.87,
+    "price": 90.2,
+    "change": -3.75,
+    "changePercent": -3.99,
     "previousClose": 93.95,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   },
   "00631L.TW": {
     "name": "元大50正2",
-    "price": 25.28,
-    "change": -1.51,
-    "changePercent": -5.64,
+    "price": 24.57,
+    "change": -2.22,
+    "changePercent": -8.29,
     "previousClose": 26.79,
-    "updatedAt": "2026-11-19 03:56:19 UTC"
+    "updatedAt": "2026-11-19 15:00:23 UTC"
   }
 }
