@@ -833,12 +833,12 @@
         </div>
     </div>
 
-    <!-- 5. 🛡️ 00631L × 微台/小台 90:10「2x 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空 (10x➔15x)」雙帳戶再平衡控制台 (Daily_00631L_90_10_signal.JSON) -->
+    <!-- 5. 🛡️ 00631L × 微台/小台 90:10「2x 靈敏快進快出鎖利 ＋ 確定再向下 15x」雙帳戶再平衡控制台 (Daily_00631L_90_10_signal.JSON) -->
     <div class="finance-dashboard" id="etf-9010-wrapper" style="margin-top: 28px; margin-bottom: 40px;">
         <div class="dashboard-header">
             <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                <h2 class="dashboard-title">🛡️ 00631L × 微台/小台「90:10 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空」雙帳戶控制台</h2>
-                <span class="strategy-badge badge-etf" id="etf9010-schedule-badge">⏰ 2x靈敏快進快出 (反轉鎖利10x / 再向下15x)｜每日 18:00 自動更新</span>
+                <h2 class="dashboard-title">🛡️ 00631L × 微台/小台「90:10 靈敏快進快出鎖利 ＋ 確定再向下 15x」雙帳戶控制台</h2>
+                <span class="strategy-badge badge-etf" id="etf9010-schedule-badge">⏰ 每日 18:00 自動更新</span>
             </div>
             <div id="etf9010-timestamp" class="update-time">排程更新最後時間：載入中…</div>
         </div>
@@ -1692,10 +1692,9 @@
         }
 
         // =========================================================================
-        // 5. 🛡️ 讀取並渲染 00631L × 微台/小台 90:10 (2x 靈敏快進快出鎖利 + 確定再向下 15x) 訊號卡片
+        // 5. 🛡️ 讀取並渲染 00631L × 微台/小台 90:10 (精簡版 STEP 1~4 + 近期 5 筆實戰紀錄)
         // =========================================================================
-        let globalEtf9010Payload = {"strategy_version": "v2_agile_2x_fast", "strategy_name": "00631L × 微台/小台 90:10「2x 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空 (10x➔15x)」雙帳戶策略", "file_name": "Daily_00631L_90_10_signal.JSON", "generated_at": "2026-11-19 21:51:27", "scheduled_run_time": "每日 18:00 自動更新", "backtest_summary": {"strategy": "2x 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空 (10x➔15x)", "total_ret_pct": 3478.54, "cagr_pct": 45.65, "mdd_pct": -44.03, "calmar": 1.04, "sharpe": 1.3, "annual_win_rate_pct": 80.0, "bottom_reinvest_times": 18, "cum_bottom_share_boost_pct": 188.9, "final_net_shares_mult": 1.58, "total_short_cycles": 34, "short_win_rate_pct": 52.9, "max_single_margin_loss_pct": -18.96}, "current": {"ticker": "00631L.TW", "name": "元大台灣50正2", "date": "2026-11-19", "time": "13:30:00 (台股收盤)", "open": 26.73, "high": 27.06, "low": 24.4, "close_price": 24.57, "change": -2.27, "change_pct": -8.46, "regime_code": "SHORT_HEDGING", "regime_badge": "⚡ 2x 靈敏期貨空單鎖利保護中 (浮盈 +95.0%｜站回5日線即平倉)", "pill_class": "action-sell", "is_short_active": true, "eff_hedge_ratio_pct": 94.2, "today_instruction": "⚡ 【靈敏期貨空單持倉大賺保護中】自 2026-11-18 進場反手放空以來，00631L 今日續跌 -8.46% 收 24.57 元，目前期貨保證金未實現浮盈達 +94.96%（為總資產貢獻 +9.41%，使期貨專戶膨脹至 19.6%）！一旦收盤站回 5日均線 (27.63) 或出現恐慌見底紅K / 移動停利，立即快進快出平倉止盈並把超額獲利全數逢低買進 00631L！", "etf_weight_pct": 80.36, "fut_weight_pct": 19.64, "sim_1m_etf_ntd": 803576, "sim_1m_fut_ntd": 196424, "sim_1m_etf_shares": 32706, "cum_bottom_share_boost_pct": 188.9, "final_net_shares_mult": 1.58, "bottom_reinvest_times": 18, "total_short_cycles": 34, "short_win_rate_pct": 52.9}, "current_slots": [{"slot_key": "ACCOUNT A", "weight_badge": "現貨佔比 80.4%", "card_title": "帳戶 A｜00631L 核心現貨長抱倉", "card_style": "filled-first", "main_value": "32,706 股", "main_unit": "(每百萬配置 NT$ 803,576)", "sub_datetime": "📅 最新收盤價：24.57 元 (-2.27 / -8.46%)", "reason_text": "🎯 策略核心：牛市享 90% 正2複利，下跌段靠靈敏期貨快進快出賺錢回補低接", "metrics": [{"label": "最終淨持股倍數", "value": "1.58x 原始股數 (比B&H多+58%股數！)", "color": "up"}, {"label": "累積抄底增持股數", "value": "+188.9% (2.89倍)", "color": "up"}, {"label": "今日現貨動作", "value": "續抱享受反彈", "color": "up"}]}, {"slot_key": "STAGE 1 (10x)", "weight_badge": "待命中 (0 口)", "card_title": "階段 ①｜現貨開始反轉・第一時間鎖利 (10x)", "card_style": "empty-slot", "main_value": "0 口 (站上5日線)", "main_unit": "微台指 2~3 口 / 小台 1 口", "sub_datetime": "📡 5日線 MA5：27.63 元 ｜ 10日線 MA10：28.71 元 ｜ 月線：31.31 元", "reason_text": "🎯 觸發條件：高檔轉弱跌破 MA20 與 MA10，且 MA5 下彎、快速 MACD(8,17,9) 轉綠柱", "metrics": [{"label": "上次高檔鎖利戰績", "value": "2026/10/16~10/29 (+7.96% 快平鎖利)", "color": "up"}, {"label": "假反轉保護機制", "value": "站回 5日線立刻小停損 (絕不虧空10萬)", "color": "neutral"}, {"label": "十年單筆最大虧損", "value": "僅 -18.96% (佔總資產 -1.8%)", "color": "up"}]}, {"slot_key": "STAGE 2 (15x)", "weight_badge": "🚨 主跌段放空中 (+95.0%)", "card_title": "階段 ②｜確定再向下・2倍敏銳破位放空 (15x)", "card_style": "filled-exit", "main_value": "浮盈 +94.96%", "main_unit": "(2026-11-18 進場 15x)", "sub_datetime": "📐 快速 MACD OSC：-0.38 (單日變化 -0.19)", "reason_text": "🎯 目前持倉：確定再向下・2倍敏銳指標破位放空 (15x) (防線：站回5日線 27.63 元即平倉)", "metrics": [{"label": "本筆空單未實現損益", "value": "保證金 +94.96% (總資產 +9.41%)", "color": "up"}, {"label": "上次確定再向下戰績", "value": "2026/11/02~11/09 (暴賺 +120.16%！)", "color": "up"}, {"label": "目前是否確定再向下", "value": "🚨 是 (主跌段空單大賺保護中)", "color": "up"}]}, {"slot_key": "FAST EXIT & BUY", "weight_badge": "勝率 52.9%", "card_title": "階段 ③｜反轉即平倉 ➔ 90:10 逢低買進 00631L", "card_style": "filled-first", "main_value": "累計 18 次", "main_unit": "(總交易 34 筆・近期5戰全勝)", "sub_datetime": "💎 最近一次暴賺抄底：2026-11-09 (+18.97% 股數)", "reason_text": "🎯 快平條件：收盤站回 5日線 MA5、或移動停利鎖住 76% 獲利、或 RSI(6)<=12 見底紅K", "metrics": [{"label": "11/09 見底平空報酬", "value": "+120.16% (總資產 +13.1%)", "color": "up"}, {"label": "11/09 底部免費增持", "value": "單次多買 +18.97% 00631L 股數！", "color": "up"}, {"label": "期貨保證金專戶現況", "value": "NT$ 196,424 (滿血 10% 待命)", "color": "neutral"}]}], "last_completed_cycle": {"entry_date": "2026-11-02", "exit_date": "2026-11-09", "trigger": "確定再向下・2倍敏銳指標破位放空 (15x)", "exit_reason": "恐慌見底反轉紅K ➔ 快進快出平空暴賺＋抄底00631L", "margin_return_pct": 120.16, "total_eq_impact_pct": 13.06, "reinvest_to_etf_pct_of_eq": 14.37, "bottom_etf_shares_boost_pct": 18.97, "cum_bottom_boost_mult": 2.889, "slots": [{"slot_key": "STEP 1 (第1段鎖利)", "weight_badge": "賺 +7.96% 快平", "card_title": "① 2026-10-16 現貨高檔反轉鎖利", "card_style": "filled-entry", "main_value": "+7.96%", "main_unit": "(2026-10-29 站回5日線快平)", "sub_datetime": "📅 第1段期間：2026-10-16 ~ 2026-10-29", "reason_text": "🎯 00631L 自 41.89 元高檔跌破月線，第一時間進場 10x 鎖利；10/28 站回 5日線立刻獲利平倉！", "metrics": [{"label": "第1段空單成果", "value": "保證金 +7.96% (增持 +0.98% 股數)", "color": "up"}, {"label": "快進快出優勢", "value": "有反轉先落袋，不死抱被反彈吃掉獲利", "color": "up"}]}, {"slot_key": "STEP 2 (確定再向下)", "weight_badge": "15x 重拳二進", "card_title": "② 2026-11-02 確定再向下二度放空", "card_style": "filled-exit", "main_value": "10% 保證金 × 15x", "main_unit": "2倍敏銳指標確認主跌段", "sub_datetime": "📅 二度進場日：2026-11-02 (開盤 33.34 元)", "reason_text": "🎯 10/29 平倉後反彈不過月線，10/30 長黑再度跌破 5日線且 MA10/MA20 加速下彎，確認再向下！", "metrics": [{"label": "主跌段精準卡位", "value": "33.34 元空在主跌段起跌點", "color": "up"}, {"label": "期貨動用槓桿", "value": "15x 滿載對沖保護 90% 現貨", "color": "neutral"}]}, {"slot_key": "STEP 3 (見底快平)", "weight_badge": "暴賺 +120.16%", "card_title": "③ 2026-11-09 恐慌見底立刻平空", "card_style": "filled-first", "main_value": "+120.16%", "main_unit": "(總資產逆勢大賺 +13.06%)", "sub_datetime": "📅 見底平倉日：2026-11-09 (27.78 元平倉)", "reason_text": "🎯 11/06 崩盤至 23.80 元、RSI(6) 僅 6.6 留長下影線見底，11/09 開盤立刻平空鎖住 +120% 暴利！", "metrics": [{"label": "對比舊版死等季線", "value": "舊版抱到11/12變 -33%，新版大賺 +120%！", "color": "up"}, {"label": "專戶超額獲利轉出", "value": "轉出總資產 14.37% 現金抄底", "color": "up"}]}, {"slot_key": "STEP 4 (底部大加碼)", "weight_badge": "股數 +18.97%", "card_title": "④ 底部 27.78 元大買 00631L 再平衡", "card_style": "filled-first", "main_value": "+18.97%", "main_unit": "單次免費擴增 00631L 股數", "sub_datetime": "🏆 最終淨持股倍數：1.58x (超越B&H +58%！)", "reason_text": "🎯 11/09 在底部 27.78 元將空單暴利換成便宜 00631L 籌碼，隨後漲回 31.92 元享受雙重暴利！", "metrics": [{"label": "每百萬相當於加碼", "value": "約 NT$ 143,700", "color": "up"}, {"label": "重平衡後雙帳戶比", "value": "90.0% 00631L : 10.0% 保證金", "color": "neutral"}]}]}, "recent_rebalance_logs": [{"entry_date": "2025-03-10", "exit_date": "2025-03-18", "trigger": "現貨破季線反轉・第一時間鎖利放空 (10x) ➔ 確定再向下加空至15x", "exit_reason": "現貨反轉站回5日線 ➔ 快進快出平空止盈＋買進00631L", "margin_return_pct": 5.53, "total_eq_impact_pct": 0.55, "reinvest_to_etf_pct_of_eq": 0.6, "bottom_etf_shares_boost_pct": 0.67, "cum_bottom_boost_mult": 1.624, "net_etf_shares_mult": 0.983}, {"entry_date": "2025-03-31", "exit_date": "2025-04-10", "trigger": "確定再向下・2倍敏銳指標破位放空 (15x)", "exit_reason": "現貨反轉 ➔ 移動停利鎖住獲利 (最高+298%)", "margin_return_pct": 226.29, "total_eq_impact_pct": 25.26, "reinvest_to_etf_pct_of_eq": 24.43, "bottom_etf_shares_boost_pct": 37.21, "cum_bottom_boost_mult": 2.228, "net_etf_shares_mult": 1.349}, {"entry_date": "2026-07-27", "exit_date": "2026-07-31", "trigger": "現貨高檔反轉・第一時間鎖利放空 (10x) ➔ 確定再向下加空至15x", "exit_reason": "現貨反轉 ➔ 移動停利鎖住獲利 (最高+96%)", "margin_return_pct": 72.55, "total_eq_impact_pct": 7.24, "reinvest_to_etf_pct_of_eq": 6.68, "bottom_etf_shares_boost_pct": 7.93, "cum_bottom_boost_mult": 2.405, "net_etf_shares_mult": 1.34}, {"entry_date": "2026-10-16", "exit_date": "2026-10-29", "trigger": "現貨高檔反轉・第一時間鎖利放空 (10x)", "exit_reason": "現貨反轉站回5日線 ➔ 快進快出平空止盈＋買進00631L", "margin_return_pct": 7.96, "total_eq_impact_pct": 0.79, "reinvest_to_etf_pct_of_eq": 0.87, "bottom_etf_shares_boost_pct": 0.98, "cum_bottom_boost_mult": 2.428, "net_etf_shares_mult": 1.329}, {"entry_date": "2026-11-02", "exit_date": "2026-11-09", "trigger": "確定再向下・2倍敏銳指標破位放空 (15x)", "exit_reason": "恐慌見底反轉紅K ➔ 快進快出平空暴賺＋抄底00631L", "margin_return_pct": 120.16, "total_eq_impact_pct": 13.06, "reinvest_to_etf_pct_of_eq": 14.37, "bottom_etf_shares_boost_pct": 18.97, "cum_bottom_boost_mult": 2.889, "net_etf_shares_mult": 1.582}], "indicator_cards": {"trend_breakdown_card": {"card_title": "⚡ 1. 現貨開始反轉・第一段鎖利雷達 (10x)", "is_triggered": true, "badge_text": "🚨 反轉鎖利觸發", "ma5": 27.63, "ma10": 28.71, "ma20": 31.31, "ma60": 35.51, "max_bias60_15d": -6.96, "status_summary": "收盤 24.57 vs 5日線 27.63 / 10日線 28.71 / 月線 31.31"}, "slope_steep_card": {"card_title": "📐 2. 確定再向下・2倍敏銳加空雷達 (15x)", "is_triggered": true, "badge_text": "🔥 確定再向下 (15x)", "ma10_slope_pct": -1.59, "ma20_slope_pct": -1.89, "ma60_slope_pct": -0.48, "osc_fast": -0.38, "osc_fast_chg": -0.19, "status_summary": "10日斜率 -1.59%/日 | 20日斜率 -1.89%/日 | 快速OSC -0.38"}, "panic_rebound_card": {"card_title": "💎 3. 快進快出・反轉即平倉雷達 (MA5 & RSI6)", "is_triggered": false, "badge_text": "⚡ 5日線下 (空單續抱)", "ma5": 27.63, "bias5_pct": -11.07, "current_rsi6": 23.5, "min_rsi6_15d": 6.7, "min_bias20_15d_pct": -25.87, "status_summary": "收盤 24.57 > 5日線 27.63 (+-11.07%) | 近15日最低 RSI(6)=6.7"}, "position_calculator_card": {"card_title": "⚖️ 4. 每 100 萬資金快進快出風控表", "badge_text": "勝率 52.9%｜最大虧 -18.96%", "base_capital_ntd": 1000000, "target_etf_ntd": 900000, "target_margin_ntd": 100000, "recommended_tmf_contracts": "階段①鎖利：微台 2~3 口 ｜ 階段②再向下：微台 3~4 口", "recommended_mtx_contracts": "保本/停損：浮盈+16%設保本+5% ｜ 站回5日線立刻小停損", "status_summary": "十年總報酬 +3478.5% (年化 45.65%) | 淨持股翻至 1.58x"}}};
-        let currentEtf9010ViewMode = 'current'; // 'current' | 'last_cycle'
+        let globalEtf9010Payload = {"strategy_version": "v2_agile_2x_fast", "strategy_name": "00631L × 微台/小台 90:10「2x 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空 (10x➔15x)」雙帳戶策略", "file_name": "Daily_00631L_90_10_signal.JSON", "generated_at": "2026-11-19 22:15:45", "scheduled_run_time": "每日 18:00 自動更新", "backtest_summary": {"strategy": "2x 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空 (10x➔15x)", "total_ret_pct": 3478.54, "cagr_pct": 45.65, "mdd_pct": -44.03, "calmar": 1.04, "sharpe": 1.3, "annual_win_rate_pct": 80.0, "bottom_reinvest_times": 18, "cum_bottom_share_boost_pct": 188.9, "final_net_shares_mult": 1.58, "total_short_cycles": 34, "short_win_rate_pct": 52.9, "max_single_margin_loss_pct": -18.96}, "current": {"ticker": "00631L.TW", "name": "元大台灣50正2", "date": "2026-11-19", "time": "13:30:00 (台股收盤)", "open": 26.73, "high": 27.06, "low": 24.4, "close_price": 24.57, "change": -2.27, "change_pct": -8.46, "regime_code": "SHORT_HEDGING", "regime_badge": "⚡ STEP 3 確定再向下 15x 空單保護中 (浮盈 +95.0%)", "pill_class": "action-sell", "is_short_active": true, "eff_hedge_ratio_pct": 94.2, "today_instruction": "🎯 今日重點：2026-11-18 進場 15x 空單目前浮盈 +94.96%（總資產 +9.41%）；續抱至站回 5日線 (27.63 元) 或見底紅K即平倉加碼 00631L。", "etf_weight_pct": 80.36, "fut_weight_pct": 19.64, "sim_1m_etf_ntd": 803576, "sim_1m_fut_ntd": 196424, "sim_1m_etf_shares": 32706, "cum_bottom_share_boost_pct": 188.9, "final_net_shares_mult": 1.58, "bottom_reinvest_times": 18, "total_short_cycles": 34, "short_win_rate_pct": 52.9}, "current_slots": [{"slot_key": "STEP 1｜90% 現貨倉", "weight_badge": "佔比 80.4%", "card_title": "00631L 核心長抱倉", "card_style": "filled-first", "main_value": "32,706 股", "main_unit": "(現價 24.57 元)", "sub_datetime": "", "reason_text": "牛市長抱 90% 享正2複利；急跌段靠期貨獲利低檔增持股數。", "metrics": [{"label": "累積淨持股倍數", "value": "1.58x (比原股數多 +58%)", "color": "up"}, {"label": "今日動作", "value": "續抱現貨・等空單平倉加碼", "color": "neutral"}]}, {"slot_key": "STEP 2｜高檔反轉 10x", "weight_badge": "已交棒 STEP 3", "card_title": "現貨開始反轉・鎖利空單", "card_style": "empty-slot", "main_value": "10x 鎖利", "main_unit": "(微台 2~3 口)", "sub_datetime": "", "reason_text": "條件：高檔跌破月線 (31.31) ＆ 10日線 (28.71) 且 MACD 轉綠。", "metrics": [{"label": "假反轉保護", "value": "站回 5日線即平倉 (最大虧 -19.0%)", "color": "neutral"}, {"label": "前次鎖利成果", "value": "10-16~10-29 快平 +7.96%", "color": "up"}]}, {"slot_key": "STEP 3｜確定再向下 15x", "weight_badge": "🚨 持倉浮盈 +95.0%", "card_title": "2倍敏銳破位・主跌段加空", "card_style": "filled-exit", "main_value": "+94.96%", "main_unit": "(11-18 進場 15x)", "sub_datetime": "", "reason_text": "條件：破 5日線 (27.63) 且雙均線斜率急殺 (-1.59% / -1.89%)。", "metrics": [{"label": "目前未實現獲利", "value": "保證金 +94.96% (總資產 +9.41%)", "color": "up"}, {"label": "微台指配置", "value": "每百萬空單 3~4 口保護中", "color": "up"}]}, {"slot_key": "STEP 4｜快平加碼 00631L", "weight_badge": "累計 18 次抄底", "card_title": "反轉即平倉 ➔ 90:10 買現貨", "card_style": "filled-first", "main_value": "防線 27.63 元", "main_unit": "(5日線 MA5)", "sub_datetime": "", "reason_text": "出場：站回 5日線 (27.63)、移動停利鎖 76% 獲利、或 RSI(6)≤12 紅K。", "metrics": [{"label": "目前 RSI(6) / 最低", "value": "23.5 / 近15日最低 6.7", "color": "neutral"}, {"label": "上次 11-09 抄底", "value": "空單 +120% ➔ 增持 +18.97% 股數", "color": "up"}]}], "last_completed_cycle": {"entry_date": "2026-11-02", "exit_date": "2026-11-09", "trigger": "確定再向下・2倍敏銳指標破位放空 (15x)", "exit_reason": "恐慌見底反轉紅K ➔ 快進快出平空暴賺＋抄底00631L", "margin_return_pct": 120.16, "total_eq_impact_pct": 13.06, "reinvest_to_etf_pct_of_eq": 14.37, "bottom_etf_shares_boost_pct": 18.97, "cum_bottom_boost_mult": 2.889, "slots": [{"slot_key": "STEP 1 (第1段鎖利)", "weight_badge": "賺 +7.96% 快平", "card_title": "① 2026-10-16 現貨高檔反轉鎖利", "card_style": "filled-entry", "main_value": "+7.96%", "main_unit": "(2026-10-29 站回5日線快平)", "sub_datetime": "📅 第1段期間：2026-10-16 ~ 2026-10-29", "reason_text": "🎯 00631L 自 41.89 元高檔跌破月線，第一時間進場 10x 鎖利；10/28 站回 5日線立刻獲利平倉！", "metrics": [{"label": "第1段空單成果", "value": "保證金 +7.96% (增持 +0.98% 股數)", "color": "up"}, {"label": "快進快出優勢", "value": "有反轉先落袋，不死抱被反彈吃掉獲利", "color": "up"}]}, {"slot_key": "STEP 2 (確定再向下)", "weight_badge": "15x 重拳二進", "card_title": "② 2026-11-02 確定再向下二度放空", "card_style": "filled-exit", "main_value": "10% 保證金 × 15x", "main_unit": "2倍敏銳指標確認主跌段", "sub_datetime": "📅 二度進場日：2026-11-02 (開盤 33.34 元)", "reason_text": "🎯 10/29 平倉後反彈不過月線，10/30 長黑再度跌破 5日線且 MA10/MA20 加速下彎，確認再向下！", "metrics": [{"label": "主跌段精準卡位", "value": "33.34 元空在主跌段起跌點", "color": "up"}, {"label": "期貨動用槓桿", "value": "15x 滿載對沖保護 90% 現貨", "color": "neutral"}]}, {"slot_key": "STEP 3 (見底快平)", "weight_badge": "暴賺 +120.16%", "card_title": "③ 2026-11-09 恐慌見底立刻平空", "card_style": "filled-first", "main_value": "+120.16%", "main_unit": "(總資產逆勢大賺 +13.06%)", "sub_datetime": "📅 見底平倉日：2026-11-09 (27.78 元平倉)", "reason_text": "🎯 11/06 崩盤至 23.80 元、RSI(6) 僅 6.6 留長下影線見底，11/09 開盤立刻平空鎖住 +120% 暴利！", "metrics": [{"label": "對比舊版死等季線", "value": "舊版抱到11/12變 -33%，新版大賺 +120%！", "color": "up"}, {"label": "專戶超額獲利轉出", "value": "轉出總資產 14.37% 現金抄底", "color": "up"}]}, {"slot_key": "STEP 4 (底部大加碼)", "weight_badge": "股數 +18.97%", "card_title": "④ 底部 27.78 元大買 00631L 再平衡", "card_style": "filled-first", "main_value": "+18.97%", "main_unit": "單次免費擴增 00631L 股數", "sub_datetime": "🏆 最終淨持股倍數：1.58x (超越B&H +58%！)", "reason_text": "🎯 11/09 在底部 27.78 元將空單暴利換成便宜 00631L 籌碼，隨後漲回 31.92 元享受雙重暴利！", "metrics": [{"label": "每百萬相當於加碼", "value": "約 NT$ 143,700", "color": "up"}, {"label": "重平衡後雙帳戶比", "value": "90.0% 00631L : 10.0% 保證金", "color": "neutral"}]}]}, "recent_rebalance_logs": [{"entry_date": "2025-03-10", "exit_date": "2025-03-18", "trigger": "現貨破季線反轉・第一時間鎖利放空 (10x) ➔ 確定再向下加空至15x", "exit_reason": "現貨反轉站回5日線 ➔ 快進快出平空止盈＋買進00631L", "margin_return_pct": 5.53, "total_eq_impact_pct": 0.55, "reinvest_to_etf_pct_of_eq": 0.6, "bottom_etf_shares_boost_pct": 0.67, "cum_bottom_boost_mult": 1.624, "net_etf_shares_mult": 0.983}, {"entry_date": "2025-03-31", "exit_date": "2025-04-10", "trigger": "確定再向下・2倍敏銳指標破位放空 (15x)", "exit_reason": "現貨反轉 ➔ 移動停利鎖住獲利 (最高+298%)", "margin_return_pct": 226.29, "total_eq_impact_pct": 25.26, "reinvest_to_etf_pct_of_eq": 24.43, "bottom_etf_shares_boost_pct": 37.21, "cum_bottom_boost_mult": 2.228, "net_etf_shares_mult": 1.349}, {"entry_date": "2026-07-27", "exit_date": "2026-07-31", "trigger": "現貨高檔反轉・第一時間鎖利放空 (10x) ➔ 確定再向下加空至15x", "exit_reason": "現貨反轉 ➔ 移動停利鎖住獲利 (最高+96%)", "margin_return_pct": 72.55, "total_eq_impact_pct": 7.24, "reinvest_to_etf_pct_of_eq": 6.68, "bottom_etf_shares_boost_pct": 7.93, "cum_bottom_boost_mult": 2.405, "net_etf_shares_mult": 1.34}, {"entry_date": "2026-10-16", "exit_date": "2026-10-29", "trigger": "現貨高檔反轉・第一時間鎖利放空 (10x)", "exit_reason": "現貨反轉站回5日線 ➔ 快進快出平空止盈＋買進00631L", "margin_return_pct": 7.96, "total_eq_impact_pct": 0.79, "reinvest_to_etf_pct_of_eq": 0.87, "bottom_etf_shares_boost_pct": 0.98, "cum_bottom_boost_mult": 2.428, "net_etf_shares_mult": 1.329}, {"entry_date": "2026-11-02", "exit_date": "2026-11-09", "trigger": "確定再向下・2倍敏銳指標破位放空 (15x)", "exit_reason": "恐慌見底反轉紅K ➔ 快進快出平空暴賺＋抄底00631L", "margin_return_pct": 120.16, "total_eq_impact_pct": 13.06, "reinvest_to_etf_pct_of_eq": 14.37, "bottom_etf_shares_boost_pct": 18.97, "cum_bottom_boost_mult": 2.889, "net_etf_shares_mult": 1.582}], "indicator_cards": {"trend_breakdown_card": {"card_title": "⚡ 1. 現貨開始反轉・第一段鎖利雷達 (10x)", "is_triggered": true, "badge_text": "🚨 反轉鎖利觸發", "ma5": 27.63, "ma10": 28.71, "ma20": 31.31, "ma60": 35.51, "max_bias60_15d": -6.96, "status_summary": "收盤 24.57 vs 5日線 27.63 / 10日線 28.71 / 月線 31.31"}, "slope_steep_card": {"card_title": "📐 2. 確定再向下・2倍敏銳加空雷達 (15x)", "is_triggered": true, "badge_text": "🔥 確定再向下 (15x)", "ma10_slope_pct": -1.59, "ma20_slope_pct": -1.89, "ma60_slope_pct": -0.48, "osc_fast": -0.38, "osc_fast_chg": -0.19, "status_summary": "10日斜率 -1.59%/日 | 20日斜率 -1.89%/日 | 快速OSC -0.38"}, "panic_rebound_card": {"card_title": "💎 3. 快進快出・反轉即平倉雷達 (MA5 & RSI6)", "is_triggered": false, "badge_text": "⚡ 5日線下 (空單續抱)", "ma5": 27.63, "bias5_pct": -11.07, "current_rsi6": 23.5, "min_rsi6_15d": 6.7, "min_bias20_15d_pct": -25.87, "status_summary": "收盤 24.57 > 5日線 27.63 (+-11.07%) | 近15日最低 RSI(6)=6.7"}, "position_calculator_card": {"card_title": "⚖️ 4. 每 100 萬資金快進快出風控表", "badge_text": "勝率 52.9%｜最大虧 -18.96%", "base_capital_ntd": 1000000, "target_etf_ntd": 900000, "target_margin_ntd": 100000, "recommended_tmf_contracts": "階段①鎖利：微台 2~3 口 ｜ 階段②再向下：微台 3~4 口", "recommended_mtx_contracts": "保本/停損：浮盈+16%設保本+5% ｜ 站回5日線立刻小停損", "status_summary": "十年總報酬 +3478.5% (年化 45.65%) | 淨持股翻至 1.58x"}}};
 
         function loadEtf9010SignalData() {
             const container = document.getElementById('etf9010-signal-container');
@@ -1712,21 +1711,20 @@
             ];
 
             function applyEtf9010Data(data) {
-                // 防範 GitHub Pages 快取延遲：若遠端抓到的是舊版 (無 v2_agile_2x_fast 標記)，自動採用內建最新 v2 數據
                 if (data && data.strategy_version === 'v2_agile_2x_fast') {
                     globalEtf9010Payload = data;
                 } else {
                     data = globalEtf9010Payload;
                 }
                 if (badgeContainer && data.scheduled_run_time) {
-                    badgeContainer.innerText = `⏰ 2x靈敏快進快出 (反轉鎖利10x / 再向下15x)｜${data.scheduled_run_time}`;
+                    badgeContainer.innerText = `⏰ ${data.scheduled_run_time}`;
                 }
                 if (timeContainer) {
                     const genAt = data.generated_at || '';
                     const dataDt = (data.current && data.current.date) ? ` | 行情基準：${data.current.date}` : '';
                     timeContainer.innerText = `排程更新最後時間: ${genAt}${dataDt}`;
                 }
-                renderEtf9010Dashboard('current');
+                renderEtf9010Dashboard();
             }
 
             function tryFetchEtf9010(idx) {
@@ -1747,22 +1745,15 @@
                         if (data && data.strategy_version === 'v2_agile_2x_fast') {
                             applyEtf9010Data(data);
                         } else {
-                            console.warn(`來源 (${candidateUrls[idx]}) 仍為舊版快取，自動嘗試下一來源...`);
                             tryFetchEtf9010(idx + 1);
                         }
                     })
-                    .catch(err => {
-                        console.warn(`00631L 90:10 訊號載入嘗試下一來源 (${candidateUrls[idx]}):`, err);
+                    .catch(() => {
                         tryFetchEtf9010(idx + 1);
                     });
             }
 
             tryFetchEtf9010(0);
-        }
-
-        function switchEtf9010Mode(mode) {
-            currentEtf9010ViewMode = mode;
-            renderEtf9010Dashboard(mode);
         }
 
         function formatEtf9010SlotCard(slot) {
@@ -1781,18 +1772,20 @@
             if (slot.card_style === 'filled-first') keyBg = '#0284c7';
             else if (slot.card_style === 'filled-entry') keyBg = '#d97706';
             else if (slot.card_style === 'filled-exit') keyBg = '#059669';
+            else if ((slot.slot_key || '').includes('STEP 2')) keyBg = '#d97706';
+            else if ((slot.slot_key || '').includes('STEP 3')) keyBg = '#059669';
 
             return `
-                <div class="v7-slot-card ${slot.card_style || 'empty-slot'}">
+                <div class="v7-slot-card ${slot.card_style || 'empty-slot'}" style="min-height:135px;padding:12px 14px;">
                     <div>
                         <div class="v7-slot-top">
                             <span class="v7-slot-key" style="background:${keyBg};color:#fff;">${slot.slot_key || 'STEP'}</span>
                             <span class="v7-slot-wt">${slot.weight_badge || ''}</span>
                         </div>
-                        <div style="font-size:0.8rem;font-weight:700;color:#1e293b;margin-bottom:4px;">${slot.card_title || ''}</div>
+                        <div style="font-size:0.82rem;font-weight:800;color:#1e293b;margin-bottom:2px;">${slot.card_title || ''}</div>
                         <div class="v7-slot-price">${slot.main_value || '--'} <span style="font-size:0.74rem;font-weight:600;color:#64748b;">${slot.main_unit || ''}</span></div>
-                        <div class="v7-slot-datetime">${slot.sub_datetime || ''}</div>
-                        <div class="v7-slot-reason">${slot.reason_text || ''}</div>
+                        ${slot.sub_datetime ? `<div class="v7-slot-datetime">${slot.sub_datetime}</div>` : ''}
+                        <div class="v7-slot-reason" style="margin-top:6px;">${slot.reason_text || ''}</div>
                     </div>
                     <div class="v7-slot-diff-box">
                         ${metricsHtml}
@@ -1801,7 +1794,7 @@
             `;
         }
 
-        function renderEtf9010Dashboard(mode) {
+        function renderEtf9010Dashboard() {
             const container = document.getElementById('etf9010-signal-container');
             if (!container || !globalEtf9010Payload) return;
 
@@ -1810,14 +1803,8 @@
             const bt = data.backtest_summary || {};
             const ind = data.indicator_cards || {};
             const trendCard = ind.trend_breakdown_card || {};
-            const slopeCard = ind.slope_steep_card || {};
-            const panicCard = ind.panic_rebound_card || {};
-            const calcCard = ind.position_calculator_card || {};
-            const lastCycle = data.last_completed_cycle || null;
+            const activeSlots = data.current_slots || [];
             const recentLogs = data.recent_rebalance_logs || [];
-
-            const useLastCycle = (mode === 'last_cycle' && lastCycle && lastCycle.slots);
-            const activeSlots = useLastCycle ? lastCycle.slots : (data.current_slots || []);
 
             const chg = Number(cur.change || 0);
             const chgPct = Number(cur.change_pct || 0);
@@ -1825,6 +1812,7 @@
             const sign = isUp ? '+' : '';
             const etfW = Number(cur.etf_weight_pct || 90.0);
             const futW = Number(cur.fut_weight_pct || 10.0);
+            const ma5Val = trendCard.ma5 !== undefined ? Number(trendCard.ma5).toFixed(2) : '--';
 
             const logsTableRows = recentLogs.slice().reverse().map(lg => {
                 const mRet = Number(lg.margin_return_pct || 0);
@@ -1848,37 +1836,38 @@
 
             container.innerHTML = `
                 <div class="v7-master-container">
-                    <!-- 第 1 層：00631L 最新行情與 90:10 雙帳戶動態配置橫幅 -->
-                    <div class="v7-current-banner">
+                    <!-- 第 1 層：精簡版最新報價與今日動作橫幅 -->
+                    <div class="v7-current-banner" style="margin-bottom:16px;">
                         <div class="v7-price-block">
                             <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
                                 <span style="font-size:0.8rem;font-weight:700;color:#475569;">📍 ${cur.name || '元大台灣50正2'} (${cur.ticker || '00631L.TW'})</span>
                                 <span class="strategy-badge badge-etf" style="font-size:0.7rem;">${cur.date || '--'}</span>
                             </div>
                             <div class="v7-price-main" style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
-                                <span>${Number(cur.close_price || 0).toFixed(2)} <span style="font-size:0.9rem;font-weight:600;color:#64748b;">元</span></span>
+                                <span>${Number(cur.close_price || 0).toFixed(2)} <span style="font-size:0.85rem;font-weight:600;color:#64748b;">元</span></span>
                                 <span style="font-size:0.95rem;font-weight:700;color:${isUp ? '#dc2626' : '#16a34a'};">
                                     ${isUp ? '▲' : '▼'} ${sign}${chg.toFixed(2)} (${sign}${chgPct.toFixed(2)}%)
                                 </span>
                             </div>
                             <div class="v7-ohlc-sub">
-                                <span>開盤: <b>${Number(cur.open || 0).toFixed(2)}</b></span>
-                                <span>最高: <b style="color:#dc2626;">${Number(cur.high || 0).toFixed(2)}</b></span>
-                                <span>最低: <b style="color:#16a34a;">${Number(cur.low || 0).toFixed(2)}</b></span>
+                                <span>開: <b>${Number(cur.open || 0).toFixed(2)}</b></span>
+                                <span>高: <b style="color:#dc2626;">${Number(cur.high || 0).toFixed(2)}</b></span>
+                                <span>低: <b style="color:#16a34a;">${Number(cur.low || 0).toFixed(2)}</b></span>
+                                <span>5日線: <b>${ma5Val}</b></span>
                             </div>
                         </div>
 
                         <div class="v7-status-block">
                             <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
                                 <span class="action-pill ${cur.pill_class || 'action-hold-long'}">${cur.regime_badge || '90:10 續抱待命'}</span>
-                                <span class="cfo-pill cfo-pill-flat">期貨空單勝率: <b>${Number(cur.short_win_rate_pct || 52.9).toFixed(1)}%</b></span>
-                                <span class="cfo-pill cfo-pill-up">淨持股倍數: <b>${Number(cur.final_net_shares_mult || 1.58).toFixed(2)}x (+58%股數)</b></span>
+                                <span class="cfo-pill cfo-pill-flat">勝率 <b>${Number(cur.short_win_rate_pct || 52.9).toFixed(1)}%</b></span>
+                                <span class="cfo-pill cfo-pill-up">淨持股 <b>${Number(cur.final_net_shares_mult || 1.58).toFixed(2)}x (+58%股數)</b></span>
                             </div>
-                            <div class="v7-signal-desc">${cur.today_instruction || ''}</div>
+                            <div class="v7-signal-desc" style="font-size:0.88rem;">${cur.today_instruction || ''}</div>
                             <div>
-                                <div style="display:flex;justify-content:space-between;font-size:0.76rem;font-weight:700;">
+                                <div style="display:flex;justify-content:space-between;font-size:0.75rem;font-weight:700;">
                                     <span style="color:#dc2626;">📈 帳戶A (00631L 現貨): ${etfW.toFixed(1)}%</span>
-                                    <span style="color:#2563eb;">🛡️ 帳戶B (期貨保證金專戶): ${futW.toFixed(1)}% (目標 90:10)</span>
+                                    <span style="color:#2563eb;">🛡️ 帳戶B (期貨保證金): ${futW.toFixed(1)}% ${cur.is_short_active ? '(空單獲利膨脹中)' : '(目標 90:10)'}</span>
                                 </div>
                                 <div class="etf9010-dual-bar-track">
                                     <div class="etf9010-bar-etf" style="width:${etfW}%;"></div>
@@ -1889,177 +1878,31 @@
 
                         <div class="v7-pnl-block">
                             <div class="metric-box">
-                                <span class="metric-label">每百萬配置：00631L 現貨</span>
+                                <span class="metric-label">每百萬：00631L 現貨</span>
                                 <span class="metric-val up">NT$ ${Number(cur.sim_1m_etf_ntd || 900000).toLocaleString()}</span>
                             </div>
                             <div class="metric-box">
-                                <span class="metric-label">每百萬配置：期貨保證金</span>
+                                <span class="metric-label">每百萬：期貨保證金</span>
                                 <span class="metric-val neutral">NT$ ${Number(cur.sim_1m_fut_ntd || 100000).toLocaleString()}</span>
                             </div>
                             <div class="metric-box">
-                                <span class="metric-label">總交易 / 底部成功加碼</span>
-                                <span class="metric-val neutral">${cur.total_short_cycles || 34} 筆 / ${cur.bottom_reinvest_times || 18} 次加碼</span>
+                                <span class="metric-label">微台指建議口數</span>
+                                <span class="metric-val neutral">鎖利 2~3口 / 再向下 3~4口</span>
                             </div>
                             <div class="metric-box">
-                                <span class="metric-label">十年總報酬 / 年化 CAGR</span>
-                                <span class="metric-val up">+${Number(bt.total_ret_pct || 3997.21).toFixed(0)}% / ${Number(bt.cagr_pct || 47.84).toFixed(2)}%</span>
+                                <span class="metric-label">十年報酬 / 年化 CAGR</span>
+                                <span class="metric-val up">+${Number(bt.total_ret_pct || 3478.54).toFixed(0)}% / ${Number(bt.cagr_pct || 45.65).toFixed(2)}%</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 第 2 層：90:10 雙帳戶四部曲卡片 -->
-                    <div class="v7-section-subtitle">
-                        <div>
-                            🔄 <b>2x 靈敏快進快出鎖利 (10x) ＋ 確定再向下 2倍敏銳加空 (15x) 雙帳戶追蹤卡</b>
-                            <span style="font-size:0.8rem;font-weight:500;color:#64748b;margin-left:6px;">
-                                (現貨開始反轉 10x 鎖利 ➔ 站回 5日線/移動停利立刻快平 ➔ 反彈失敗確定再向下 15x 重拳進場 ➔ 見底平空大買 00631L)
-                            </span>
-                        </div>
-                        <div class="v7-mode-tabs">
-                            <button class="v7-mode-btn ${!useLastCycle ? 'active' : ''}" onclick="switchEtf9010Mode('current')">
-                                🟢 目前雙帳戶即時狀態 (${cur.date || '--'})
-                            </button>
-                            ${lastCycle ? `
-                            <button class="v7-mode-btn ${useLastCycle ? 'active' : ''}" onclick="switchEtf9010Mode('last_cycle')">
-                                📜 最新兩段式快進快出戰績 (10/16 鎖利快平 ➔ 11/02 再向下暴賺 +${lastCycle.margin_return_pct}%)
-                            </button>` : ''}
-                        </div>
-                    </div>
-
-                    ${useLastCycle ? `
-                    <div style="background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af;padding:8px 14px;border-radius:8px;margin-bottom:12px;font-size:0.82rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
-                        <span>📜 正在檢視【2026年10~11月 兩段式快進快出實戰回顧】：第1段(10/16~10/29 站回5日線快平 +7.96%) ➔ 第2段(${lastCycle.entry_date} ~ ${lastCycle.exit_date} 確定再向下 15x)</span>
-                        <span>第2段空單暴賺：<b style="color:#dc2626;">+${lastCycle.margin_return_pct}% (總資產 +${lastCycle.total_eq_impact_pct}%)</b> ➔ 底部免費幫 00631L 擴增 <b style="color:#1d4ed8;">+${lastCycle.bottom_etf_shares_boost_pct}% 股數</b>！</span>
-                    </div>` : ''}
-
-                    <div class="etf9010-slots-grid">
+                    <!-- 第 2 層：精簡版 STEP 1 ~ STEP 4 重點狀態卡 -->
+                    <div class="etf9010-slots-grid" style="margin-bottom:14px;">
                         ${activeSlots.map(s => formatEtf9010SlotCard(s)).join('')}
                     </div>
 
-                    <!-- 第 3 層：四大技術指標與口數試算診斷卡 -->
-                    <div class="v7-section-subtitle" style="margin-top:4px;">
-                        <div>📡 <b>00631L 2x 靈敏快進快出雷達 ＆ 確定再向下 2倍敏銳指標診斷卡 (${cur.date || '--'})</b></div>
-                        <span style="font-size:0.76rem;color:#64748b;">對應 JSON 欄位：Daily_00631L_90_10_signal.JSON</span>
-                    </div>
-
-                    <div class="v7-indicators-grid">
-                        <!-- 指標卡 1：第一段現貨開始反轉鎖利雷達 -->
-                        <div class="v7-ind-card">
-                            <div class="v7-ind-header">
-                                <span>${trendCard.card_title || '⚡ 1. 現貨開始反轉・鎖利雷達'}</span>
-                                <span class="cfo-pill ${trendCard.is_triggered ? 'cfo-pill-down' : 'cfo-pill-up'}">
-                                    ${trendCard.badge_text || '🟢 未觸發高檔反轉'}
-                                </span>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">5日均線 (MA5) 快進快出線</span>
-                                <b>${trendCard.ma5} 元 (${Number(cur.close_price) > Number(trendCard.ma5) ? '✔️ 收盤在MA5上' : '🔻 跌破MA5'})</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">10日均線 (MA10) 轉折線</span>
-                                <b>${trendCard.ma10} 元</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">20日均線 (MA20) 月線防線</span>
-                                <b>${trendCard.ma20} 元</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">60日均線 (MA60) 季線座標</span>
-                                <b>${trendCard.ma60} 元 (近15日最高乖離 +${trendCard.max_bias60_15d}%)</b>
-                            </div>
-                            <div class="v7-ind-summary-foot" style="margin-top:10px;">
-                                ${trendCard.status_summary || ''}
-                            </div>
-                        </div>
-
-                        <!-- 指標卡 2：第二段確定再向下 2倍敏銳加空雷達 -->
-                        <div class="v7-ind-card">
-                            <div class="v7-ind-header">
-                                <span>${slopeCard.card_title || '📐 2. 確定再向下・2倍敏銳雷達'}</span>
-                                <span class="cfo-pill ${slopeCard.is_triggered ? 'cfo-pill-down' : 'cfo-pill-up'}">
-                                    ${slopeCard.badge_text || '🟢 穩守5日線未再向下'}
-                                </span>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">10日線斜率 (門檻 &lt;-0.50%/日)</span>
-                                <b style="color:${Number(slopeCard.ma10_slope_pct) < -0.50 ? '#16a34a' : '#0f172a'};">${Number(slopeCard.ma10_slope_pct) >= 0 ? '+' : ''}${slopeCard.ma10_slope_pct}%/日</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">20日線斜率 (門檻 &lt;-0.50%/日)</span>
-                                <b style="color:${Number(slopeCard.ma20_slope_pct) < -0.50 ? '#16a34a' : '#475569'};">${Number(slopeCard.ma20_slope_pct) >= 0 ? '+' : ''}${slopeCard.ma20_slope_pct}%/日</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">快速 MACD(8,17,9) OSC 柱</span>
-                                <b style="color:${Number(slopeCard.osc_fast) >= 0 ? '#dc2626' : '#16a34a'};">${Number(slopeCard.osc_fast) >= 0 ? '+' : ''}${slopeCard.osc_fast}</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">快速 OSC 單日動能變化</span>
-                                <b style="color:${Number(slopeCard.osc_fast_chg) >= 0 ? '#dc2626' : '#16a34a'};">${Number(slopeCard.osc_fast_chg) >= 0 ? '▲ +' : '▼ '}${slopeCard.osc_fast_chg}</b>
-                            </div>
-                            <div class="v7-ind-summary-foot" style="margin-top:10px;">
-                                ${slopeCard.status_summary || ''}
-                            </div>
-                        </div>
-
-                        <!-- 指標卡 3：快進快出反轉即平倉雷達 -->
-                        <div class="v7-ind-card">
-                            <div class="v7-ind-header">
-                                <span>${panicCard.card_title || '💎 3. 快進快出・反轉即平倉雷達'}</span>
-                                <span class="cfo-pill ${panicCard.is_triggered ? 'cfo-pill-up' : 'cfo-pill-down'}">
-                                    ${panicCard.badge_text || '✔️ 已站回5日線'}
-                                </span>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">收盤 vs 5日均線 (MA5)</span>
-                                <b style="color:${Number(panicCard.bias5_pct) >= 0 ? '#dc2626' : '#16a34a'};">${Number(panicCard.bias5_pct) >= 0 ? '+' : ''}${panicCard.bias5_pct}% (站上即平空)</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">靈敏 RSI(6) 目前 / 近15日最低</span>
-                                <b>${panicCard.current_rsi6} / <span style="color:${Number(panicCard.min_rsi6_15d) <= 12 ? '#dc2626' : '#475569'};">${panicCard.min_rsi6_15d}</span> (見底門檻 ≤12)</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">近15日最深月線負乖離</span>
-                                <b style="color:${Number(panicCard.min_bias20_15d_pct) <= -22 ? '#dc2626' : '#0f172a'};">${panicCard.min_bias20_15d_pct}% (門檻 ≤-22%)</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">移動停利 / 保本鎖利機制</span>
-                                <b style="color:#1d4ed8;">浮盈+16%保本 / +35%鎖76%獲利</b>
-                            </div>
-                            <div class="v7-ind-summary-foot" style="margin-top:10px;">
-                                ${panicCard.status_summary || ''}
-                            </div>
-                        </div>
-
-                        <!-- 指標卡 4：每 100 萬總資金 90:10 快進快出風控表 -->
-                        <div class="v7-ind-card">
-                            <div class="v7-ind-header">
-                                <span>${calcCard.card_title || '⚖️ 4. 每 100 萬資金快進快出風控'}</span>
-                                <span class="cfo-pill cfo-pill-up">${calcCard.badge_text || '勝率52.9%'}</span>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">帳戶A：00631L 現貨目標 (90%)</span>
-                                <b style="color:#dc2626;">NT$ 900,000</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">帳戶B：期貨保證金目標 (10%)</span>
-                                <b style="color:#2563eb;">NT$ 100,000</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">兩段式微台 (TMF) 口數配置</span>
-                                <b>${calcCard.recommended_tmf_contracts || '階段① 2~3口 / 階段② 3~4口'}</b>
-                            </div>
-                            <div class="v7-ind-row">
-                                <span style="color:#64748b;">10萬本金不虧空鐵律</span>
-                                <b>${calcCard.recommended_mtx_contracts || '站回5日線立刻平倉'}</b>
-                            </div>
-                            <div class="v7-ind-summary-foot" style="margin-top:10px;">
-                                ${calcCard.status_summary || ''}
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 近期 5 筆空單避險與再平衡歷史明細表 -->
-                    <details open style="margin-top:14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px 14px;">
+                    <!-- 第 3 層：近期 5 筆空單避險與再平衡歷史明細表 -->
+                    <details open style="margin-top:8px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px 14px;">
                         <summary style="cursor:pointer;font-size:0.82rem;font-weight:700;color:#334155;">
                             📋 展開檢視近期 5 筆「2x 靈敏快進快出鎖利 ➔ 確定再向下 15x ➔ 平倉加碼 00631L」實戰紀錄 (近期 5 戰全勝！10年共 ${bt.total_short_cycles || 34} 筆，勝率 ${cur.short_win_rate_pct || 52.9}%，淨持股擴增至 ${bt.final_net_shares_mult || 1.58}x)
                         </summary>
