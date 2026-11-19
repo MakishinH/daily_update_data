@@ -2,15 +2,15 @@
   "strategy_version": "v2_agile_2x_fast",
   "strategy_name": "00631L × 微台/小台 90:10「2x 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空 (10x➔15x)」雙帳戶策略",
   "file_name": "Daily_00631L_90_10_signal.JSON",
-  "generated_at": "2026-11-19 18:01:59",
+  "generated_at": "2026-11-19 21:51:27",
   "scheduled_run_time": "每日 18:00 自動更新",
   "backtest_summary": {
     "strategy": "2x 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空 (10x➔15x)",
-    "total_ret_pct": 3997.21,
-    "cagr_pct": 47.84,
+    "total_ret_pct": 3478.54,
+    "cagr_pct": 45.65,
     "mdd_pct": -44.03,
-    "calmar": 1.09,
-    "sharpe": 1.35,
+    "calmar": 1.04,
+    "sharpe": 1.3,
     "annual_win_rate_pct": 80.0,
     "bottom_reinvest_times": 18,
     "cum_bottom_share_boost_pct": 188.9,
@@ -22,25 +22,25 @@
   "current": {
     "ticker": "00631L.TW",
     "name": "元大台灣50正2",
-    "date": "2026-11-13",
+    "date": "2026-11-19",
     "time": "13:30:00 (台股收盤)",
-    "open": 32.33,
-    "high": 33.2,
-    "low": 31.74,
-    "close_price": 31.92,
-    "change": 0.93,
-    "change_pct": 3.0,
-    "regime_code": "BULL_STANDBY_90_10",
-    "regime_badge": "🔥 90% 00631L 續抱反彈 + 10% 保證金靈敏待命 (空單 0 口)",
-    "pill_class": "action-hold-long",
-    "is_short_active": false,
-    "eff_hedge_ratio_pct": 0.0,
-    "today_instruction": "🟢 【兩段式快進快出已止盈・現貨站上 5日線續抱中】本波我們已完美執行兩段式操作：① 10/16 高檔反轉進場鎖利 ➔ 10/29 站回 5日線快平 (+7.96%)；② 11/02 確定再向下以 15x 二度進場 ➔ 11/09 見底紅K快平暴賺 +120.16%（單次免費增持 +18.97% 股數）！目前收盤 31.92 元穩守 5日線 (30.92) 與 10日線 (30.63) 之上，維持 90% 00631L 抱牢享受反彈、10% 保證金待命（若未來反彈失敗再次跌破 5日線才再度進場）。",
-    "etf_weight_pct": 91.18,
-    "fut_weight_pct": 8.82,
-    "sim_1m_etf_ntd": 911807,
-    "sim_1m_fut_ntd": 88193,
-    "sim_1m_etf_shares": 28565,
+    "open": 26.73,
+    "high": 27.06,
+    "low": 24.4,
+    "close_price": 24.57,
+    "change": -2.27,
+    "change_pct": -8.46,
+    "regime_code": "SHORT_HEDGING",
+    "regime_badge": "⚡ 2x 靈敏期貨空單鎖利保護中 (浮盈 +95.0%｜站回5日線即平倉)",
+    "pill_class": "action-sell",
+    "is_short_active": true,
+    "eff_hedge_ratio_pct": 94.2,
+    "today_instruction": "⚡ 【靈敏期貨空單持倉大賺保護中】自 2026-11-18 進場反手放空以來，00631L 今日續跌 -8.46% 收 24.57 元，目前期貨保證金未實現浮盈達 +94.96%（為總資產貢獻 +9.41%，使期貨專戶膨脹至 19.6%）！一旦收盤站回 5日均線 (27.63) 或出現恐慌見底紅K / 移動停利，立即快進快出平倉止盈並把超額獲利全數逢低買進 00631L！",
+    "etf_weight_pct": 80.36,
+    "fut_weight_pct": 19.64,
+    "sim_1m_etf_ntd": 803576,
+    "sim_1m_fut_ntd": 196424,
+    "sim_1m_etf_shares": 32706,
     "cum_bottom_share_boost_pct": 188.9,
     "final_net_shares_mult": 1.58,
     "bottom_reinvest_times": 18,
@@ -50,12 +50,12 @@
   "current_slots": [
     {
       "slot_key": "ACCOUNT A",
-      "weight_badge": "現貨佔比 91.2%",
+      "weight_badge": "現貨佔比 80.4%",
       "card_title": "帳戶 A｜00631L 核心現貨長抱倉",
       "card_style": "filled-first",
-      "main_value": "28,565 股",
-      "main_unit": "(每百萬配置 NT$ 911,807)",
-      "sub_datetime": "📅 最新收盤價：31.92 元 (+0.93 / +3.00%)",
+      "main_value": "32,706 股",
+      "main_unit": "(每百萬配置 NT$ 803,576)",
+      "sub_datetime": "📅 最新收盤價：24.57 元 (-2.27 / -8.46%)",
       "reason_text": "🎯 策略核心：牛市享 90% 正2複利，下跌段靠靈敏期貨快進快出賺錢回補低接",
       "metrics": [
         {
@@ -82,7 +82,7 @@
       "card_style": "empty-slot",
       "main_value": "0 口 (站上5日線)",
       "main_unit": "微台指 2~3 口 / 小台 1 口",
-      "sub_datetime": "📡 5日線 MA5：30.92 元 ｜ 10日線 MA10：30.63 元 ｜ 月線：33.31 元",
+      "sub_datetime": "📡 5日線 MA5：27.63 元 ｜ 10日線 MA10：28.71 元 ｜ 月線：31.31 元",
       "reason_text": "🎯 觸發條件：高檔轉弱跌破 MA20 與 MA10，且 MA5 下彎、快速 MACD(8,17,9) 轉綠柱",
       "metrics": [
         {
@@ -104,27 +104,27 @@
     },
     {
       "slot_key": "STAGE 2 (15x)",
-      "weight_badge": "待命中 (0 口)",
+      "weight_badge": "🚨 主跌段放空中 (+95.0%)",
       "card_title": "階段 ②｜確定再向下・2倍敏銳破位放空 (15x)",
-      "card_style": "empty-slot",
-      "main_value": "10日斜率 -0.73%",
-      "main_unit": "(20日斜率 -0.78%/日)",
-      "sub_datetime": "📐 快速 MACD OSC：+0.33 (單日變化 +0.19)",
-      "reason_text": "🎯 觸發條件：第1段平倉後反彈不過月線，再次長黑跌破 MA5 且 MA10/MA20 加速下彎",
+      "card_style": "filled-exit",
+      "main_value": "浮盈 +94.96%",
+      "main_unit": "(2026-11-18 進場 15x)",
+      "sub_datetime": "📐 快速 MACD OSC：-0.38 (單日變化 -0.19)",
+      "reason_text": "🎯 目前持倉：確定再向下・2倍敏銳指標破位放空 (15x) (防線：站回5日線 27.63 元即平倉)",
       "metrics": [
+        {
+          "label": "本筆空單未實現損益",
+          "value": "保證金 +94.96% (總資產 +9.41%)",
+          "color": "up"
+        },
         {
           "label": "上次確定再向下戰績",
           "value": "2026/11/02~11/09 (暴賺 +120.16%！)",
           "color": "up"
         },
         {
-          "label": "2025/04 關稅崩盤戰績",
-          "value": "2025/03/31~04/10 (暴賺 +226.29%！)",
-          "color": "up"
-        },
-        {
           "label": "目前是否確定再向下",
-          "value": "🟢 否 (目前穩守5日線之上)",
+          "value": "🚨 是 (主跌段空單大賺保護中)",
           "color": "up"
         }
       ]
@@ -151,7 +151,7 @@
         },
         {
           "label": "期貨保證金專戶現況",
-          "value": "NT$ 88,193 (滿血 10% 待命)",
+          "value": "NT$ 196,424 (滿血 10% 待命)",
           "color": "neutral"
         }
       ]
@@ -323,36 +323,36 @@
   "indicator_cards": {
     "trend_breakdown_card": {
       "card_title": "⚡ 1. 現貨開始反轉・第一段鎖利雷達 (10x)",
-      "is_triggered": false,
-      "badge_text": "🟢 未觸發高檔反轉",
-      "ma5": 30.92,
-      "ma10": 30.63,
-      "ma20": 33.31,
-      "ma60": 36.04,
-      "max_bias60_15d": 0.62,
-      "status_summary": "收盤 31.92 vs 5日線 30.92 / 10日線 30.63 / 月線 33.31"
+      "is_triggered": true,
+      "badge_text": "🚨 反轉鎖利觸發",
+      "ma5": 27.63,
+      "ma10": 28.71,
+      "ma20": 31.31,
+      "ma60": 35.51,
+      "max_bias60_15d": -6.96,
+      "status_summary": "收盤 24.57 vs 5日線 27.63 / 10日線 28.71 / 月線 31.31"
     },
     "slope_steep_card": {
       "card_title": "📐 2. 確定再向下・2倍敏銳加空雷達 (15x)",
-      "is_triggered": false,
-      "badge_text": "🟢 穩守5日線未再向下",
-      "ma10_slope_pct": -0.73,
-      "ma20_slope_pct": -0.78,
-      "ma60_slope_pct": -0.19,
-      "osc_fast": 0.33,
-      "osc_fast_chg": 0.19,
-      "status_summary": "10日斜率 -0.73%/日 | 20日斜率 -0.78%/日 | 快速OSC +0.33"
+      "is_triggered": true,
+      "badge_text": "🔥 確定再向下 (15x)",
+      "ma10_slope_pct": -1.59,
+      "ma20_slope_pct": -1.89,
+      "ma60_slope_pct": -0.48,
+      "osc_fast": -0.38,
+      "osc_fast_chg": -0.19,
+      "status_summary": "10日斜率 -1.59%/日 | 20日斜率 -1.89%/日 | 快速OSC -0.38"
     },
     "panic_rebound_card": {
       "card_title": "💎 3. 快進快出・反轉即平倉雷達 (MA5 & RSI6)",
-      "is_triggered": true,
-      "badge_text": "✔️ 已站回5日線 (空單平倉)",
-      "ma5": 30.92,
-      "bias5_pct": 3.24,
-      "current_rsi6": 51.8,
+      "is_triggered": false,
+      "badge_text": "⚡ 5日線下 (空單續抱)",
+      "ma5": 27.63,
+      "bias5_pct": -11.07,
+      "current_rsi6": 23.5,
       "min_rsi6_15d": 6.7,
       "min_bias20_15d_pct": -25.87,
-      "status_summary": "收盤 31.92 > 5日線 30.92 (+3.24%) | 近15日最低 RSI(6)=6.7"
+      "status_summary": "收盤 24.57 > 5日線 27.63 (+-11.07%) | 近15日最低 RSI(6)=6.7"
     },
     "position_calculator_card": {
       "card_title": "⚖️ 4. 每 100 萬資金快進快出風控表",
@@ -362,7 +362,7 @@
       "target_margin_ntd": 100000,
       "recommended_tmf_contracts": "階段①鎖利：微台 2~3 口 ｜ 階段②再向下：微台 3~4 口",
       "recommended_mtx_contracts": "保本/停損：浮盈+16%設保本+5% ｜ 站回5日線立刻小停損",
-      "status_summary": "十年總報酬 +3997.2% (年化 47.84%) | 淨持股翻至 1.58x"
+      "status_summary": "十年總報酬 +3478.5% (年化 45.65%) | 淨持股翻至 1.58x"
     }
   }
 }
