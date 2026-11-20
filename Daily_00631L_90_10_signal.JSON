@@ -2,12 +2,12 @@
   "strategy_version": "v2_agile_2x_fast",
   "strategy_name": "00631L × 微台/小台 90:10「2x 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空 (10x➔15x)」雙帳戶策略",
   "file_name": "Daily_00631L_90_10_signal.JSON",
-  "generated_at": "2026-11-19 22:15:45",
+  "generated_at": "2026-11-20 18:02:47",
   "scheduled_run_time": "每日 18:00 自動更新",
   "backtest_summary": {
     "strategy": "2x 靈敏快進快出鎖利 ＋ 確定再向下 2倍敏銳放空 (10x➔15x)",
-    "total_ret_pct": 3478.54,
-    "cagr_pct": 45.65,
+    "total_ret_pct": 3469.21,
+    "cagr_pct": 45.59,
     "mdd_pct": -44.03,
     "calmar": 1.04,
     "sharpe": 1.3,
@@ -22,25 +22,25 @@
   "current": {
     "ticker": "00631L.TW",
     "name": "元大台灣50正2",
-    "date": "2026-11-19",
+    "date": "2026-11-20",
     "time": "13:30:00 (台股收盤)",
-    "open": 26.73,
-    "high": 27.06,
-    "low": 24.4,
-    "close_price": 24.57,
-    "change": -2.27,
-    "change_pct": -8.46,
+    "open": 23.08,
+    "high": 23.53,
+    "low": 21.0,
+    "close_price": 21.24,
+    "change": -3.33,
+    "change_pct": -13.55,
     "regime_code": "SHORT_HEDGING",
-    "regime_badge": "⚡ STEP 3 確定再向下 15x 空單保護中 (浮盈 +95.0%)",
+    "regime_badge": "⚡ STEP 3 確定再向下 15x 空單保護中 (浮盈 +200.5%)",
     "pill_class": "action-sell",
     "is_short_active": true,
-    "eff_hedge_ratio_pct": 94.2,
-    "today_instruction": "🎯 今日重點：2026-11-18 進場 15x 空單目前浮盈 +94.96%（總資產 +9.41%）；續抱至站回 5日線 (27.63 元) 或見底紅K即平倉加碼 00631L。",
-    "etf_weight_pct": 80.36,
-    "fut_weight_pct": 19.64,
-    "sim_1m_etf_ntd": 803576,
-    "sim_1m_fut_ntd": 196424,
-    "sim_1m_etf_shares": 32706,
+    "eff_hedge_ratio_pct": 109.0,
+    "today_instruction": "🎯 今日重點：2026-11-18 進場 15x 空單目前浮盈 +200.48%（總資產 +19.87%）；續抱至站回 5日線 (25.49 元) 或見底紅K即平倉加碼 00631L。",
+    "etf_weight_pct": 69.65,
+    "fut_weight_pct": 30.35,
+    "sim_1m_etf_ntd": 696483,
+    "sim_1m_fut_ntd": 303517,
+    "sim_1m_etf_shares": 32791,
     "cum_bottom_share_boost_pct": 188.9,
     "final_net_shares_mult": 1.58,
     "bottom_reinvest_times": 18,
@@ -50,11 +50,11 @@
   "current_slots": [
     {
       "slot_key": "STEP 1｜90% 現貨倉",
-      "weight_badge": "佔比 80.4%",
+      "weight_badge": "佔比 69.7%",
       "card_title": "00631L 核心長抱倉",
       "card_style": "filled-first",
-      "main_value": "32,706 股",
-      "main_unit": "(現價 24.57 元)",
+      "main_value": "32,791 股",
+      "main_unit": "(現價 21.24 元)",
       "sub_datetime": "",
       "reason_text": "牛市長抱 90% 享正2複利；急跌段靠期貨獲利低檔增持股數。",
       "metrics": [
@@ -78,7 +78,7 @@
       "main_value": "10x 鎖利",
       "main_unit": "(微台 2~3 口)",
       "sub_datetime": "",
-      "reason_text": "條件：高檔跌破月線 (31.31) ＆ 10日線 (28.71) 且 MACD 轉綠。",
+      "reason_text": "條件：高檔跌破月線 (30.59) ＆ 10日線 (28.20) 且 MACD 轉綠。",
       "metrics": [
         {
           "label": "假反轉保護",
@@ -94,17 +94,17 @@
     },
     {
       "slot_key": "STEP 3｜確定再向下 15x",
-      "weight_badge": "🚨 持倉浮盈 +95.0%",
+      "weight_badge": "🚨 持倉浮盈 +200.5%",
       "card_title": "2倍敏銳破位・主跌段加空",
       "card_style": "filled-exit",
-      "main_value": "+94.96%",
+      "main_value": "+200.48%",
       "main_unit": "(11-18 進場 15x)",
       "sub_datetime": "",
-      "reason_text": "條件：破 5日線 (27.63) 且雙均線斜率急殺 (-1.59% / -1.89%)。",
+      "reason_text": "條件：破 5日線 (25.49) 且雙均線斜率急殺 (-1.76% / -2.29%)。",
       "metrics": [
         {
           "label": "目前未實現獲利",
-          "value": "保證金 +94.96% (總資產 +9.41%)",
+          "value": "保證金 +200.48% (總資產 +19.87%)",
           "color": "up"
         },
         {
@@ -119,14 +119,14 @@
       "weight_badge": "累計 18 次抄底",
       "card_title": "反轉即平倉 ➔ 90:10 買現貨",
       "card_style": "filled-first",
-      "main_value": "防線 27.63 元",
+      "main_value": "防線 25.49 元",
       "main_unit": "(5日線 MA5)",
       "sub_datetime": "",
-      "reason_text": "出場：站回 5日線 (27.63)、移動停利鎖 76% 獲利、或 RSI(6)≤12 紅K。",
+      "reason_text": "出場：站回 5日線 (25.49)、移動停利鎖 76% 獲利、或 RSI(6)≤12 紅K。",
       "metrics": [
         {
           "label": "目前 RSI(6) / 最低",
-          "value": "23.5 / 近15日最低 6.7",
+          "value": "16.7 / 近15日最低 6.7",
           "color": "neutral"
         },
         {
@@ -305,34 +305,34 @@
       "card_title": "⚡ 1. 現貨開始反轉・第一段鎖利雷達 (10x)",
       "is_triggered": true,
       "badge_text": "🚨 反轉鎖利觸發",
-      "ma5": 27.63,
-      "ma10": 28.71,
-      "ma20": 31.31,
-      "ma60": 35.51,
-      "max_bias60_15d": -6.96,
-      "status_summary": "收盤 24.57 vs 5日線 27.63 / 10日線 28.71 / 月線 31.31"
+      "ma5": 25.49,
+      "ma10": 28.2,
+      "ma20": 30.59,
+      "ma60": 35.3,
+      "max_bias60_15d": -7.93,
+      "status_summary": "收盤 21.24 vs 5日線 25.49 / 10日線 28.20 / 月線 30.59"
     },
     "slope_steep_card": {
       "card_title": "📐 2. 確定再向下・2倍敏銳加空雷達 (15x)",
       "is_triggered": true,
       "badge_text": "🔥 確定再向下 (15x)",
-      "ma10_slope_pct": -1.59,
-      "ma20_slope_pct": -1.89,
-      "ma60_slope_pct": -0.48,
-      "osc_fast": -0.38,
-      "osc_fast_chg": -0.19,
-      "status_summary": "10日斜率 -1.59%/日 | 20日斜率 -1.89%/日 | 快速OSC -0.38"
+      "ma10_slope_pct": -1.76,
+      "ma20_slope_pct": -2.29,
+      "ma60_slope_pct": -0.6,
+      "osc_fast": -0.72,
+      "osc_fast_chg": -0.34,
+      "status_summary": "10日斜率 -1.76%/日 | 20日斜率 -2.29%/日 | 快速OSC -0.72"
     },
     "panic_rebound_card": {
       "card_title": "💎 3. 快進快出・反轉即平倉雷達 (MA5 & RSI6)",
       "is_triggered": false,
       "badge_text": "⚡ 5日線下 (空單續抱)",
-      "ma5": 27.63,
-      "bias5_pct": -11.07,
-      "current_rsi6": 23.5,
+      "ma5": 25.49,
+      "bias5_pct": -16.68,
+      "current_rsi6": 16.7,
       "min_rsi6_15d": 6.7,
-      "min_bias20_15d_pct": -25.87,
-      "status_summary": "收盤 24.57 > 5日線 27.63 (+-11.07%) | 近15日最低 RSI(6)=6.7"
+      "min_bias20_15d_pct": -30.57,
+      "status_summary": "收盤 21.24 > 5日線 25.49 (+-16.68%) | 近15日最低 RSI(6)=6.7"
     },
     "position_calculator_card": {
       "card_title": "⚖️ 4. 每 100 萬資金快進快出風控表",
@@ -342,7 +342,7 @@
       "target_margin_ntd": 100000,
       "recommended_tmf_contracts": "階段①鎖利：微台 2~3 口 ｜ 階段②再向下：微台 3~4 口",
       "recommended_mtx_contracts": "保本/停損：浮盈+16%設保本+5% ｜ 站回5日線立刻小停損",
-      "status_summary": "十年總報酬 +3478.5% (年化 45.65%) | 淨持股翻至 1.58x"
+      "status_summary": "十年總報酬 +3469.2% (年化 45.59%) | 淨持股翻至 1.58x"
     }
   }
 }
