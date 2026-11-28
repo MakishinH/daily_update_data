@@ -18,7 +18,7 @@ TARGET_SYMBOLS = {
     "^DJI": "道瓊工業指數",
     "^GSPC": "S&P 500 指數",
     "^IXIC": "NASDAQ 指數",
-    "^SOXX": "費城半導體 指數",   # 原code "SOXX": "iShares 費城半導體 ETF",
+    "^SOX": "費城半導體 指數",   # 原code "SOXX": "iShares 費城半導體 ETF",
     "^N225": "日經 225 指數",   # 原"VOO": "Vanguard S&P 500 ETF",
     "^KS11": "韓國綜合股價指數", # 原"QQQ": "Invesco QQQ Trust",
     "TSM": "台積電 ADR",
